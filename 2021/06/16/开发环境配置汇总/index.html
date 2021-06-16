@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="elegantlee"><meta name="copyright" content="elegantlee"><meta name="generator" content="Hexo 5.4.0"><meta name="theme" content="hexo-theme-yun"><title>开发环境配置汇总 | 天下武功，无坚不破，唯快不破</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.25/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_j5gk85dg4pf.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link rel="icon" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="dns-prefetch" href="https://cos.yunyoujun.cn"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"elegantlee.github.io","root":"/","title":"新时代无产者","version":"1.6.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><script src="/h" async></script><script src="/t" async></script><script src="/t" async></script><script src="/p" async></script><script src="/s" async></script><script src="/:" async></script><script src="/" async></script><script src="/" async></script><script src="/c" async></script><script src="/d" async></script><script src="/n" async></script><script src="/." async></script><script src="/j" async></script><script src="/s" async></script><script src="/d" async></script><script src="/e" async></script><script src="/l" async></script><script src="/i" async></script><script src="/v" async></script><script src="/r" async></script><script src="/." async></script><script src="/n" async></script><script src="/e" async></script><script src="/t" async></script><script src="/" async></script><script src="/n" async></script><script src="/p" async></script><script src="/m" async></script><script src="/" async></script><script src="/i" async></script><script src="/o" async></script><script src="/n" async></script><script src="/i" async></script><script src="/c" async></script><script src="/o" async></script><script src="/n" async></script><script src="/s" async></script><script src="/" async></script><script src="/d" async></script><script src="/i" async></script><script src="/s" async></script><script src="/t" async></script><script src="/" async></script><script src="/i" async></script><script src="/o" async></script><script src="/n" async></script><script src="/i" async></script><script src="/c" async></script><script src="/o" async></script><script src="/n" async></script><script src="/s" async></script><script src="/." async></script><script src="/j" async></script><script src="/s" async></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-71DVTQCBDW"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-71DVTQCBDW');
+}</script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MDZGC5R');</script><!-- End Google Tag Manager --><meta name="description" content="主要是java和python的环境配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发环境配置汇总">
+<meta property="og:url" content="https://elegantlee.github.io/2021/06/16/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%B1%87%E6%80%BB/index.html">
+<meta property="og:site_name" content="天下武功，无坚不破，唯快不破">
+<meta property="og:description" content="主要是java和python的环境配置">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-16T11:37:13.000Z">
+<meta property="article:modified_time" content="2021-06-16T11:57:05.604Z">
+<meta property="article:author" content="elegantlee">
+<meta property="article:tag" content="环境配置">
+<meta name="twitter:card" content="summary"><script src="/js/ui/mode.js"></script>
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="elegantlee"><img width="96" loading="lazy" src="/images/avatar3.jpg" alt="elegantlee"><span class="site-author-status" title="Looking for dawn.">🌑</span></a><div class="site-author-name"><a href="/about/">elegantlee</a></div><span class="site-name">天下武功，无坚不破，唯快不破</span><sub class="site-subtitle">修炼计算机科学内功</sub><div class="site-desciption">Talk is cheap, show me your code!!!</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">4</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">5</span></a></div></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=641731718&amp;website=www.oicqzone.com" title="QQ 641731718" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/ElegantLee" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=428084429" title="网易云音乐" target="_blank" style="color:#C20C0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/li-biao-26-93" title="知乎" target="_blank" style="color:#0084FF"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhihu-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com/347714868" title="哔哩哔哩" target="_blank" style="color:#FF8EB3"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bilibili-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://twitter.com/elegantlee2" title="Twitter" target="_blank" style="color:#1da1f2"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-twitter-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:superlee666@163.com" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%B1%87%E6%80%BB"><span class="toc-number">1.</span> <span class="toc-text">开发环境配置汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java"><span class="toc-number">1.1.</span> <span class="toc-text">Java</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JDK"><span class="toc-number">1.1.1.</span> <span class="toc-text">JDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#maven"><span class="toc-number">1.1.2.</span> <span class="toc-text">maven</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tomcat"><span class="toc-number">1.1.3.</span> <span class="toc-text">Tomcat</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python"><span class="toc-number">1.2.</span> <span class="toc-text">Python</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pip%E6%8D%A2%E6%BA%90"><span class="toc-number">1.2.1.</span> <span class="toc-text">pip换源</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pip%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85"><span class="toc-number">1.3.</span> <span class="toc-text">pip离线安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pip%E5%AE%89%E8%A3%85requirements"><span class="toc-number">1.4.</span> <span class="toc-text">pip安装requirements</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Anacond"><span class="toc-number">1.5.</span> <span class="toc-text">Anacond</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NodeJS"><span class="toc-number">1.6.</span> <span class="toc-text">NodeJS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Hexo"><span class="toc-number">1.6.1.</span> <span class="toc-text">安装Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo%E8%BF%81%E7%A7%BB"><span class="toc-number">1.6.2.</span> <span class="toc-text">Hexo迁移</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VS-Code"><span class="toc-number">1.7.</span> <span class="toc-text">VS Code</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%9A%84%E6%8F%92%E4%BB%B6"><span class="toc-number">1.7.1.</span> <span class="toc-text">安装的插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.7.2.</span> <span class="toc-text">常用快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%8E%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86"><span class="toc-number">1.7.2.1.</span> <span class="toc-text">编辑器与窗口管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-number">1.7.2.2.</span> <span class="toc-text">文件操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%BC%E5%BC%8F%E8%B0%83%E6%95%B4"><span class="toc-number">1.7.2.3.</span> <span class="toc-text">格式调整</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%BC%96%E8%BE%91"><span class="toc-number">1.7.2.4.</span> <span class="toc-text">代码编辑</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git"><span class="toc-number">1.8.</span> <span class="toc-text">git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E5%86%99%E4%BD%9C"><span class="toc-number">1.9.</span> <span class="toc-text">文档写作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Typora"><span class="toc-number">1.9.1.</span> <span class="toc-text">Typora</span></a></li></ol></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://elegantlee.github.io/2021/06/16/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%B1%87%E6%80%BB/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="elegantlee"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="天下武功，无坚不破，唯快不破"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">开发环境配置汇总<a class="post-edit-link" href="https://github.com/ElegantLee/elegantlee.github.io/tree/hexo/source/_posts/开发环境配置汇总.md" target="_blank" title="编辑" rel="noopener"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-edit-line"></use></svg></a></h1><div class="post-meta"><div class="post-time" style="display:inline-block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2021-06-16 19:37:13" itemprop="dateCreated datePublished" datetime="2021-06-16T19:37:13+08:00">2021-06-16</time></div><span class="leancloud_visitors" id="/2021/06/16/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%B1%87%E6%80%BB/" data-flag-title="开发环境配置汇总"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span class="leancloud-visitors-count"></span></span></span><span class="post-meta-divider">-</span><a href="#comment"><span class="post-meta-item-icon" title="评论数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-chat-3-line"></use></svg> <span class="waline-comment-count" id="/2021/06/16/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%B1%87%E6%80%BB/"></span></span></a><div class="post-classify"><span class="post-category"> <span class="post-meta-item-icon" style="margin-right:3px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-line"></use></svg></span><span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a class="category-item" href="/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="--text-color:var(--hty-text-color)" itemprop="url" rel="index"><span itemprop="text">开发环境配置</span></a></span></span><span class="post-tag"><span class="post-meta-divider">-</span><a class="tag-item" href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="--text-color:var(--hty-text-color)"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="tag-name">环境配置</span></a></span></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h1 id="开发环境配置汇总"><a href="#开发环境配置汇总" class="headerlink" title="开发环境配置汇总"></a>开发环境配置汇总</h1><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><div class="info">
+
+<blockquote>
+<p>下载了JDK，安装时不需要再安装jre了 </p>
+</blockquote>
+</div>
+
+  
+
+<ol>
+<li>JAVA_HOME<ul>
+<li>JDK安装的目录</li>
+</ul>
+</li>
+<li>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin<ul>
+<li>添加到PATH中</li>
+</ul>
+</li>
+<li>CLASSPATH<ul>
+<li>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</li>
+</ul>
+</li>
+</ol>
+<h3 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h3><div class="warning">
+
+<blockquote>
+<p>可使用国内镜像源下载，官网下载比较慢    </p>
+</blockquote>
+</div>
+
+<ol>
+<li><p>MAVEN_HOME</p>
+<ul>
+<li>maven的安装目录</li>
+</ul>
+</li>
+<li><p>%MAVEN_HOME%\bin</p>
+<ul>
+<li>添加到PATH中去</li>
+</ul>
+</li>
+<li><p>MAVEN_OPTS</p>
+<ul>
+<li>-Xms128m -Xmx512m</li>
+</ul>
+</li>
+<li><p>生成.m2文件（默认在C盘）</p>
+<ul>
+<li><p>执行命令：mvn help:system（可中断），目的是生成C盘中的.m2文件夹</p>
+</li>
+<li><p>将安装目录下的conf中的settings.xml拷贝到.m2文件夹下 。前者是全局的，后者是当前用户的。 </p>
+</li>
+<li><p>在settings.xml中改镜像和本地仓库位置</p>
+</li>
+</ul>
+ <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 配置中央仓库的镜像（改用：阿里云中央仓库镜像）--&gt;</span><br><span class="line">&lt;mirror&gt;        </span><br><span class="line">  &lt;id&gt;alimaven&lt;/id&gt;</span><br><span class="line">  &lt;name&gt;aliyun-maven&lt;/name&gt;</span><br><span class="line">  &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;</span><br><span class="line">  &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 设置本地仓库位置 --&gt;</span><br><span class="line">&lt;localRepository&gt;D:\maven-local-repository&lt;/localRepository&gt;</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>IDEA中的配置</p>
+</li>
+</ol>
+<h3 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h3><hr>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><h3 id="pip换源"><a href="#pip换源" class="headerlink" title="pip换源"></a>pip换源</h3><p>​    在C:\Users\当前用户名\pip下新建一个pip.ini文件，写入以下内容</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">global</span>]</span><br><span class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">trusted-host = mirrors.aliyun.com</span><br><span class="line">timeout = <span class="number">120</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="pip离线安装"><a href="#pip离线安装" class="headerlink" title="pip离线安装"></a>pip离线安装</h2><p>查看当前python版本支持的离线文件类型</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pip._internal</span><br><span class="line"><span class="built_in">print</span>(pip._internal.pep425tags.get_supported())</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="pip安装requirements"><a href="#pip安装requirements" class="headerlink" title="pip安装requirements"></a>pip安装requirements</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="Anacond"><a href="#Anacond" class="headerlink" title="Anacond"></a>Anacond</h2><p>一、安装Pytorch</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Solving environment: failed with current_repodata.json, will retry with next repodata source.</span><br><span class="line">Initial quick solve with frozen env failed.  Unfreezing env and trying again.</span><br><span class="line"></span><br><span class="line">解决：conda update --all</span><br></pre></td></tr></tbody></table></figure>
+
+<p>二、安装package</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PackagesNotFoundError</span><br><span class="line">解决：</span><br><span class="line">1. anaconda search -t conda package</span><br><span class="line">2. anaconda show "conda-forge/pydap"(根据查出来的结果选择)</span><br><span class="line">3. 根据提示安装</span><br></pre></td></tr></tbody></table></figure>
+
+<p>三、环境管理</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>) 克隆环境</span><br><span class="line">conda create -n BBB --clone AAA</span><br><span class="line">* BBB是自己要创建的环境名称</span><br><span class="line">* AAA是已经存在的环境名称</span><br><span class="line">(<span class="number">2</span>) 删除环境</span><br><span class="line">conda remove -n env_name --<span class="built_in">all</span></span><br><span class="line">(<span class="number">3</span>) 环境迁移</span><br><span class="line">---Linux---</span><br><span class="line"><span class="number">1.</span> conda pack -n my_env(要打包的环境) -o my_env.tar.gz(自定义打包后的环境名称)</span><br><span class="line"><span class="number">2.</span> 在env目录下, mkdir -p my_env</span><br><span class="line"><span class="number">3.</span> tar -xzvf my_env.tar.gz -C my_env</span><br><span class="line"><span class="number">4.</span> source ./my_env/<span class="built_in">bin</span>/activate</span><br><span class="line"><span class="number">5.</span> conda activate my_env</span><br><span class="line"><span class="number">6.</span>(my_env) $ conda-unpack</span><br><span class="line"></span><br><span class="line">---Windows---</span><br><span class="line"><span class="number">1.</span> 同上进行打包, 可打包为<span class="built_in">zip</span></span><br><span class="line"><span class="number">2.</span> 将<span class="built_in">zip</span>文件解压到envs目录下</span><br><span class="line"><span class="number">3.</span> 进入base环境</span><br><span class="line"><span class="number">4.</span> conda env <span class="built_in">list</span></span><br><span class="line"><span class="number">5.</span> 进入envs目录</span><br><span class="line"><span class="number">6.</span> .\my_env\Scripts\activate.bat</span><br><span class="line"><span class="number">7.</span> .\my_env\Scripts\conda-unpack.exe</span><br><span class="line">--------------------------------------------------------------------------------------------------------------</span><br><span class="line">reference: https://zhuanlan.zhihu.com/p/<span class="number">87344422</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>四、镜像管理</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>) .condarc配置</span><br><span class="line">show_channel_urls: true</span><br><span class="line">channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - defaults</span><br><span class="line">(<span class="number">2</span>) 查看当前channel</span><br><span class="line">conda config --show-sources</span><br><span class="line">(<span class="number">3</span>) 添加源</span><br><span class="line">conda config --add channels</span><br><span class="line">(<span class="number">4</span>) 移除源</span><br><span class="line">conda config --remove channels</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><ol>
+<li>检查是否安装成功<ul>
+<li>node -v</li>
+<li>npm -v</li>
+</ul>
+</li>
+<li>换源<ul>
+<li>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></li>
+<li>测试是否安装成功<ul>
+<li>cnpm</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>设置npm全局模块路径（自定义路径）<ul>
+<li>在NodeJS安装路径下新建两个文件夹： node_globle, node_cache</li>
+<li>npm config set prefix “D:\Environments\nodejs\node_globle”</li>
+<li>npm config set cache “D:\Environments\nodejs\node_cache”</li>
+</ul>
+</li>
+<li>添加环境变量<ul>
+<li>NODE_PATH<ul>
+<li>D:\Enviroment\NodeJs\node_globle\node_modules</li>
+</ul>
+</li>
+<li>PATH<ul>
+<li>D:\Enviroment\NodeJs\node_globle\</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ol>
+<li>cnpm install -g hexo-cli</li>
+<li>hexo -v</li>
+<li>hexo init (在指定的存放博客目录下使用)</li>
+<li>hexo s</li>
+<li>localhost:4000测试</li>
+<li>常用命令</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* hexo c 	<span class="comment">// 清理缓存文件</span></span><br><span class="line">* hexo g	<span class="comment">// 生成文件</span></span><br><span class="line">* hexo s	<span class="comment">// 运行本地服务器</span></span><br><span class="line">* hexo d	<span class="comment">// 上传到服务器</span></span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h3 id="Hexo迁移"><a href="#Hexo迁移" class="headerlink" title="Hexo迁移"></a>Hexo迁移</h3><div class="info">
+
+<blockquote>
+<p>将电脑上的博客迁移到另一台电脑</p>
+</blockquote>
+</div>
+
+<ol>
+<li>备份原来的博客文件夹，清单如下：<ul>
+<li>_config.yml</li>
+<li>package.json</li>
+<li>scaffolds/</li>
+<li>source/</li>
+<li>themes/</li>
+</ul>
+</li>
+<li>在新电脑上安装环境（node，hexo）</li>
+<li>在博客目录下（与原来的博客路径保持一致最好，不同的话没试过）<ul>
+<li>cnpm install –save hexo-deployer-git</li>
+<li>hexo c<ul>
+<li>这里会报错，缺少相关依赖，根据提示安装即可</li>
+<li>再次执行hexo c</li>
+</ul>
+</li>
+<li>hexo g</li>
+<li>hexo s</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="VS-Code"><a href="#VS-Code" class="headerlink" title="VS Code"></a>VS Code</h2><h3 id="安装的插件"><a href="#安装的插件" class="headerlink" title="安装的插件"></a>安装的插件</h3><blockquote>
+<ol>
+<li><p>open-in-browser 在浏览器中查看</p>
+</li>
+<li><p>Auto Close Tag 自动闭合标签</p>
+</li>
+<li><p>Auto Rename Tag 尾部闭合标签同步修改</p>
+</li>
+<li><p>Bracket Pair Colorizer 用不同颜色高亮显示匹配的括号</p>
+</li>
+<li><p>Highlight Matching Tag 高亮显示匹配标签</p>
+</li>
+<li><p>Vscode-icons VSCode 文件图标</p>
+</li>
+<li><p>TODO Highlight 高亮</p>
+</li>
+<li><p>Code Spell Checker 单词拼写检查</p>
+</li>
+<li><p>Code Runner 运行选中代码段</p>
+</li>
+</ol>
+<ul>
+<li>Python开发时的配置</li>
+<li>输出时中文乱码<ul>
+<li>“code-runner.runInTerminal”: true</li>
+</ul>
+</li>
+</ul>
+<ol start="10">
+<li><p>Improt Cost 成本提示</p>
+</li>
+<li><p>WakaTime 计算代码工作量</p>
+</li>
+<li><p>Settings Sync 同步扩展配置到GitHub</p>
+</li>
+</ol>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lychee/p/11214032.html">参考</a></p>
+<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><h4 id="编辑器与窗口管理"><a href="#编辑器与窗口管理" class="headerlink" title="编辑器与窗口管理"></a>编辑器与窗口管理</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+Shift+P: 打开命令面板。</span><br><span class="line"></span><br><span class="line">Ctrl+Shift+N: 新建窗口。</span><br><span class="line"></span><br><span class="line">Ctrl+Shift+W: 关闭窗口。</span><br><span class="line"></span><br><span class="line">切分窗口：Ctrl+1/Ctrl+3/Ctrl+3</span><br><span class="line"></span><br><span class="line">Ctrl+H：最小化窗口</span><br><span class="line"></span><br><span class="line">Ctrl+B：显示/隐藏侧边栏</span><br><span class="line"></span><br><span class="line">Ctrl+"+/-"：放大/缩小界面</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+N：新建文件</span><br><span class="line"></span><br><span class="line">Ctrl+W：关闭文件</span><br><span class="line"></span><br><span class="line">Ctrl+Tab：文件切换</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h4 id="格式调整"><a href="#格式调整" class="headerlink" title="格式调整"></a>格式调整</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+C/Ctrl+V：复制或剪切当前行/当前选中内容</span><br><span class="line"></span><br><span class="line">Alt+Up/Down：向上/下移动一行</span><br><span class="line"></span><br><span class="line">Shift+Alt+Up//Down：向上/下复制一行</span><br><span class="line"></span><br><span class="line">Ctrl+Delete：删除当前行</span><br><span class="line"></span><br><span class="line">Shift+Alt+Left/Right：从光标开始向左/右选择内容</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h4 id="代码编辑"><a href="#代码编辑" class="headerlink" title="代码编辑"></a>代码编辑</h4><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+D：选中下一个相同内容</span><br><span class="line"></span><br><span class="line">Ctrl+Shift+L：选中所有相同内容</span><br><span class="line"></span><br><span class="line">Ctrl+F：查找内容</span><br><span class="line"></span><br><span class="line">Ctrl+Shit+F：在整个文件夹中查找内容</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><ol>
+<li><p>检查本机是否有ssh key设置，打开git bash客户端：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh或cd .ssh</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>使用Git Bash生成新的ssh key</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd ~  <span class="comment">#保证当前路径在”~”下</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"xxxxxx@yy.com"</span>  <span class="comment">#填写自己真实有效的邮箱地址</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> which to save the key (/c/Users/xxxx_000/.ssh/id_rsa):   <span class="comment">#不填直接回车</span></span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):   <span class="comment">#输入密码（可以为空）</span></span><br><span class="line">Enter same passphrase again:   <span class="comment">#再次确认密码（可以为空）</span></span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /c/Users/xxxx_000/.ssh/id_rsa.   <span class="comment">#生成的id_rsa文件为密钥</span></span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /c/Users/xxxx_000/.ssh/id_rsa.pub.  <span class="comment">#生成的id_rsa.pub公钥</span></span><br><span class="line">The key fingerprint <span class="keyword">is</span>:</span><br><span class="line">e3:<span class="number">51</span>:<span class="number">33</span>:xx:xx:xx:xx:xxx:<span class="number">61</span>:<span class="number">28</span>:<span class="number">83</span>:e2:<span class="number">81</span> xxxxxx@yy.com</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>配置GitHub账户</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="keyword">global</span> user.name “your_username”  <span class="comment">#设置用户名</span></span><br><span class="line">git config --<span class="keyword">global</span> user.email “your_registered_github_Email”  <span class="comment">#设置邮箱地址(建议用注册giuhub的邮箱)</span></span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>测试ssh keys是否设置成功</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line">The authenticity of host <span class="string">'github.com (192.30.252.129)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is 16:27:xx:xx:xx:xx:xx:4d:eb:df:a6:48.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)? yes #确认你是否继续联系，输入yes</span></span><br><span class="line"><span class="string">Warning: Permanently added '</span>github.com,<span class="number">192.30</span><span class="number">.252</span><span class="number">.129</span><span class="string">' (RSA) to the list of known hosts.</span></span><br><span class="line"><span class="string">Enter passphrase for key '</span>/c/Users/xxxx_000/.ssh/id_rsa<span class="string">':  #生成ssh kye是密码为空则无此项，若设置有密码则有此项且，输入生成ssh key时设置的密码即可。</span></span><br><span class="line"><span class="string">Hi xxx! You'</span>ve successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell access. <span class="comment">#出现词句话，说明设置成功。</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>Reference: [<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000004564905">Windows下配置Git连接上github - SegmentFault 思否</a>]:</p>
+</li>
+</ol>
+<h2 id="文档写作"><a href="#文档写作" class="headerlink" title="文档写作"></a>文档写作</h2><h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><p>配置快捷设置字体颜色</p>
+<p>快捷键：</p>
+<ul>
+<li>Ctrl+Alt+o 橙色</li>
+<li>Ctrl+Alt+r 红色</li>
+<li>Ctrl+Alt+b 浅蓝色</li>
+</ul>
+<p>Reference：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010886217/article/details/109661322">Typora修改字体颜色快捷键设置</a></p>
+</li>
+<li></li>
+</ul>
+</div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="打赏" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">I'm so cute. Please give me money.</div><div id="qr" style="display:none;"><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210616192029.jpg"><img loading="lazy" src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210616192029.jpg" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-alipay-line"></use></svg></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210616192027.png"><img loading="lazy" src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210616192027.png" alt="QQ 支付" title="QQ 支付"></a><div><span style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210616192028.png"><img loading="lazy" src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210616192028.png" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-pay-line"></use></svg></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>elegantlee</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://elegantlee.github.io/2021/06/16/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%B1%87%E6%80%BB/" title="开发环境配置汇总">https://elegantlee.github.io/2021/06/16/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%B1%87%E6%80%BB/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2021/06/16/Paper-for-Fun/" rel="prev" title="Paper for Fun"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">Paper for Fun</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2021/06/16/Windows-%E5%AE%89%E8%A3%85Tensorflow-GPU%E7%89%88%E6%9C%AC/" rel="next" title="Windows 安装Tensorflow GPU版本"><span class="post-nav-text">Windows 安装Tensorflow GPU版本</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/ElegantLee/elegantlee.github.io/discussions" target="_blank">GitHub Discussions</a> 与我交流。</span><br></div><div id="waline"></div><script>Yun.utils.getScript("https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js", () => {
+  const walineConfig = {"enable":true,"serverURL":"https://elegantlee-github-io.vercel.app","comment":true,"visitor":true,"placeholder":"填写邮箱，可以收到回复通知哦～","requiredFields":["nick"],"el":"#waline","lang":"zh-CN"}
+  walineConfig.path = "/2021/06/16/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E6%B1%87%E6%80%BB/"
+  new Waline(walineConfig)
+}, window.Waline);</script></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> elegantlee</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.0</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.6.1</span></div><div class="live_time"><span>本博客已坚挺地运行</span><span id="display_live_time"></span><span class="moe-text">(ง •_•)ง</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-06-14T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><script>const date = new Date();
+const today = (date.getMonth() + 1) + "-" + date.getDate()
+const mourn_days = ["4-4"]
+if (mourn_days.includes(today)) {
+  document.documentElement.style.filter = "grayscale(1)";
+}</script></div></body></html>
