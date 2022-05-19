@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="elegantlee"><meta name="copyright" content="elegantlee"><meta name="generator" content="Hexo 5.4.1"><meta name="theme" content="hexo-theme-yun"><title>Vue概览 | 天下武功，无坚不破，唯快不破</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@900&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.25/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_j5gk85dg4pf.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
+});
+</script><link id="light-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css" media="(prefers-color-scheme: light)"><link id="dark-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-tomorrow.css" media="(prefers-color-scheme: dark)"><link rel="icon" href="/yun.svg"><link rel="mask-icon" href="/yun.svg" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="dns-prefetch" href="https://cos.yunyoujun.cn"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"elegantlee.github.io","root":"/","title":"新时代无产者","version":"1.6.1","mode":"auto","copycode":true,"page":{"isPost":true},"i18n":{"placeholder":"搜索...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）"},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://el-bot-api.vercel.app/api/words/young"},"fireworks":{"colors":["102, 167, 221","62, 131, 225","33, 78, 194"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><script src="/h" async></script><script src="/t" async></script><script src="/t" async></script><script src="/p" async></script><script src="/s" async></script><script src="/:" async></script><script src="/" async></script><script src="/" async></script><script src="/c" async></script><script src="/d" async></script><script src="/n" async></script><script src="/." async></script><script src="/j" async></script><script src="/s" async></script><script src="/d" async></script><script src="/e" async></script><script src="/l" async></script><script src="/i" async></script><script src="/v" async></script><script src="/r" async></script><script src="/." async></script><script src="/n" async></script><script src="/e" async></script><script src="/t" async></script><script src="/" async></script><script src="/n" async></script><script src="/p" async></script><script src="/m" async></script><script src="/" async></script><script src="/i" async></script><script src="/o" async></script><script src="/n" async></script><script src="/i" async></script><script src="/c" async></script><script src="/o" async></script><script src="/n" async></script><script src="/s" async></script><script src="/" async></script><script src="/d" async></script><script src="/i" async></script><script src="/s" async></script><script src="/t" async></script><script src="/" async></script><script src="/i" async></script><script src="/o" async></script><script src="/n" async></script><script src="/i" async></script><script src="/c" async></script><script src="/o" async></script><script src="/n" async></script><script src="/s" async></script><script src="/." async></script><script src="/j" async></script><script src="/s" async></script><link rel="preconnect" href="https://www.google-analytics.com" crossorigin><script async src="https://www.googletagmanager.com/gtag/js?id=G-71DVTQCBDW"></script><script>if (CONFIG.hostname === location.hostname) {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-71DVTQCBDW');
+}</script><script>(function(){
+  var bp = document.createElement('script');
+  var curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else {
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})();</script><!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MDZGC5R');</script><!-- End Google Tag Manager --><meta name="description" content="Vue概览Vue是什么Vue是一个基于MVVM的前端框架，目前有两个版本（2.x和3.x）。目前学习的是Vue2.x的特性，3.x对2.x有更好的改进。在前端框架出现以前，前端工程师编写代码的思路是事件驱动，围绕事件来展开。Vue鼓励开发人员使用数据驱动的方式进行开发，围绕数据状态来编写代码。 事件驱动的开发流程：  编写静态页面； 给对应元素绑定对应的事件； 实现事件对应的功能，如获取数据，更新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue概览">
+<meta property="og:url" content="https://elegantlee.github.io/2022/05/19/Vue%E6%A6%82%E8%A7%88/index.html">
+<meta property="og:site_name" content="天下武功，无坚不破，唯快不破">
+<meta property="og:description" content="Vue概览Vue是什么Vue是一个基于MVVM的前端框架，目前有两个版本（2.x和3.x）。目前学习的是Vue2.x的特性，3.x对2.x有更好的改进。在前端框架出现以前，前端工程师编写代码的思路是事件驱动，围绕事件来展开。Vue鼓励开发人员使用数据驱动的方式进行开发，围绕数据状态来编写代码。 事件驱动的开发流程：  编写静态页面； 给对应元素绑定对应的事件； 实现事件对应的功能，如获取数据，更新">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/8/87/MVVMPattern.png">
+<meta property="og:image" content="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20220519225439.png">
+<meta property="article:published_time" content="2022-05-19T13:59:21.000Z">
+<meta property="article:modified_time" content="2022-05-19T16:59:50.530Z">
+<meta property="article:author" content="elegantlee">
+<meta property="article:tag" content="elegantlee">
+<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="elegantlee.github.io">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="Deep Learning">
+<meta property="article:tag" content="Machine Learning">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/8/87/MVVMPattern.png"><script src="/js/ui/mode.js"></script>
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><ul class="sidebar-nav"><li class="sidebar-nav-item sidebar-nav-toc hty-icon-button sidebar-nav-active" data-target="post-toc-wrap" title="文章目录"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-list-ordered"></use></svg></li><li class="sidebar-nav-item sidebar-nav-overview hty-icon-button" data-target="site-overview-wrap" title="站点概览"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-passport-line"></use></svg></li></ul><div class="sidebar-panel" id="site-overview-wrap"><div class="site-info fix-top"><a class="site-author-avatar" href="/about/" title="elegantlee"><img width="96" loading="lazy" src="/images/avatar3.jpg" alt="elegantlee"><span class="site-author-status" title="Looking for dawn.">🌑</span></a><div class="site-author-name"><a href="/about/">elegantlee</a></div><span class="site-name">天下武功，无坚不破，唯快不破</span><sub class="site-subtitle">修炼计算机科学内功</sub><div class="site-desciption">Talk is cheap, show me your code!!!</div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">11</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">6</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">9</span></a></div></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="/atom.xml" title="RSS" target="_blank" style="color:orange"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=641731718&amp;website=www.oicqzone.com" title="QQ 641731718" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/ElegantLee" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=428084429" title="网易云音乐" target="_blank" style="color:#C20C0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/li-biao-26-93" title="知乎" target="_blank" style="color:#0084FF"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhihu-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com/347714868" title="哔哩哔哩" target="_blank" style="color:#FF8EB3"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bilibili-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://twitter.com/elegantlee2" title="Twitter" target="_blank" style="color:#1da1f2"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-twitter-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:superlee666@163.com" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div><div class="sidebar-panel sidebar-panel-active" id="post-toc-wrap"><div class="post-toc"><div class="post-toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue%E6%A6%82%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text">Vue概览</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.1.</span> <span class="toc-text">Vue是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.2.</span> <span class="toc-text">Vue实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue%E6%8C%87%E4%BB%A4"><span class="toc-number">1.3.</span> <span class="toc-text">Vue指令</span></a></li></ol></li></ol></div></div></div></aside><main class="sidebar-translate" id="content"><div id="post"><article class="hty-card post-block" itemscope itemtype="https://schema.org/Article"><link itemprop="mainEntityOfPage" href="https://elegantlee.github.io/2022/05/19/Vue%E6%A6%82%E8%A7%88/"><span hidden itemprop="author" itemscope itemtype="https://schema.org/Person"><meta itemprop="name" content="elegantlee"><meta itemprop="description"></span><span hidden itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="天下武功，无坚不破，唯快不破"></span><header class="post-header"><h1 class="post-title" itemprop="name headline">Vue概览<a class="post-edit-link" href="https://github.com/ElegantLee/elegantlee.github.io/tree/hexo/source/_posts/Vue概览.md" target="_blank" title="编辑" rel="noopener"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-edit-line"></use></svg></a></h1><div class="post-meta"><div class="post-time" style="display:inline-block"><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-line"></use></svg></span> <time title="创建时间：2022-05-19 21:59:21" itemprop="dateCreated datePublished" datetime="2022-05-19T21:59:21+08:00">2022-05-19</time><span class="post-meta-divider">-</span><span class="post-meta-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-2-line"></use></svg></span> <time title="修改时间：2022-05-20 00:59:50" itemprop="dateModified" datetime="2022-05-20T00:59:50+08:00">2022-05-20</time></div><span class="leancloud_visitors" id="/2022/05/19/Vue%E6%A6%82%E8%A7%88/" data-flag-title="Vue概览"><span class="post-meta-divider">-</span><span class="post-meta-item-icon" title="阅读次数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg> <span class="leancloud-visitors-count"></span></span></span><span class="post-meta-divider">-</span><a href="#comment"><span class="post-meta-item-icon" title="评论数"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-chat-3-line"></use></svg> <span class="waline-comment-count" id="/2022/05/19/Vue%E6%A6%82%E8%A7%88/"></span></span></a><div class="post-classify"></div></div></header><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body" style="--smc-primary:#0078E7;"><h1 id="Vue概览"><a href="#Vue概览" class="headerlink" title="Vue概览"></a>Vue概览</h1><h2 id="Vue是什么"><a href="#Vue是什么" class="headerlink" title="Vue是什么"></a>Vue是什么</h2><p>Vue是一个基于<code>MVVM</code>的前端框架，目前有两个版本（2.x和3.x）。目前学习的是Vue2.x的特性，3.x对2.x有更好的改进。在前端框架出现以前，前端工程师编写代码的思路是事件驱动，围绕事件来展开。Vue鼓励开发人员使用数据驱动的方式进行开发，围绕数据状态来编写代码。</p>
+<p><strong>事件驱动的开发流程：</strong></p>
+<ol>
+<li>编写静态页面；</li>
+<li>给对应元素绑定对应的事件；</li>
+<li>实现事件对应的功能，如获取数据，更新页面等等；</li>
+<li>手动将计算后的数据更新到页面中；</li>
+</ol>
+<p><strong>数据驱动的开发流程：</strong></p>
+<ol>
+<li>设计数据结构；</li>
+<li>完成静态页面，同时将数据和事件绑定到页面中；</li>
+<li>事件绑定的方法（methods）中完成相应的逻辑处理；</li>
+</ol>
+<p><strong>区别：</strong></p>
+<ol>
+<li>事件驱动以事件为核心，事件如何触发，触发后应该进行怎样的操作，与用户的交互密切相关；数据驱动以数据的维护为核心，更多的考虑数据在什么时候得到正确的改变，而无需过多的考虑UI的变化和事件的监听。</li>
+<li>数据驱动需要对一个页面进行数据结构的抽象，我们应该如何设计一个页面的数据结构。</li>
+</ol>
+<p><strong>MVVM原理</strong></p>
+<p>MVVM(Model-View-ViewModel)是一种软件架构模式。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/MVVMPattern.png" alt="MVVMPattern.png" loading="lazy"></p>
+<ul>
+<li>Model: 模型层，负责处理业务逻辑以及和服务器端交互。<ul>
+<li>Wiki: <em>模型</em>是指代表真实状态内容的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B">领域模型</a>（面向对象），或指代表内容的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE%E5%B1%82">数据访问层</a>（以数据为中心）。</li>
+</ul>
+</li>
+<li>View: 视图层，负责将数据模型转化为UI展示出来。<ul>
+<li>Wiki: 视图是用户在屏幕上看到的结构、布局和外观（UI）。</li>
+</ul>
+</li>
+<li>ViewModel: 视图模型层，连接View和Model，是两者通信的桥梁。<ul>
+<li>Wiki: <em>视图模型</em>是暴露公共属性和命令的视图的抽象。在视图模型中，绑定器在视图和<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%99%A8&amp;action=edit&amp;redlink=1">数据绑定器</a>之间进行通信。</li>
+</ul>
+</li>
+</ul>
+<p>Vue专注于 MVVM 模型的 ViewModel 层。它通过<code>双向数据</code>绑定把 View 层和 Model 层连接了起来。实际的 DOM 封装和输出格式都被抽象为了 Directives 和 Filters。</p>
+<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20220519225439.png" alt="MVVM" loading="lazy"></p>
+<p>在Vue中，View对应DOM（Document Object Model），通过vm.$el可以访问到；Model对应Vue实例的data数据对象，通过vm.$data可以访问到；每个Vue实例本质上就是一个ViewModel，由Vue提供的双向绑定机制实现View中触发的事件改变Model状态的变化，Model状态的变化响应到View上。</p>
+<hr>
+<h2 id="Vue实例"><a href="#Vue实例" class="headerlink" title="Vue实例"></a>Vue实例</h2><p>​        Vue实例本质是一个ViewModel，在Vue实例中对View和Model进行维护。实际开发中，Vue创建的是一个SPA（Single Page Application，单页应用），整个应用通过一个页面进行展示，通过路由找到URL对应的组件对页面进行局部替换，然后渲染展示给用户。这样的好处是局部刷新提升用户的访问速度，页面切换的动画更好实现。但缺点在于，SPA不利于SEO（Search Engine Optimization），由于都在一个页面进行展示，因此首页加载的资源较多，响应速度慢。</p>
+<p>​         一个SPA的典型组成结构如下：</p>
+<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">根实例
+├─ App.vue
+    ├─ Page1
+    │  ├─ subPage1
+    │  ├─ subPage2
+    ├─ Page2
+    ├─ Page3
+	 ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 创建一个组件Vue实例</span>
+<span class="token keyword">let</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment">// 常用的配置</span>
+    <span class="token comment">// 父组件传入的数据</span>
+    <span class="token literal-property property">props</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 局部注册组件</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// Model---数据对象</span>
+    <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            <span class="token comment">// 页面中涉及的数据</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 对data中数据对象属性的操作</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">computed</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">watch</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// 生命周期钩子</span>
+    <span class="token function">beforeCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 创建一个根实例</span>
+<span class="token keyword">let</span> vm <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">el</span><span class="token operator">:</span> <span class="token string">"#app"</span><span class="token punctuation">,</span>
+    router<span class="token punctuation">,</span>
+    store<span class="token punctuation">,</span>
+    <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token parameter">h</span> <span class="token operator">=&gt;</span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>  
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Vue指令"><a href="#Vue指令" class="headerlink" title="Vue指令"></a>Vue指令</h2><hr>
+</div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="打赏" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">I'm so cute. Please give me money.</div><div id="qr" style="display:none;"><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210616192029.jpg"><img loading="lazy" src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210616192029.jpg" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-alipay-line"></use></svg></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210616192027.png"><img loading="lazy" src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210616192027.png" alt="QQ 支付" title="QQ 支付"></a><div><span style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210616192028.png"><img loading="lazy" src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210616192028.png" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-pay-line"></use></svg></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>elegantlee</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://elegantlee.github.io/2022/05/19/Vue%E6%A6%82%E8%A7%88/" title="Vue概览">https://elegantlee.github.io/2022/05/19/Vue%E6%A6%82%E8%A7%88/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"></div><div class="post-nav-item"><a class="post-nav-next" href="/2022/05/17/%E9%9D%A2%E7%BB%8F/%E5%89%91%E6%8C%87offer/" rel="next" title="剑指offer刷题"><span class="post-nav-text">剑指offer刷题</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/ElegantLee/elegantlee.github.io/discussions" target="_blank">GitHub Discussions</a> 与我交流。</span><br></div><div id="waline"></div><script>Yun.utils.getScript("https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js", () => {
+  const walineConfig = {"enable":true,"serverURL":"https://elegantlee-github-io.vercel.app","comment":true,"visitor":true,"placeholder":"填写邮箱，可以收到回复通知哦～","requiredFields":["nick"],"el":"#waline","lang":"zh-CN"}
+  walineConfig.path = "/2022/05/19/Vue%E6%A6%82%E8%A7%88/"
+  new Waline(walineConfig)
+}, window.Waline);</script></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2021 – 2022 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> elegantlee</span></div><div class="powered"><span>由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v5.4.1</span><span class="footer-separator">|</span><span>主题 - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v1.6.1</span></div><div class="live_time"><span>本博客已坚挺地运行</span><span id="display_live_time"></span><span class="moe-text">(ง •_•)ง</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-06-14T00:00:00');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div></footer><a class="hty-icon-button" id="back-to-top" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><script>const date = new Date();
+const today = (date.getMonth() + 1) + "-" + date.getDate()
+const mourn_days = ["4-4"]
+if (mourn_days.includes(today)) {
+  document.documentElement.style.filter = "grayscale(1)";
+}</script></div></body></html>
