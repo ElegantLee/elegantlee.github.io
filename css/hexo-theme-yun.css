@@ -1815,7 +1815,7 @@ input {
   max-height: 10000px;
 }
 :root {
-  --sidebar-bg-image: url("https://cdn.jsdelivr.net/gh/YunYouJun/cdn@master/img/bg/alpha-stars-timing-1.webp");
+  --sidebar-bg-image: url("/images/one-piece.jpg");
 }
 #menu-btn {
   display: none;
