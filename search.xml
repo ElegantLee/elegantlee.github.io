@@ -211,6 +211,28 @@
       </tags>
   </entry>
   <entry>
+    <title>paper写作词汇及句子</title>
+    <url>/2021/06/16/xue-zhu/paper-ju-zi/</url>
+    <content><![CDATA[<h1 id="paper的表达及词汇整理"><a href="#paper的表达及词汇整理" class="headerlink" title="paper的表达及词汇整理"></a>paper的表达及词汇整理</h1><ul>
+<li>花里胡哨<ul>
+<li>without any bells and whistles</li>
+</ul>
+</li>
+<li>简单的，直截了当的<ul>
+<li>straightforward</li>
+</ul>
+</li>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>学术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>怎样看论文</title>
     <url>/2021/06/21/xue-zhu/zen-yang-kan-lun-wen/</url>
     <content><![CDATA[<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><ol>
@@ -238,28 +260,6 @@
 <li>What were the key elements of the approch？—该方法的关键要素是什么？</li>
 <li>What can you use yourself? — 什么东西能为你所用？</li>
 <li>What other references do you want to follow?  — 你还想跟踪阅读哪些参考文献？</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>学术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>paper写作词汇及句子</title>
-    <url>/2021/06/16/xue-zhu/paper-ju-zi/</url>
-    <content><![CDATA[<h1 id="paper的表达及词汇整理"><a href="#paper的表达及词汇整理" class="headerlink" title="paper的表达及词汇整理"></a>paper的表达及词汇整理</h1><ul>
-<li>花里胡哨<ul>
-<li>without any bells and whistles</li>
-</ul>
-</li>
-<li>简单的，直截了当的<ul>
-<li>straightforward</li>
-</ul>
-</li>
-<li></li>
 </ul>
 ]]></content>
       <categories>
@@ -543,62 +543,6 @@ git push &lt;远程仓库名&gt; &lt;本地仓库名&gt;<span aria-hidden="true"
       </tags>
   </entry>
   <entry>
-    <title>Windows 安装Tensorflow GPU版本</title>
-    <url>/2021/06/16/huan-jing-pei-zhi/windows-an-zhuang-tensorflow-gpu-ban-ben/</url>
-    <content><![CDATA[<h1 id="Windows-安装Tensorflow-GPU版本"><a href="#Windows-安装Tensorflow-GPU版本" class="headerlink" title="Windows 安装Tensorflow GPU版本"></a>Windows 安装Tensorflow GPU版本</h1><h2 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h2><p><a href="https://developer.nvidia.com/cuda-toolkit-archive">历史版本</a></p>
-<p><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">驱动版本要求</a></p>
-<hr>
-<h2 id="安装cuDNN"><a href="#安装cuDNN" class="headerlink" title="安装cuDNN"></a>安装cuDNN</h2><p><a href="https://developer.nvidia.com/cudnn">历史版本</a></p>
-<ul>
-<li>需要下载与CUDA对应的版本</li>
-</ul>
-<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092349.png" alt="image-20200718171010579"></p>
-<ul>
-<li>将解压出来的文件夹下的lib, include, bin目录下的文件粘贴到CUDA的文件夹下（C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2 | 环境变量PATH中可以看到）</li>
-</ul>
-<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092402.png" alt="image-20200718181032861"></p>
-<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092415.png" alt="image-20200718181057262"></p>
-<hr>
-<h2 id="安装tensorflow-gpu"><a href="#安装tensorflow-gpu" class="headerlink" title="安装tensorflow-gpu"></a>安装tensorflow-gpu</h2><p><a href="https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/1-2-install/">参考</a></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install <span class="token operator">-</span><span class="token operator">-</span>upgrade tensorflow<span class="token operator">-</span>gpu<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<hr>
-<h3 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h3><p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092603.png" alt="image-20200718181842958"></p>
-<p>分析：</p>
-<ol>
-<li><p>检查安装的Python版本是否为3.6以上的64bit</p>
-<ul>
-<li><p>使用命令python -v查看</p>
-<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092618.png" alt="image-20200718182013302"></p>
-</li>
-</ul>
-</li>
-<li><p>检查使用的pip镜像（亲测华为的镜像不行）</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span><span class="token keyword">global</span><span class="token punctuation">]</span>
-index<span class="token operator">-</span>url <span class="token operator">=</span> http<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>pypi<span class="token operator">/</span>simple<span class="token operator">/</span>
-trusted<span class="token operator">-</span>host <span class="token operator">=</span> mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com
-timeout <span class="token operator">=</span> <span class="token number">120</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<hr>
-</li>
-</ol>
-<h2 id="目前的环境"><a href="#目前的环境" class="headerlink" title="目前的环境"></a>目前的环境</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">CUDA Toolkit<span class="token punctuation">:</span> <span class="token number">10.1</span> 
-cuDNN<span class="token punctuation">:</span> v7<span class="token punctuation">.</span><span class="token number">6.5</span>
-python<span class="token punctuation">:</span> <span class="token number">3.7</span><span class="token number">.0</span> x64  
-pip<span class="token punctuation">:</span> <span class="token number">20.1</span><span class="token number">.1</span> 
-Pycharm<span class="token punctuation">:</span> <span class="token number">2020.1</span><span class="token number">.2</span> x64<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">Could <span class="token keyword">not</span> load dynamic library <span class="token string">'cudart64_101.dll'</span><span class="token punctuation">;</span> dlerror<span class="token punctuation">:</span> cudart64_101<span class="token punctuation">.</span>dll <span class="token keyword">not</span> found<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-]]></content>
-      <categories>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>环境配置</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>算法与数据结构(JavaScript实现)</title>
     <url>/2022/03/16/suan-fa/javascript-suan-fa-yu-shu-ju-jie-gou/</url>
     <content><![CDATA[<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><blockquote>
@@ -696,40 +640,6 @@ console<span class="token punctuation">.</span><span class="token function">log<
       </categories>
       <tags>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端开发配置</title>
-    <url>/2022/05/15/huan-jing-pei-zhi/qian-duan-kai-fa-pei-zhi/</url>
-    <content><![CDATA[<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h2 id="Vue和Vue-CLI版本"><a href="#Vue和Vue-CLI版本" class="headerlink" title="Vue和Vue-CLI版本"></a>Vue和Vue-CLI版本</h2><ul>
-<li>安装Vue-CLI</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">npm install -g @vue/cli （安装的是最新版）
-npm install vue-cli@2.9.6 （指定版本安装【指定版本为3.0以下版本】，其中2.9.6为版本号）
-npm install -g @vue/cli@3.11.0（指定版本安装【指定版本为3.0以上版本】，其中3.11.0为版本号）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li>Vue-CLI版本查看</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">vue -V<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ul>
-<li>对应关系</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">Vue CLI 4.5以下---Vue2
-Vue CLI 4.5及以上---Vue3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p><strong>【注】：</strong>当使用Vue-CLI进行快速原型开发的时候，如果使用<code>vue serve</code>后报错，看看Vue-CLI与Vue的版本是否对应。</p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
-<li><a href="https://www.cnblogs.com/xiluhua/p/14600292.html">xiluhua-博客园-vue &amp; vue Cli 版本对应关系</a></li>
-</ul>
-<hr>
-]]></content>
-      <categories>
-        <category>技术开发</category>
-      </categories>
-      <tags>
-        <tag>环境配置</tag>
       </tags>
   </entry>
   <entry>
@@ -988,6 +898,146 @@ Vue CLI 4.5及以上---Vue3<span aria-hidden="true" class="line-numbers-rows"><s
       </categories>
       <tags>
         <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>算法题技巧总结</title>
+    <url>/2022/07/22/suan-fa/shua-ti-zong-jie/</url>
+    <content><![CDATA[<h1 id="算法题技巧总结"><a href="#算法题技巧总结" class="headerlink" title="算法题技巧总结"></a>算法题技巧总结</h1><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h3><blockquote>
+<p>有n件物品和一个最多能背重量为w 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品只能用一次</strong>，求解将哪些物品装入背包里物品价值总和最大。</p>
+</blockquote>
+<p>二维<code>dp</code>数组：</p>
+<ul>
+<li><p><code>dp[i][j]</code>表示从下标<code>[0, i]</code>的物品里任意取，放进容量为<code>j</code>的背包，价值总和最大为<code>dp[i][j]</code>。</p>
+</li>
+<li><p>递推公式：$dp[i][j]=max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i])$；</p>
+<ul>
+<li>不放物品<code>i</code>时的最大价值：$dp[i-1][j]$；</li>
+<li>放物品<code>i</code>时的最大价值：$dp[i-1][j-weight[i]]+value[i]$；</li>
+</ul>
+</li>
+<li><p>从前往后遍历</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// weight数组的大小 就是物品个数</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span>int i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> weight<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历物品</span>
+	<span class="token comment">// 从前往后遍历</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span>int j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> bagweight<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历背包容量</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">&lt;</span> weight<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+    <span class="token keyword">else</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> weight<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">+</span> value<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p>一维dp数组：</p>
+<ul>
+<li><p><code>dp[j]</code>表示：容量为<code>j</code>的背包，所背的物品价值最大为<code>dp[j]</code>；</p>
+</li>
+<li><p>递推公式：$dp[j]=max(dp[j], dp[j-weight[i]]+value[i])$；</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">for</span><span class="token punctuation">(</span>int i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> weight<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历物品</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>int j <span class="token operator">=</span> bagWeight<span class="token punctuation">;</span> j <span class="token operator">&gt;=</span> weight<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历背包容量-从后往前遍历</span>
+        dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>j <span class="token operator">-</span> weight<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">+</span> value<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>从后往前遍历，保证物品只放入一次；</p>
+</li>
+</ul>
+<hr>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 安装Tensorflow GPU版本</title>
+    <url>/2021/06/16/huan-jing-pei-zhi/windows-an-zhuang-tensorflow-gpu-ban-ben/</url>
+    <content><![CDATA[<h1 id="Windows-安装Tensorflow-GPU版本"><a href="#Windows-安装Tensorflow-GPU版本" class="headerlink" title="Windows 安装Tensorflow GPU版本"></a>Windows 安装Tensorflow GPU版本</h1><h2 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h2><p><a href="https://developer.nvidia.com/cuda-toolkit-archive">历史版本</a></p>
+<p><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">驱动版本要求</a></p>
+<hr>
+<h2 id="安装cuDNN"><a href="#安装cuDNN" class="headerlink" title="安装cuDNN"></a>安装cuDNN</h2><p><a href="https://developer.nvidia.com/cudnn">历史版本</a></p>
+<ul>
+<li>需要下载与CUDA对应的版本</li>
+</ul>
+<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092349.png" alt="image-20200718171010579"></p>
+<ul>
+<li>将解压出来的文件夹下的lib, include, bin目录下的文件粘贴到CUDA的文件夹下（C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2 | 环境变量PATH中可以看到）</li>
+</ul>
+<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092402.png" alt="image-20200718181032861"></p>
+<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092415.png" alt="image-20200718181057262"></p>
+<hr>
+<h2 id="安装tensorflow-gpu"><a href="#安装tensorflow-gpu" class="headerlink" title="安装tensorflow-gpu"></a>安装tensorflow-gpu</h2><p><a href="https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/1-2-install/">参考</a></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install <span class="token operator">-</span><span class="token operator">-</span>upgrade tensorflow<span class="token operator">-</span>gpu<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<h3 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h3><p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092603.png" alt="image-20200718181842958"></p>
+<p>分析：</p>
+<ol>
+<li><p>检查安装的Python版本是否为3.6以上的64bit</p>
+<ul>
+<li><p>使用命令python -v查看</p>
+<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092618.png" alt="image-20200718182013302"></p>
+</li>
+</ul>
+</li>
+<li><p>检查使用的pip镜像（亲测华为的镜像不行）</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span><span class="token keyword">global</span><span class="token punctuation">]</span>
+index<span class="token operator">-</span>url <span class="token operator">=</span> http<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>pypi<span class="token operator">/</span>simple<span class="token operator">/</span>
+trusted<span class="token operator">-</span>host <span class="token operator">=</span> mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com
+timeout <span class="token operator">=</span> <span class="token number">120</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+</li>
+</ol>
+<h2 id="目前的环境"><a href="#目前的环境" class="headerlink" title="目前的环境"></a>目前的环境</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">CUDA Toolkit<span class="token punctuation">:</span> <span class="token number">10.1</span> 
+cuDNN<span class="token punctuation">:</span> v7<span class="token punctuation">.</span><span class="token number">6.5</span>
+python<span class="token punctuation">:</span> <span class="token number">3.7</span><span class="token number">.0</span> x64  
+pip<span class="token punctuation">:</span> <span class="token number">20.1</span><span class="token number">.1</span> 
+Pycharm<span class="token punctuation">:</span> <span class="token number">2020.1</span><span class="token number">.2</span> x64<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">Could <span class="token keyword">not</span> load dynamic library <span class="token string">'cudart64_101.dll'</span><span class="token punctuation">;</span> dlerror<span class="token punctuation">:</span> cudart64_101<span class="token punctuation">.</span>dll <span class="token keyword">not</span> found<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+]]></content>
+      <categories>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端开发配置</title>
+    <url>/2022/05/15/huan-jing-pei-zhi/qian-duan-kai-fa-pei-zhi/</url>
+    <content><![CDATA[<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h2 id="Vue和Vue-CLI版本"><a href="#Vue和Vue-CLI版本" class="headerlink" title="Vue和Vue-CLI版本"></a>Vue和Vue-CLI版本</h2><ul>
+<li>安装Vue-CLI</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">npm install -g @vue/cli （安装的是最新版）
+npm install vue-cli@2.9.6 （指定版本安装【指定版本为3.0以下版本】，其中2.9.6为版本号）
+npm install -g @vue/cli@3.11.0（指定版本安装【指定版本为3.0以上版本】，其中3.11.0为版本号）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>Vue-CLI版本查看</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">vue -V<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>对应关系</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">Vue CLI 4.5以下---Vue2
+Vue CLI 4.5及以上---Vue3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>【注】：</strong>当使用Vue-CLI进行快速原型开发的时候，如果使用<code>vue serve</code>后报错，看看Vue-CLI与Vue的版本是否对应。</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a href="https://www.cnblogs.com/xiluhua/p/14600292.html">xiluhua-博客园-vue &amp; vue Cli 版本对应关系</a></li>
+</ul>
+<hr>
+]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
       </tags>
   </entry>
   <entry>
@@ -1353,6 +1403,69 @@ Hi xxx! You've successfully authenticated<span class="token punctuation">,</span
       </tags>
   </entry>
   <entry>
+    <title>前端进阶</title>
+    <url>/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/jin-jie/</url>
+    <content><![CDATA[<h1 id="进阶内容"><a href="#进阶内容" class="headerlink" title="进阶内容"></a>进阶内容</h1><h2 id="Vue原理"><a href="#Vue原理" class="headerlink" title="Vue原理"></a>Vue原理</h2><h3 id="响应式原理"><a href="#响应式原理" class="headerlink" title="响应式原理"></a>响应式原理</h3><hr>
+<h2 id="浏览器原理"><a href="#浏览器原理" class="headerlink" title="浏览器原理"></a>浏览器原理</h2><hr>
+<h2 id="Web安全"><a href="#Web安全" class="headerlink" title="Web安全"></a>Web安全</h2><hr>
+<h2 id="JavaScript引擎"><a href="#JavaScript引擎" class="headerlink" title="JavaScript引擎"></a>JavaScript引擎</h2><hr>
+<h2 id="项目工程化"><a href="#项目工程化" class="headerlink" title="项目工程化"></a>项目工程化</h2><h3 id="Mock-js的使用"><a href="#Mock-js的使用" class="headerlink" title="Mock.js的使用"></a>Mock.js的使用</h3><hr>
+<h3 id="打包构建"><a href="#打包构建" class="headerlink" title="打包构建"></a>打包构建</h3><p>webpack</p>
+<p>babel</p>
+<p>Sass</p>
+<hr>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><hr>
+<h2 id="招聘要求"><a href="#招聘要求" class="headerlink" title="招聘要求"></a>招聘要求</h2><p>精通HTML、CSS、JS，熟悉页面架构和布局，熟悉HTML5/CSS3等常用技术，，具备浏览器兼容处理能力；</p>
+<p>能熟练掌握至少一种主流前端框架React、Vue、Angular等，并了解其特性原理，有移动端App开发经验者优先  </p>
+<ul>
+<li>深入应用并深入理解其设计原理</li>
+</ul>
+<p>具备跨浏览器、跨终端的前端开发经验</p>
+<p>UI框架：</p>
+<ul>
+<li>bootstrap</li>
+<li>pure</li>
+<li>kendo</li>
+</ul>
+<p>构建工具：</p>
+<ul>
+<li>Grunt</li>
+<li>Gulp</li>
+<li>Webpack</li>
+<li>Rollup</li>
+</ul>
+<p>NodeJS：</p>
+<ul>
+<li>Koa</li>
+</ul>
+<p>Server端语言</p>
+<ul>
+<li>Node.JS</li>
+<li>PHP</li>
+<li>Python</li>
+<li>Java</li>
+<li>Ruby</li>
+<li>C</li>
+<li>C++</li>
+<li>C#</li>
+</ul>
+<hr>
+<p>加分项：</p>
+<ul>
+<li>对编程语言设计有了解，对抽象语法树（AST）有一定的认知</li>
+<li>对网站性能优化有所研究，在实际项目中有经验者优先</li>
+<li>熟练掌握基于 Node.js 的 SSR技术及原理，对 Node.js 的性能调优，问题诊断有经验者优先</li>
+<li>有 Flutter 的开发经验，在 Web 与 Native 技术的融合上有自己的探索</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术沉淀</category>
+      </categories>
+      <tags>
+        <tag>入坑指南</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue概览</title>
     <url>/2022/05/19/ji-zhu-chen-dian/vue-li-jie/vue-gai-lan/</url>
     <content><![CDATA[<h1 id="Vue概览"><a href="#Vue概览" class="headerlink" title="Vue概览"></a>Vue概览</h1><h2 id="Vue是什么"><a href="#Vue是什么" class="headerlink" title="Vue是什么"></a>Vue是什么</h2><p>Vue是一个基于<code>MVVM</code>的前端框架，目前有两个版本（2.x和3.x）。目前学习的是Vue2.x的特性，3.x对2.x有更好的改进。在前端框架出现以前，前端工程师编写代码的思路是事件驱动，围绕事件来展开。Vue鼓励开发人员使用数据驱动的方式进行开发，围绕数据状态来编写代码。</p>
@@ -1454,119 +1567,6 @@ Hi xxx! You've successfully authenticated<span class="token punctuation">,</span
       </categories>
       <tags>
         <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法题技巧总结</title>
-    <url>/2022/07/22/suan-fa/shua-ti-zong-jie/</url>
-    <content><![CDATA[<h1 id="算法题技巧总结"><a href="#算法题技巧总结" class="headerlink" title="算法题技巧总结"></a>算法题技巧总结</h1><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h3><blockquote>
-<p>有n件物品和一个最多能背重量为w 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品只能用一次</strong>，求解将哪些物品装入背包里物品价值总和最大。</p>
-</blockquote>
-<p>二维<code>dp</code>数组：</p>
-<ul>
-<li><p><code>dp[i][j]</code>表示从下标<code>[0, i]</code>的物品里任意取，放进容量为<code>j</code>的背包，价值总和最大为<code>dp[i][j]</code>。</p>
-</li>
-<li><p>递推公式：$dp[i][j]=max(dp[i-1][j], dp[i-1][j-weight[i]]+value[i])$；</p>
-<ul>
-<li>不放物品<code>i</code>时的最大价值：$dp[i-1][j]$；</li>
-<li>放物品<code>i</code>时的最大价值：$dp[i-1][j-weight[i]]+value[i]$；</li>
-</ul>
-</li>
-<li><p>从前往后遍历</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// weight数组的大小 就是物品个数</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span>int i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> weight<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历物品</span>
-	<span class="token comment">// 从前往后遍历</span>
-  <span class="token keyword">for</span><span class="token punctuation">(</span>int j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> bagweight<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历背包容量</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>j <span class="token operator">&lt;</span> weight<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span> 
-    <span class="token keyword">else</span> dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j <span class="token operator">-</span> weight<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">+</span> value<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<p>一维dp数组：</p>
-<ul>
-<li><p><code>dp[j]</code>表示：容量为<code>j</code>的背包，所背的物品价值最大为<code>dp[j]</code>；</p>
-</li>
-<li><p>递推公式：$dp[j]=max(dp[j], dp[j-weight[i]]+value[i])$；</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">for</span><span class="token punctuation">(</span>int i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> weight<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历物品</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span>int j <span class="token operator">=</span> bagWeight<span class="token punctuation">;</span> j <span class="token operator">&gt;=</span> weight<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历背包容量-从后往前遍历</span>
-        dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>j <span class="token operator">-</span> weight<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">+</span> value<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>从后往前遍历，保证物品只放入一次；</p>
-</li>
-</ul>
-<hr>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端进阶</title>
-    <url>/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/jin-jie/</url>
-    <content><![CDATA[<h1 id="进阶内容"><a href="#进阶内容" class="headerlink" title="进阶内容"></a>进阶内容</h1><h2 id="Vue原理"><a href="#Vue原理" class="headerlink" title="Vue原理"></a>Vue原理</h2><h3 id="响应式原理"><a href="#响应式原理" class="headerlink" title="响应式原理"></a>响应式原理</h3><hr>
-<h2 id="浏览器原理"><a href="#浏览器原理" class="headerlink" title="浏览器原理"></a>浏览器原理</h2><hr>
-<h2 id="Web安全"><a href="#Web安全" class="headerlink" title="Web安全"></a>Web安全</h2><hr>
-<h2 id="JavaScript引擎"><a href="#JavaScript引擎" class="headerlink" title="JavaScript引擎"></a>JavaScript引擎</h2><hr>
-<h2 id="项目工程化"><a href="#项目工程化" class="headerlink" title="项目工程化"></a>项目工程化</h2><h3 id="Mock-js的使用"><a href="#Mock-js的使用" class="headerlink" title="Mock.js的使用"></a>Mock.js的使用</h3><hr>
-<h3 id="打包构建"><a href="#打包构建" class="headerlink" title="打包构建"></a>打包构建</h3><p>webpack</p>
-<p>babel</p>
-<p>Sass</p>
-<hr>
-<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><hr>
-<h2 id="招聘要求"><a href="#招聘要求" class="headerlink" title="招聘要求"></a>招聘要求</h2><p>精通HTML、CSS、JS，熟悉页面架构和布局，熟悉HTML5/CSS3等常用技术，，具备浏览器兼容处理能力；</p>
-<p>能熟练掌握至少一种主流前端框架React、Vue、Angular等，并了解其特性原理，有移动端App开发经验者优先  </p>
-<ul>
-<li>深入应用并深入理解其设计原理</li>
-</ul>
-<p>具备跨浏览器、跨终端的前端开发经验</p>
-<p>UI框架：</p>
-<ul>
-<li>bootstrap</li>
-<li>pure</li>
-<li>kendo</li>
-</ul>
-<p>构建工具：</p>
-<ul>
-<li>Grunt</li>
-<li>Gulp</li>
-<li>Webpack</li>
-<li>Rollup</li>
-</ul>
-<p>NodeJS：</p>
-<ul>
-<li>Koa</li>
-</ul>
-<p>Server端语言</p>
-<ul>
-<li>Node.JS</li>
-<li>PHP</li>
-<li>Python</li>
-<li>Java</li>
-<li>Ruby</li>
-<li>C</li>
-<li>C++</li>
-<li>C#</li>
-</ul>
-<hr>
-<p>加分项：</p>
-<ul>
-<li>对编程语言设计有了解，对抽象语法树（AST）有一定的认知</li>
-<li>对网站性能优化有所研究，在实际项目中有经验者优先</li>
-<li>熟练掌握基于 Node.js 的 SSR技术及原理，对 Node.js 的性能调优，问题诊断有经验者优先</li>
-<li>有 Flutter 的开发经验，在 Web 与 Native 技术的融合上有自己的探索</li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术沉淀</category>
-      </categories>
-      <tags>
-        <tag>入坑指南</tag>
       </tags>
   </entry>
   <entry>
