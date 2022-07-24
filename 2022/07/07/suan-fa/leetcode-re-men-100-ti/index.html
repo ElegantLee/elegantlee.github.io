@@ -421,14 +421,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    10 分
                 </div>
                 
 
@@ -510,7 +510,7 @@
 <h3 id="101-对称二叉树"><a href="#101-对称二叉树" class="headerlink" title="101. 对称二叉树"></a>101. 对称二叉树</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/symmetric-tree/">leetcode</a></p>
 <p>【提示】两种思路：递归和迭代。</p>
 <p>（1）递归</p>
-<p>将整棵树分为左右两侧的子树，比较每个节点的外侧和内侧节点是否相同。前序位置递归，处理每一个节点然后接着往下递归。退出条件是：</p>
+<p>将整棵树分为左右两侧的子树，比较每个节点的<strong>外侧</strong>和<strong>内侧</strong>节点是否相同。<strong>前序位置递归</strong>，处理每一个节点然后接着往下递归。退出条件是：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>leftNode <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> rightNode <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>leftNode <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> rightNode <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -604,6 +604,47 @@
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
+<h3 id="105-从前序与中序遍历序列构造二叉树"><a href="#105-从前序与中序遍历序列构造二叉树" class="headerlink" title="105. 从前序与中序遍历序列构造二叉树"></a>105. 从前序与中序遍历序列构造二叉树</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">leetcode</a></p>
+<p>【提示】设根节点在中序遍历中的索引为<code>rootIndex</code>，则前序遍历的左子树范围和右子树范围，中序遍历的左子树范围和左子树范围就可以确定了，分别是：</p>
+<img src="D:\Users\superlee\Pictures\算法\前序和中序构建二叉树.png" alt="前序和中序构建二叉树" style="zoom: 25%;">
+
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">preStart</span><span class="token operator">:</span> 前序遍历的开始位置；
+<span class="token literal-property property">preEnd</span><span class="token operator">:</span> 前序遍历的结束位置；
+<span class="token literal-property property">inStart</span><span class="token operator">:</span> 中序遍历的开始位置；
+<span class="token literal-property property">inEnd</span><span class="token operator">:</span> 中序遍历的结束位置；
+
+<span class="token literal-property property">preLeftStart</span><span class="token operator">:</span> 前序遍历中，左子树的开始位置索引；
+<span class="token literal-property property">preLeftEnd</span><span class="token operator">:</span> 前序遍历中，左子树的结束位置索引；
+<span class="token literal-property property">inLeftStart</span><span class="token operator">:</span> 中序遍历中，左子树的开始位置索引；
+<span class="token literal-property property">inLeftEnd</span><span class="token operator">:</span> 中序遍历中，左子树的结束位置索引；
+
+<span class="token literal-property property">preRightStart</span><span class="token operator">:</span> 前序遍历中，右子树的开始位置索引；
+<span class="token literal-property property">preRightEnd</span><span class="token operator">:</span> 前序遍历中，右子树的结束位置索引；
+<span class="token literal-property property">inRightStart</span><span class="token operator">:</span> 中序遍历中，右子树的开始位置索引；
+<span class="token literal-property property">inRightEnd</span><span class="token operator">:</span> 中序遍历中，右子树的结束位置索引；
+
+<span class="token keyword">let</span> preLeftStart <span class="token operator">=</span> preStart <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> inLeftStart <span class="token operator">=</span> inStart<span class="token punctuation">;</span>
+<span class="token keyword">let</span> inLeftEnd <span class="token operator">=</span> rootIndex <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> preLeftEnd <span class="token operator">=</span> preLeftStart <span class="token operator">+</span> inLeftEnd <span class="token operator">-</span> inLeftStart<span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> inRightStart <span class="token operator">=</span> rootIndex <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> inRightEnd <span class="token operator">=</span> inEnd<span class="token punctuation">;</span>
+<span class="token keyword">let</span> preRightStart <span class="token operator">=</span> preLeftEnd <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> preRightEnd <span class="token operator">=</span> preEnd<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h3 id="226-翻转二叉树"><a href="#226-翻转二叉树" class="headerlink" title="226. 翻转二叉树"></a>226. 翻转二叉树</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/invert-binary-tree/">leetcode</a></p>
+<p>【提示】两种解法：</p>
+<ol>
+<li><p>深度优先遍历（前序递归）</p>
+<p>在每个节点处交换该节点的左右子节点。</p>
+</li>
+<li><p>宽度优先遍历（层序遍历）</p>
+</li>
+</ol>
+<p>!!! 注意</p>
+<p>​    不要跟<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/symmetric-tree/">对称二叉树</a>弄混了，对称二叉树才需要对比内侧和外侧。</p>
 <hr>
 <h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/">leetcode</a></p>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/solution/zui-da-zi-xu-he-cshi-xian-si-chong-jie-fa-bao-li-f/">题解</a></p>
@@ -698,6 +739,55 @@
 <p>由 $positive+negetive=target, positive-negetive=sum$，有：</p>
 <p>$positive = (sum+target)/2$</p>
 <p>这里注意，可能positive&lt;0，此时positive=-positive（转换成正数和，因为数组中都是正整数）</p>
+<hr>
+<h2 id="深度优先搜索（回溯）"><a href="#深度优先搜索（回溯）" class="headerlink" title="深度优先搜索（回溯）"></a>深度优先搜索（回溯）</h2><h3 id="200-岛屿数量"><a href="#200-岛屿数量" class="headerlink" title="200. 岛屿数量"></a>200. 岛屿数量</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-islands/">leetcode</a></p>
+<p>题解1-<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-islands/solution/dao-yu-lei-wen-ti-de-tong-yong-jie-fa-dfs-bian-li-/">通用解法</a></p>
+<p>题解2-<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-islands/solution/number-of-islands-shen-du-you-xian-bian-li-dfs-or-/">本题解法</a></p>
+<p>【提示】岛屿问题是一类在网格中的深度搜索问题，类似于二叉树和一般的一维数组的搜索（N叉树），只是网格深度搜索需要特别注意标记已遍历过的节点，并且搜索的方向有4个。求岛屿的数量，在<code>宽度遍历</code>中<code>count++</code>。</p>
+<p><strong>岛屿问题的通用框架：</strong></p>
+<ul>
+<li><code>'0'</code>表示海洋；</li>
+<li><code>'1'</code>表示陆地（还没遍历过）；</li>
+<li><code>'2'</code>表示陆地（已经遍历过）；</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> row <span class="token operator">=</span> grid<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+<span class="token keyword">const</span> column <span class="token operator">=</span> grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+
+<span class="token comment">/* 宽度遍历 */</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> row<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> column<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>grid<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">'1'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">dfs</span><span class="token punctuation">(</span>grid<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token function">具体操作</span><span class="token punctuation">(</span>求岛屿数量<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 深度遍历 --- 是否有返回值根据题目要求定 */</span>
+<span class="token keyword">function</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token parameter">grid<span class="token punctuation">,</span> myRow<span class="token punctuation">,</span> myColumn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// base case---退出递归的条件</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">inArea</span><span class="token punctuation">(</span>grid<span class="token punctuation">,</span> myRow<span class="token punctuation">,</span> myColumn<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  
+  grid<span class="token punctuation">[</span>myRow<span class="token punctuation">]</span><span class="token punctuation">[</span>myColumn<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'2'</span><span class="token punctuation">;</span> <span class="token comment">// 标记已遍历过的陆地，防止重复遍历</span>
+  
+  <span class="token comment">// 分四个方向分别深度搜索</span>
+  <span class="token function">dfs</span><span class="token punctuation">(</span>grid<span class="token punctuation">,</span> myRow <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> myColumn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">dfs</span><span class="token punctuation">(</span>grid<span class="token punctuation">,</span> myRow <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> myColumn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">dfs</span><span class="token punctuation">(</span>grid<span class="token punctuation">,</span> myRow<span class="token punctuation">,</span> myColumn <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token function">dfs</span><span class="token punctuation">(</span>grid<span class="token punctuation">,</span> myRow<span class="token punctuation">,</span> myColumn <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* 判断这个位置是否在网格上 */</span>
+<span class="token keyword">function</span> <span class="token function">inArea</span><span class="token punctuation">(</span><span class="token parameter">grid<span class="token punctuation">,</span> myRow<span class="token punctuation">,</span> myColumn</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> row <span class="token operator">=</span> grid<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> column <span class="token operator">=</span> grid<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>myRow <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> myRow <span class="token operator">&lt;</span> row<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>myColumn <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> myColumn <span class="token operator">&lt;</span> column<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
 
                 
             </div>
