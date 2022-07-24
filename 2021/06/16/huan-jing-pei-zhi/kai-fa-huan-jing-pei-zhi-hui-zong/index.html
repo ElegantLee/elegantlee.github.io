@@ -1,0 +1,1783 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><!-- hexo injector head_begin start --><link href="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.2.2/css/index.css" rel="stylesheet"/><!-- hexo injector head_begin end -->
+    <meta charset="utf-8">
+    <meta name="keywords" content="JDK配置、maven镜像、pip换源、配置Anaconda、安装Node.js、安装hexo">
+    <meta name="description" content="主要是java和python的环境配置">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>开发环境配置汇总 | 天下武功，无坚不破，唯快不破</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">天下武功，无坚不破，唯快不破</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">天下武功，无坚不破，唯快不破</div>
+        <div class="logo-desc">
+            
+            Talk is cheap, show me your code!!!
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">开发环境配置汇总</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                <span class="chip bg-color">环境配置</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/" class="post-category">
+                                技术开发
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-06-16
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-07-24
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    7 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="开发环境配置汇总"><a href="#开发环境配置汇总" class="headerlink" title="开发环境配置汇总"></a>开发环境配置汇总</h1><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><div class="info">
+
+<blockquote>
+<p>下载了JDK，安装时不需要再安装jre了 </p>
+</blockquote>
+</div>
+
+  
+
+<ol>
+<li>JAVA_HOME<ul>
+<li>JDK安装的目录</li>
+</ul>
+</li>
+<li>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin<ul>
+<li>添加到PATH中</li>
+</ul>
+</li>
+<li>CLASSPATH<ul>
+<li>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</li>
+</ul>
+</li>
+</ol>
+<h3 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h3><div class="warning">
+
+<blockquote>
+<p>可使用国内镜像源下载，官网下载比较慢    </p>
+</blockquote>
+</div>
+
+<ol>
+<li><p>MAVEN_HOME</p>
+<ul>
+<li>maven的安装目录</li>
+</ul>
+</li>
+<li><p>%MAVEN_HOME%\bin</p>
+<ul>
+<li>添加到PATH中去</li>
+</ul>
+</li>
+<li><p>MAVEN_OPTS</p>
+<ul>
+<li>-Xms128m -Xmx512m</li>
+</ul>
+</li>
+<li><p>生成.m2文件（默认在C盘）</p>
+<ul>
+<li><p>执行命令：mvn help:system（可中断），目的是生成C盘中的.m2文件夹</p>
+</li>
+<li><p>将安装目录下的conf中的settings.xml拷贝到.m2文件夹下 。前者是全局的，后者是当前用户的。 </p>
+</li>
+<li><p>在settings.xml中改镜像和本地仓库位置</p>
+</li>
+</ul>
+ <pre class="line-numbers language-none"><code class="language-none">&lt;!-- 配置中央仓库的镜像（改用：阿里云中央仓库镜像）--&gt;
+&lt;mirror&gt;        
+  &lt;id&gt;alimaven&lt;/id&gt;
+  &lt;name&gt;aliyun-maven&lt;/name&gt;
+  &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+  &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;
+&lt;/mirror&gt;
+
+&lt;!-- 设置本地仓库位置 --&gt;
+&lt;localRepository&gt;D:\maven-local-repository&lt;/localRepository&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>IDEA中的配置</p>
+</li>
+</ol>
+<h3 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h3><hr>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><h3 id="pip换源"><a href="#pip换源" class="headerlink" title="pip换源"></a>pip换源</h3><p>​    在C:\Users\当前用户名\pip下新建一个pip.ini文件，写入以下内容</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span><span class="token keyword">global</span><span class="token punctuation">]</span>
+index<span class="token operator">-</span>url <span class="token operator">=</span> http<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>pypi<span class="token operator">/</span>simple<span class="token operator">/</span>
+trusted<span class="token operator">-</span>host <span class="token operator">=</span> mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com
+timeout <span class="token operator">=</span> <span class="token number">120</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="pip离线安装"><a href="#pip离线安装" class="headerlink" title="pip离线安装"></a>pip离线安装</h2><p>查看当前python版本支持的离线文件类型</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pip<span class="token punctuation">.</span>_internal
+<span class="token keyword">print</span><span class="token punctuation">(</span>pip<span class="token punctuation">.</span>_internal<span class="token punctuation">.</span>pep425tags<span class="token punctuation">.</span>get_supported<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="pip安装requirements"><a href="#pip安装requirements" class="headerlink" title="pip安装requirements"></a>pip安装requirements</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip install <span class="token operator">-</span>r requirements<span class="token punctuation">.</span>txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="Anacond"><a href="#Anacond" class="headerlink" title="Anacond"></a>Anacond</h2><p>一、安装Pytorch</p>
+<pre class="line-numbers language-none"><code class="language-none">Solving environment: failed with current_repodata.json, will retry with next repodata source.
+Initial quick solve with frozen env failed.  Unfreezing env and trying again.
+
+解决：conda update --all<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>二、安装package</p>
+<pre class="line-numbers language-none"><code class="language-none">PackagesNotFoundError
+解决：
+1. anaconda search -t conda package
+2. anaconda show "conda-forge/pydap"(根据查出来的结果选择)
+3. 根据提示安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>三、环境管理</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> 克隆环境
+conda create <span class="token operator">-</span>n BBB <span class="token operator">-</span><span class="token operator">-</span>clone AAA
+<span class="token operator">*</span> BBB是自己要创建的环境名称
+<span class="token operator">*</span> AAA是已经存在的环境名称
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 删除环境
+conda remove <span class="token operator">-</span>n env_name <span class="token operator">-</span><span class="token operator">-</span><span class="token builtin">all</span>
+<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> 环境迁移
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>Linux<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token number">1.</span> conda pack <span class="token operator">-</span>n my_env<span class="token punctuation">(</span>要打包的环境<span class="token punctuation">)</span> <span class="token operator">-</span>o my_env<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz<span class="token punctuation">(</span>自定义打包后的环境名称<span class="token punctuation">)</span>
+<span class="token number">2.</span> 在env目录下<span class="token punctuation">,</span> mkdir <span class="token operator">-</span>p my_env
+<span class="token number">3.</span> tar <span class="token operator">-</span>xzvf my_env<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz <span class="token operator">-</span>C my_env
+<span class="token number">4.</span> source <span class="token punctuation">.</span><span class="token operator">/</span>my_env<span class="token operator">/</span><span class="token builtin">bin</span><span class="token operator">/</span>activate
+<span class="token number">5.</span> conda activate my_env
+<span class="token number">6.</span><span class="token punctuation">(</span>my_env<span class="token punctuation">)</span> $ conda<span class="token operator">-</span>unpack
+
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>Windows<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token number">1.</span> 同上进行打包<span class="token punctuation">,</span> 可打包为<span class="token builtin">zip</span>
+<span class="token number">2.</span> 将<span class="token builtin">zip</span>文件解压到envs目录下
+<span class="token number">3.</span> 进入base环境
+<span class="token number">4.</span> conda env <span class="token builtin">list</span>
+<span class="token number">5.</span> 进入envs目录
+<span class="token number">6.</span> <span class="token punctuation">.</span>\my_env\Scripts\activate<span class="token punctuation">.</span>bat
+<span class="token number">7.</span> <span class="token punctuation">.</span>\my_env\Scripts\conda<span class="token operator">-</span>unpack<span class="token punctuation">.</span>exe
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+reference<span class="token punctuation">:</span> https<span class="token punctuation">:</span><span class="token operator">//</span>zhuanlan<span class="token punctuation">.</span>zhihu<span class="token punctuation">.</span>com<span class="token operator">/</span>p<span class="token operator">/</span><span class="token number">87344422</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>四、镜像管理</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">.</span>condarc配置
+show_channel_urls<span class="token punctuation">:</span> true
+channels<span class="token punctuation">:</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>conda<span class="token operator">-</span>forge<span class="token operator">/</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>msys2<span class="token operator">/</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>bioconda<span class="token operator">/</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>menpo<span class="token operator">/</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>pytorch<span class="token operator">/</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>pkgs<span class="token operator">/</span>free<span class="token operator">/</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>pkgs<span class="token operator">/</span>main<span class="token operator">/</span>
+  <span class="token operator">-</span> defaults
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 查看当前channel
+conda config <span class="token operator">-</span><span class="token operator">-</span>show<span class="token operator">-</span>sources
+<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> 添加源
+conda config <span class="token operator">-</span><span class="token operator">-</span>add channels
+<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> 移除源
+conda config <span class="token operator">-</span><span class="token operator">-</span>remove channels<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><ol>
+<li>检查是否安装成功<ul>
+<li>node -v</li>
+<li>npm -v</li>
+</ul>
+</li>
+<li>换源<ul>
+<li>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></li>
+<li>测试是否安装成功<ul>
+<li>cnpm</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>设置npm全局模块路径（自定义路径）<ul>
+<li>在NodeJS安装路径下新建两个文件夹： node_globle, node_cache</li>
+<li>npm config set prefix “D:\Environments\nodejs\node_globle”</li>
+<li>npm config set cache “D:\Environments\nodejs\node_cache”</li>
+</ul>
+</li>
+<li>添加环境变量<ul>
+<li>NODE_PATH<ul>
+<li>D:\Enviroment\NodeJs\node_globle\node_modules</li>
+</ul>
+</li>
+<li>PATH<ul>
+<li>D:\Enviroment\NodeJs\node_globle\</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ol>
+<li>cnpm install -g hexo-cli</li>
+<li>hexo -v</li>
+<li>hexo init (在指定的存放博客目录下使用)</li>
+<li>hexo s</li>
+<li>localhost:4000测试</li>
+<li>常用命令</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token operator">*</span> hexo c 	<span class="token comment">// 清理缓存文件</span>
+<span class="token operator">*</span> hexo g	<span class="token comment">// 生成文件</span>
+<span class="token operator">*</span> hexo s	<span class="token comment">// 运行本地服务器</span>
+<span class="token operator">*</span> hexo d	<span class="token comment">// 上传到服务器</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h3 id="Hexo迁移"><a href="#Hexo迁移" class="headerlink" title="Hexo迁移"></a>Hexo迁移</h3><div class="info">
+
+<blockquote>
+<p>将电脑上的博客迁移到另一台电脑</p>
+</blockquote>
+</div>
+
+<ol>
+<li>备份原来的博客文件夹，清单如下：<ul>
+<li>_config.yml</li>
+<li>package.json</li>
+<li>scaffolds/</li>
+<li>source/</li>
+<li>themes/</li>
+</ul>
+</li>
+<li>在新电脑上安装环境（node，hexo）</li>
+<li>在博客目录下（与原来的博客路径保持一致最好，不同的话没试过）<ul>
+<li>cnpm install –save hexo-deployer-git</li>
+<li>hexo c<ul>
+<li>这里会报错，缺少相关依赖，根据提示安装即可</li>
+<li>再次执行hexo c</li>
+</ul>
+</li>
+<li>hexo g</li>
+<li>hexo s</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="VS-Code"><a href="#VS-Code" class="headerlink" title="VS Code"></a>VS Code</h2><h3 id="安装的插件"><a href="#安装的插件" class="headerlink" title="安装的插件"></a>安装的插件</h3><blockquote>
+<ol>
+<li><p>open-in-browser 在浏览器中查看</p>
+</li>
+<li><p>Auto Close Tag 自动闭合标签</p>
+</li>
+<li><p>Auto Rename Tag 尾部闭合标签同步修改</p>
+</li>
+<li><p>Bracket Pair Colorizer 用不同颜色高亮显示匹配的括号</p>
+</li>
+<li><p>Highlight Matching Tag 高亮显示匹配标签</p>
+</li>
+<li><p>Vscode-icons VSCode 文件图标</p>
+</li>
+<li><p>TODO Highlight 高亮</p>
+</li>
+<li><p>Code Spell Checker 单词拼写检查</p>
+</li>
+<li><p>Code Runner 运行选中代码段</p>
+</li>
+</ol>
+<ul>
+<li>Python开发时的配置</li>
+<li>输出时中文乱码<ul>
+<li>“code-runner.runInTerminal”: true</li>
+</ul>
+</li>
+</ul>
+<ol start="10">
+<li><p>Improt Cost 成本提示</p>
+</li>
+<li><p>WakaTime 计算代码工作量</p>
+</li>
+<li><p>Settings Sync 同步扩展配置到GitHub</p>
+</li>
+</ol>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lychee/p/11214032.html">参考</a></p>
+<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><h4 id="编辑器与窗口管理"><a href="#编辑器与窗口管理" class="headerlink" title="编辑器与窗口管理"></a>编辑器与窗口管理</h4><pre class="line-numbers language-none"><code class="language-none">Ctrl+Shift+P: 打开命令面板。
+
+Ctrl+Shift+N: 新建窗口。
+
+Ctrl+Shift+W: 关闭窗口。
+
+切分窗口：Ctrl+1/Ctrl+3/Ctrl+3
+
+Ctrl+H：最小化窗口
+
+Ctrl+B：显示/隐藏侧边栏
+
+Ctrl+"+/-"：放大/缩小界面<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h4><pre class="line-numbers language-none"><code class="language-none">Ctrl+N：新建文件
+
+Ctrl+W：关闭文件
+
+Ctrl+Tab：文件切换<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="格式调整"><a href="#格式调整" class="headerlink" title="格式调整"></a>格式调整</h4><pre class="line-numbers language-none"><code class="language-none">Ctrl+C/Ctrl+V：复制或剪切当前行/当前选中内容
+
+Alt+Up/Down：向上/下移动一行
+
+Shift+Alt+Up//Down：向上/下复制一行
+
+Ctrl+Delete：删除当前行
+
+Shift+Alt+Left/Right：从光标开始向左/右选择内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="代码编辑"><a href="#代码编辑" class="headerlink" title="代码编辑"></a>代码编辑</h4><pre class="line-numbers language-none"><code class="language-none">Ctrl+D：选中下一个相同内容
+
+Ctrl+Shift+L：选中所有相同内容
+
+Ctrl+F：查找内容
+
+Ctrl+Shit+F：在整个文件夹中查找内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><ol>
+<li><p>检查本机是否有ssh key设置，打开git bash客户端：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">cd <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span>ssh或cd <span class="token punctuation">.</span>ssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>使用Git Bash生成新的ssh key</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">cd <span class="token operator">~</span>  <span class="token comment">#保证当前路径在”~”下</span>
+ssh<span class="token operator">-</span>keygen <span class="token operator">-</span>t rsa <span class="token operator">-</span>C <span class="token string">"xxxxxx@yy.com"</span>  <span class="token comment">#填写自己真实有效的邮箱地址</span>
+Generating public<span class="token operator">/</span>private rsa key pair<span class="token punctuation">.</span>
+Enter <span class="token builtin">file</span> <span class="token keyword">in</span> which to save the key <span class="token punctuation">(</span><span class="token operator">/</span>c<span class="token operator">/</span>Users<span class="token operator">/</span>xxxx_000<span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#不填直接回车</span>
+Enter passphrase <span class="token punctuation">(</span>empty <span class="token keyword">for</span> no passphrase<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#输入密码（可以为空）</span>
+Enter same passphrase again<span class="token punctuation">:</span>   <span class="token comment">#再次确认密码（可以为空）</span>
+Your identification has been saved <span class="token keyword">in</span> <span class="token operator">/</span>c<span class="token operator">/</span>Users<span class="token operator">/</span>xxxx_000<span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa<span class="token punctuation">.</span>   <span class="token comment">#生成的id_rsa文件为密钥</span>
+Your public key has been saved <span class="token keyword">in</span> <span class="token operator">/</span>c<span class="token operator">/</span>Users<span class="token operator">/</span>xxxx_000<span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa<span class="token punctuation">.</span>pub<span class="token punctuation">.</span>  <span class="token comment">#生成的id_rsa.pub公钥</span>
+The key fingerprint <span class="token keyword">is</span><span class="token punctuation">:</span>
+e3<span class="token punctuation">:</span><span class="token number">51</span><span class="token punctuation">:</span><span class="token number">33</span><span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xxx<span class="token punctuation">:</span><span class="token number">61</span><span class="token punctuation">:</span><span class="token number">28</span><span class="token punctuation">:</span><span class="token number">83</span><span class="token punctuation">:</span>e2<span class="token punctuation">:</span><span class="token number">81</span> xxxxxx@yy<span class="token punctuation">.</span>com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>配置GitHub账户</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">git config <span class="token operator">-</span><span class="token operator">-</span><span class="token keyword">global</span> user<span class="token punctuation">.</span>name “your_username”  <span class="token comment">#设置用户名</span>
+git config <span class="token operator">-</span><span class="token operator">-</span><span class="token keyword">global</span> user<span class="token punctuation">.</span>email “your_registered_github_Email”  <span class="token comment">#设置邮箱地址(建议用注册giuhub的邮箱)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>测试ssh keys是否设置成功</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">ssh <span class="token operator">-</span>T git@github<span class="token punctuation">.</span>com
+The authenticity of host <span class="token string">'github.com (192.30.252.129)'</span> can't be established<span class="token punctuation">.</span>
+RSA key fingerprint <span class="token keyword">is</span> <span class="token number">16</span><span class="token punctuation">:</span><span class="token number">27</span><span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>4d<span class="token punctuation">:</span>eb<span class="token punctuation">:</span>df<span class="token punctuation">:</span>a6<span class="token punctuation">:</span><span class="token number">48.</span>
+Are you sure you want to <span class="token keyword">continue</span> connecting <span class="token punctuation">(</span>yes<span class="token operator">/</span>no<span class="token punctuation">)</span>? yes <span class="token comment">#确认你是否继续联系，输入yes</span>
+Warning<span class="token punctuation">:</span> Permanently added <span class="token string">'github.com,192.30.252.129'</span> <span class="token punctuation">(</span>RSA<span class="token punctuation">)</span> to the <span class="token builtin">list</span> of known hosts<span class="token punctuation">.</span>
+Enter passphrase <span class="token keyword">for</span> key <span class="token string">'/c/Users/xxxx_000/.ssh/id_rsa'</span><span class="token punctuation">:</span>  <span class="token comment">#生成ssh kye是密码为空则无此项，若设置有密码则有此项且，输入生成ssh key时设置的密码即可。</span>
+Hi xxx! You've successfully authenticated<span class="token punctuation">,</span> but GitHub does <span class="token keyword">not</span> provide shell access<span class="token punctuation">.</span> <span class="token comment">#出现词句话，说明设置成功。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Reference: [<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000004564905">Windows下配置Git连接上github - SegmentFault 思否</a>]:</p>
+</li>
+</ol>
+<h2 id="文档写作"><a href="#文档写作" class="headerlink" title="文档写作"></a>文档写作</h2><h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><p>配置快捷设置字体颜色</p>
+<p>快捷键：</p>
+<ul>
+<li>Ctrl+Alt+o 橙色</li>
+<li>Ctrl+Alt+r 红色</li>
+<li>Ctrl+Alt+b 浅蓝色</li>
+</ul>
+<p>Reference：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010886217/article/details/109661322">Typora修改字体颜色快捷键设置</a></p>
+</li>
+<li></li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">elegantlee</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://elegantlee.github.io/2021/06/16/huan-jing-pei-zhi/kai-fa-huan-jing-pei-zhi-hui-zong/">https://elegantlee.github.io/2021/06/16/huan-jing-pei-zhi/kai-fa-huan-jing-pei-zhi-hui-zong/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">elegantlee</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                                    <span class="chip bg-color">环境配置</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .waline-card {
+        margin: 1.5rem auto;
+    }
+    .waline-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #waline p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+    #waline blockquote p {
+        text-indent: 0.2rem;
+    }
+    #waline a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    #waline img {
+        max-width: 100%;
+        cursor: pointer;
+    }
+    #waline ol li {
+        list-style-type: decimal;
+    }
+    #waline ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+    #waline ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+    #waline ul li {
+        list-style-type: disc;
+    }
+    #waline ul ul li {
+        list-style-type: circle;
+    }
+    #waline table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+    #waline table, th, td {
+        border: 0;
+    }
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+    #waline table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+    #waline table td {
+        min-width: 80px;
+    }
+    #waline h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+    #waline h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+    #waline h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+    #waline h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+    #waline h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+    #waline h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+    #waline p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    #waline hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+    #waline blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+    #waline pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+    #waline code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+    #waline pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+    #waline pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+    #waline code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+    #waline [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+    #waline b,
+    strong {
+        font-weight: bold;
+    }
+    #waline dfn {
+        font-style: italic;
+    }
+    #waline small {
+        font-size: 85%;
+    }
+    #waline cite {
+        font-style: normal;
+    }
+    #waline mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+    #waline table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+    #waline table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+    #waline table td {
+        min-width: 80px;
+    }
+    #waline [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+  </style>
+  
+  <div class="card waline-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="waline" class="card-content" style="display: grid">
+    </div>
+  </div>
+  
+
+  <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
+  <script src="/libs/waline/Waline.min.js"></script>
+  <script>
+    new Waline({
+        el: '#waline',
+        serverURL: 'https://waline-server-ruddy.vercel.app/',
+        avatar: 'mm'    
+    });
+  </script> 
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/06/16/xue-zhu/paper-ju-zi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="paper写作词汇及句子">
+                        
+                        <span class="card-title">paper写作词汇及句子</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            收集整理paper中看到的表达
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AD%A6%E6%9C%AF/">
+                        <span class="chip bg-color">学术</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/06/16/huan-jing-pei-zhi/windows-an-zhuang-tensorflow-gpu-ban-ben/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Windows 安装Tensorflow GPU版本">
+                        
+                        <span class="card-title">Windows 安装Tensorflow GPU版本</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            安装cuDNN和CUDA, 以及安装过程遇到的问题
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Deep-Learning/" class="post-category">
+                                    Deep Learning
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                        <span class="chip bg-color">环境配置</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 天下武功，无坚不破，唯快不破<br />'
+            + '文章作者: elegantlee<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <a href="/about" target="_blank">elegantlee</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/ElegantLee" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:superlee6699@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=641731718" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 641731718" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<!-- hexo injector body_end start --><script src="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.2.2/js/index.js"></script><div id="widget-tree">
+      <ul>
+      <li class="tree-list-item">
+        <i class="toggle-post-icon gg-folder-add"></i>
+        <a class="tree-list-link" href="/categories/Deep-Learning/">
+          Deep Learning
+        </a>
+      <span class="tree-list-count">5</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/paper-for-fun/" title="Paper for Fun"><i class="post-icon gg-file-document"></i>Paper for Fun</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/21/xue-zhu/zen-yang-kan-lun-wen/" title="怎样看论文"><i class="post-icon gg-file-document"></i>怎样看论文</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/paper-ju-zi/" title="paper写作词汇及句子"><i class="post-icon gg-file-document"></i>paper写作词汇及句子</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/shen-du-lian-dan-zhi-bei/" title="深度炼丹指北"><i class="post-icon gg-file-document"></i>深度炼丹指北</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/huan-jing-pei-zhi/windows-an-zhuang-tensorflow-gpu-ban-ben/" title="Windows 安装Tensorflow GPU版本"><i class="post-icon gg-file-document"></i>Windows 安装Tensorflow GPU版本</a></li></ul></li>
+      <li class="tree-list-item">
+        <i class="toggle-post-icon gg-folder-add"></i>
+        <a class="tree-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/">
+          技术开发
+        </a>
+      <span class="tree-list-count">3</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/06/04/ji-zhu-kai-fa/git-ming-ling/" title="git常用命令"><i class="post-icon gg-file-document"></i>git常用命令</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/15/huan-jing-pei-zhi/qian-duan-kai-fa-pei-zhi/" title="前端开发配置"><i class="post-icon gg-file-document"></i>前端开发配置</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/huan-jing-pei-zhi/kai-fa-huan-jing-pei-zhi-hui-zong/" title="开发环境配置汇总"><i class="post-icon gg-file-document"></i>开发环境配置汇总</a></li></ul></li>
+      <li class="tree-list-item">
+        <i class="toggle-post-icon gg-folder-add"></i>
+        <a class="tree-list-link" href="/categories/%E7%AE%97%E6%B3%95/">
+          算法
+        </a>
+      <span class="tree-list-count">5</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/03/16/suan-fa/javascript-suan-fa-yu-shu-ju-jie-gou/" title="算法与数据结构(JavaScript实现)"><i class="post-icon gg-file-document"></i>算法与数据结构(JavaScript实现)</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/07/suan-fa/leetcode-re-men-100-ti/" title="Leetcode热门100题刷题笔记(JavaScript实现)"><i class="post-icon gg-file-document"></i>Leetcode热门100题刷题笔记(JavaScript实现)</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/22/suan-fa/shua-ti-zong-jie/" title="算法题技巧总结"><i class="post-icon gg-file-document"></i>算法题技巧总结</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/09/suan-fa/jian-zhi-offer-bi-ji/" title="剑指offer-JavaScript刷题笔记"><i class="post-icon gg-file-document"></i>剑指offer-JavaScript刷题笔记</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/03/25/suan-fa/leetcode/" title="LeetCode刷题(JavaScript实现)"><i class="post-icon gg-file-document"></i>LeetCode刷题(JavaScript实现)</a></li></ul></li>
+      <li class="tree-list-item">
+        <i class="toggle-post-icon gg-folder-add"></i>
+        <a class="tree-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%B2%89%E6%B7%80/">
+          技术沉淀
+        </a>
+      <span class="tree-list-count">4</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/19/ji-zhu-chen-dian/vue-li-jie/vue-gai-lan/" title="Vue概览"><i class="post-icon gg-file-document"></i>Vue概览</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/jin-jie/" title="前端进阶"><i class="post-icon gg-file-document"></i>前端进阶</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/vue-xu-ni-dom/" title="Vue源码阅读之虚拟DOM"><i class="post-icon gg-file-document"></i>Vue源码阅读之虚拟DOM</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/snabbdom/" title="snabbdom源码总结"><i class="post-icon gg-file-document"></i>snabbdom源码总结</a></li></ul></li></ul>
+        <div id="widget-tree-button">
+          <i class="gg-chevron-right"></i>
+        </div>
+      </div><!-- hexo injector body_end end --></body>
+
+</html>
