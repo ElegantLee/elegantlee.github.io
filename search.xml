@@ -800,7 +800,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <hr>
 <h3 id="105-从前序与中序遍历序列构造二叉树"><a href="#105-从前序与中序遍历序列构造二叉树" class="headerlink" title="105. 从前序与中序遍历序列构造二叉树"></a>105. 从前序与中序遍历序列构造二叉树</h3><p><a href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">leetcode</a></p>
 <p>【提示】设根节点在中序遍历中的索引为<code>rootIndex</code>，则前序遍历的左子树范围和右子树范围，中序遍历的左子树范围和左子树范围就可以确定了，分别是：</p>
-<img src="D:\Users\superlee\Pictures\算法\前序和中序构建二叉树.png" alt="前序和中序构建二叉树" style="zoom: 25%;">
+<img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20220724232228.png" alt="前序和中序构建二叉树" style="zoom: 25%;">
 
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">preStart</span><span class="token operator">:</span> 前序遍历的开始位置；
 <span class="token literal-property property">preEnd</span><span class="token operator">:</span> 前序遍历的结束位置；
@@ -837,7 +837,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li><p>宽度优先遍历（层序遍历）</p>
 </li>
 </ol>
-<p>!!! 注意</p>
+<div class="admonition warning"><p class="admonition-title">“注意”
+</p></div>
+
 <p>​    不要跟<a href="https://leetcode.cn/problems/symmetric-tree/">对称二叉树</a>弄混了，对称二叉树才需要对比内侧和外侧。</p>
 <hr>
 <h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h3><p><a href="https://leetcode.cn/problems/maximum-subarray/">leetcode</a></p>
