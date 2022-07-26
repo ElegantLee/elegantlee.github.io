@@ -1,6 +1,504 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>前端开发配置</title>
+    <url>/2022/05/15/huan-jing-pei-zhi/qian-duan-kai-fa-pei-zhi/</url>
+    <content><![CDATA[<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h2 id="Vue和Vue-CLI版本"><a href="#Vue和Vue-CLI版本" class="headerlink" title="Vue和Vue-CLI版本"></a>Vue和Vue-CLI版本</h2><ul>
+<li>安装Vue-CLI</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">npm install -g @vue/cli （安装的是最新版）
+npm install vue-cli@2.9.6 （指定版本安装【指定版本为3.0以下版本】，其中2.9.6为版本号）
+npm install -g @vue/cli@3.11.0（指定版本安装【指定版本为3.0以上版本】，其中3.11.0为版本号）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>Vue-CLI版本查看</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">vue -V<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<ul>
+<li>对应关系</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">Vue CLI 4.5以下---Vue2
+Vue CLI 4.5及以上---Vue3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>【注】：</strong>当使用Vue-CLI进行快速原型开发的时候，如果使用<code>vue serve</code>后报错，看看Vue-CLI与Vue的版本是否对应。</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a href="https://www.cnblogs.com/xiluhua/p/14600292.html">xiluhua-博客园-vue &amp; vue Cli 版本对应关系</a></li>
+</ul>
+<hr>
+]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows 安装Tensorflow GPU版本</title>
+    <url>/2021/06/16/huan-jing-pei-zhi/windows-an-zhuang-tensorflow-gpu-ban-ben/</url>
+    <content><![CDATA[<h1 id="Windows-安装Tensorflow-GPU版本"><a href="#Windows-安装Tensorflow-GPU版本" class="headerlink" title="Windows 安装Tensorflow GPU版本"></a>Windows 安装Tensorflow GPU版本</h1><h2 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h2><p><a href="https://developer.nvidia.com/cuda-toolkit-archive">历史版本</a></p>
+<p><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">驱动版本要求</a></p>
+<hr>
+<h2 id="安装cuDNN"><a href="#安装cuDNN" class="headerlink" title="安装cuDNN"></a>安装cuDNN</h2><p><a href="https://developer.nvidia.com/cudnn">历史版本</a></p>
+<ul>
+<li>需要下载与CUDA对应的版本</li>
+</ul>
+<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092349.png" alt="image-20200718171010579"></p>
+<ul>
+<li>将解压出来的文件夹下的lib, include, bin目录下的文件粘贴到CUDA的文件夹下（C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2 | 环境变量PATH中可以看到）</li>
+</ul>
+<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092402.png" alt="image-20200718181032861"></p>
+<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092415.png" alt="image-20200718181057262"></p>
+<hr>
+<h2 id="安装tensorflow-gpu"><a href="#安装tensorflow-gpu" class="headerlink" title="安装tensorflow-gpu"></a>安装tensorflow-gpu</h2><p><a href="https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/1-2-install/">参考</a></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install <span class="token operator">-</span><span class="token operator">-</span>upgrade tensorflow<span class="token operator">-</span>gpu<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<hr>
+<h3 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h3><p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092603.png" alt="image-20200718181842958"></p>
+<p>分析：</p>
+<ol>
+<li><p>检查安装的Python版本是否为3.6以上的64bit</p>
+<ul>
+<li><p>使用命令python -v查看</p>
+<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092618.png" alt="image-20200718182013302"></p>
+</li>
+</ul>
+</li>
+<li><p>检查使用的pip镜像（亲测华为的镜像不行）</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span><span class="token keyword">global</span><span class="token punctuation">]</span>
+index<span class="token operator">-</span>url <span class="token operator">=</span> http<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>pypi<span class="token operator">/</span>simple<span class="token operator">/</span>
+trusted<span class="token operator">-</span>host <span class="token operator">=</span> mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com
+timeout <span class="token operator">=</span> <span class="token number">120</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+</li>
+</ol>
+<h2 id="目前的环境"><a href="#目前的环境" class="headerlink" title="目前的环境"></a>目前的环境</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">CUDA Toolkit<span class="token punctuation">:</span> <span class="token number">10.1</span> 
+cuDNN<span class="token punctuation">:</span> v7<span class="token punctuation">.</span><span class="token number">6.5</span>
+python<span class="token punctuation">:</span> <span class="token number">3.7</span><span class="token number">.0</span> x64  
+pip<span class="token punctuation">:</span> <span class="token number">20.1</span><span class="token number">.1</span> 
+Pycharm<span class="token punctuation">:</span> <span class="token number">2020.1</span><span class="token number">.2</span> x64<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">Could <span class="token keyword">not</span> load dynamic library <span class="token string">'cudart64_101.dll'</span><span class="token punctuation">;</span> dlerror<span class="token punctuation">:</span> cudart64_101<span class="token punctuation">.</span>dll <span class="token keyword">not</span> found<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+]]></content>
+      <categories>
+        <category>Deep Learning</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>开发环境配置汇总</title>
+    <url>/2021/06/16/huan-jing-pei-zhi/kai-fa-huan-jing-pei-zhi-hui-zong/</url>
+    <content><![CDATA[<h1 id="开发环境配置汇总"><a href="#开发环境配置汇总" class="headerlink" title="开发环境配置汇总"></a>开发环境配置汇总</h1><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><div class="info">
+
+<blockquote>
+<p>下载了JDK，安装时不需要再安装jre了 </p>
+</blockquote>
+</div>
+
+  
+
+<ol>
+<li>JAVA_HOME<ul>
+<li>JDK安装的目录</li>
+</ul>
+</li>
+<li>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin<ul>
+<li>添加到PATH中</li>
+</ul>
+</li>
+<li>CLASSPATH<ul>
+<li>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</li>
+</ul>
+</li>
+</ol>
+<h3 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h3><div class="warning">
+
+<blockquote>
+<p>可使用国内镜像源下载，官网下载比较慢    </p>
+</blockquote>
+</div>
+
+<ol>
+<li><p>MAVEN_HOME</p>
+<ul>
+<li>maven的安装目录</li>
+</ul>
+</li>
+<li><p>%MAVEN_HOME%\bin</p>
+<ul>
+<li>添加到PATH中去</li>
+</ul>
+</li>
+<li><p>MAVEN_OPTS</p>
+<ul>
+<li>-Xms128m -Xmx512m</li>
+</ul>
+</li>
+<li><p>生成.m2文件（默认在C盘）</p>
+<ul>
+<li><p>执行命令：mvn help:system（可中断），目的是生成C盘中的.m2文件夹</p>
+</li>
+<li><p>将安装目录下的conf中的settings.xml拷贝到.m2文件夹下 。前者是全局的，后者是当前用户的。 </p>
+</li>
+<li><p>在settings.xml中改镜像和本地仓库位置</p>
+</li>
+</ul>
+ <pre class="line-numbers language-none"><code class="language-none">&lt;!-- 配置中央仓库的镜像（改用：阿里云中央仓库镜像）--&gt;
+&lt;mirror&gt;        
+  &lt;id&gt;alimaven&lt;/id&gt;
+  &lt;name&gt;aliyun-maven&lt;/name&gt;
+  &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+  &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;
+&lt;/mirror&gt;
+
+&lt;!-- 设置本地仓库位置 --&gt;
+&lt;localRepository&gt;D:\maven-local-repository&lt;/localRepository&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>IDEA中的配置</p>
+</li>
+</ol>
+<h3 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h3><hr>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><h3 id="pip换源"><a href="#pip换源" class="headerlink" title="pip换源"></a>pip换源</h3><p>​    在C:\Users\当前用户名\pip下新建一个pip.ini文件，写入以下内容</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span><span class="token keyword">global</span><span class="token punctuation">]</span>
+index<span class="token operator">-</span>url <span class="token operator">=</span> http<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>pypi<span class="token operator">/</span>simple<span class="token operator">/</span>
+trusted<span class="token operator">-</span>host <span class="token operator">=</span> mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com
+timeout <span class="token operator">=</span> <span class="token number">120</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="pip离线安装"><a href="#pip离线安装" class="headerlink" title="pip离线安装"></a>pip离线安装</h2><p>查看当前python版本支持的离线文件类型</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pip<span class="token punctuation">.</span>_internal
+<span class="token keyword">print</span><span class="token punctuation">(</span>pip<span class="token punctuation">.</span>_internal<span class="token punctuation">.</span>pep425tags<span class="token punctuation">.</span>get_supported<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="pip安装requirements"><a href="#pip安装requirements" class="headerlink" title="pip安装requirements"></a>pip安装requirements</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip install <span class="token operator">-</span>r requirements<span class="token punctuation">.</span>txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h2 id="Anacond"><a href="#Anacond" class="headerlink" title="Anacond"></a>Anacond</h2><p>一、安装Pytorch</p>
+<pre class="line-numbers language-none"><code class="language-none">Solving environment: failed with current_repodata.json, will retry with next repodata source.
+Initial quick solve with frozen env failed.  Unfreezing env and trying again.
+
+解决：conda update --all<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>二、安装package</p>
+<pre class="line-numbers language-none"><code class="language-none">PackagesNotFoundError
+解决：
+1. anaconda search -t conda package
+2. anaconda show "conda-forge/pydap"(根据查出来的结果选择)
+3. 根据提示安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>三、环境管理</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> 克隆环境
+conda create <span class="token operator">-</span>n BBB <span class="token operator">-</span><span class="token operator">-</span>clone AAA
+<span class="token operator">*</span> BBB是自己要创建的环境名称
+<span class="token operator">*</span> AAA是已经存在的环境名称
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 删除环境
+conda remove <span class="token operator">-</span>n env_name <span class="token operator">-</span><span class="token operator">-</span><span class="token builtin">all</span>
+<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> 环境迁移
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>Linux<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token number">1.</span> conda pack <span class="token operator">-</span>n my_env<span class="token punctuation">(</span>要打包的环境<span class="token punctuation">)</span> <span class="token operator">-</span>o my_env<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz<span class="token punctuation">(</span>自定义打包后的环境名称<span class="token punctuation">)</span>
+<span class="token number">2.</span> 在env目录下<span class="token punctuation">,</span> mkdir <span class="token operator">-</span>p my_env
+<span class="token number">3.</span> tar <span class="token operator">-</span>xzvf my_env<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz <span class="token operator">-</span>C my_env
+<span class="token number">4.</span> source <span class="token punctuation">.</span><span class="token operator">/</span>my_env<span class="token operator">/</span><span class="token builtin">bin</span><span class="token operator">/</span>activate
+<span class="token number">5.</span> conda activate my_env
+<span class="token number">6.</span><span class="token punctuation">(</span>my_env<span class="token punctuation">)</span> $ conda<span class="token operator">-</span>unpack
+
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>Windows<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token number">1.</span> 同上进行打包<span class="token punctuation">,</span> 可打包为<span class="token builtin">zip</span>
+<span class="token number">2.</span> 将<span class="token builtin">zip</span>文件解压到envs目录下
+<span class="token number">3.</span> 进入base环境
+<span class="token number">4.</span> conda env <span class="token builtin">list</span>
+<span class="token number">5.</span> 进入envs目录
+<span class="token number">6.</span> <span class="token punctuation">.</span>\my_env\Scripts\activate<span class="token punctuation">.</span>bat
+<span class="token number">7.</span> <span class="token punctuation">.</span>\my_env\Scripts\conda<span class="token operator">-</span>unpack<span class="token punctuation">.</span>exe
+<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+reference<span class="token punctuation">:</span> https<span class="token punctuation">:</span><span class="token operator">//</span>zhuanlan<span class="token punctuation">.</span>zhihu<span class="token punctuation">.</span>com<span class="token operator">/</span>p<span class="token operator">/</span><span class="token number">87344422</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>四、镜像管理</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">.</span>condarc配置
+show_channel_urls<span class="token punctuation">:</span> true
+channels<span class="token punctuation">:</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>conda<span class="token operator">-</span>forge<span class="token operator">/</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>msys2<span class="token operator">/</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>bioconda<span class="token operator">/</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>menpo<span class="token operator">/</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>pytorch<span class="token operator">/</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>pkgs<span class="token operator">/</span>free<span class="token operator">/</span>
+  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>pkgs<span class="token operator">/</span>main<span class="token operator">/</span>
+  <span class="token operator">-</span> defaults
+<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 查看当前channel
+conda config <span class="token operator">-</span><span class="token operator">-</span>show<span class="token operator">-</span>sources
+<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> 添加源
+conda config <span class="token operator">-</span><span class="token operator">-</span>add channels
+<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> 移除源
+conda config <span class="token operator">-</span><span class="token operator">-</span>remove channels<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><ol>
+<li>检查是否安装成功<ul>
+<li>node -v</li>
+<li>npm -v</li>
+</ul>
+</li>
+<li>换源<ul>
+<li>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></li>
+<li>测试是否安装成功<ul>
+<li>cnpm</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>设置npm全局模块路径（自定义路径）<ul>
+<li>在NodeJS安装路径下新建两个文件夹： node_globle, node_cache</li>
+<li>npm config set prefix “D:\Environments\nodejs\node_globle”</li>
+<li>npm config set cache “D:\Environments\nodejs\node_cache”</li>
+</ul>
+</li>
+<li>添加环境变量<ul>
+<li>NODE_PATH<ul>
+<li>D:\Enviroment\NodeJs\node_globle\node_modules</li>
+</ul>
+</li>
+<li>PATH<ul>
+<li>D:\Enviroment\NodeJs\node_globle\</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ol>
+<li>cnpm install -g hexo-cli</li>
+<li>hexo -v</li>
+<li>hexo init (在指定的存放博客目录下使用)</li>
+<li>hexo s</li>
+<li>localhost:4000测试</li>
+<li>常用命令</li>
+</ol>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token operator">*</span> hexo c 	<span class="token comment">// 清理缓存文件</span>
+<span class="token operator">*</span> hexo g	<span class="token comment">// 生成文件</span>
+<span class="token operator">*</span> hexo s	<span class="token comment">// 运行本地服务器</span>
+<span class="token operator">*</span> hexo d	<span class="token comment">// 上传到服务器</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h3 id="Hexo迁移"><a href="#Hexo迁移" class="headerlink" title="Hexo迁移"></a>Hexo迁移</h3><div class="info">
+
+<blockquote>
+<p>将电脑上的博客迁移到另一台电脑</p>
+</blockquote>
+</div>
+
+<ol>
+<li>备份原来的博客文件夹，清单如下：<ul>
+<li>_config.yml</li>
+<li>package.json</li>
+<li>scaffolds/</li>
+<li>source/</li>
+<li>themes/</li>
+</ul>
+</li>
+<li>在新电脑上安装环境（node，hexo）</li>
+<li>在博客目录下（与原来的博客路径保持一致最好，不同的话没试过）<ul>
+<li>cnpm install –save hexo-deployer-git</li>
+<li>hexo c<ul>
+<li>这里会报错，缺少相关依赖，根据提示安装即可</li>
+<li>再次执行hexo c</li>
+</ul>
+</li>
+<li>hexo g</li>
+<li>hexo s</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="VS-Code"><a href="#VS-Code" class="headerlink" title="VS Code"></a>VS Code</h2><h3 id="安装的插件"><a href="#安装的插件" class="headerlink" title="安装的插件"></a>安装的插件</h3><blockquote>
+<ol>
+<li><p>open-in-browser 在浏览器中查看</p>
+</li>
+<li><p>Auto Close Tag 自动闭合标签</p>
+</li>
+<li><p>Auto Rename Tag 尾部闭合标签同步修改</p>
+</li>
+<li><p>Bracket Pair Colorizer 用不同颜色高亮显示匹配的括号</p>
+</li>
+<li><p>Highlight Matching Tag 高亮显示匹配标签</p>
+</li>
+<li><p>Vscode-icons VSCode 文件图标</p>
+</li>
+<li><p>TODO Highlight 高亮</p>
+</li>
+<li><p>Code Spell Checker 单词拼写检查</p>
+</li>
+<li><p>Code Runner 运行选中代码段</p>
+</li>
+</ol>
+<ul>
+<li>Python开发时的配置</li>
+<li>输出时中文乱码<ul>
+<li>“code-runner.runInTerminal”: true</li>
+</ul>
+</li>
+</ul>
+<ol start="10">
+<li><p>Improt Cost 成本提示</p>
+</li>
+<li><p>WakaTime 计算代码工作量</p>
+</li>
+<li><p>Settings Sync 同步扩展配置到GitHub</p>
+</li>
+</ol>
+</blockquote>
+<p><a href="https://www.cnblogs.com/lychee/p/11214032.html">参考</a></p>
+<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><h4 id="编辑器与窗口管理"><a href="#编辑器与窗口管理" class="headerlink" title="编辑器与窗口管理"></a>编辑器与窗口管理</h4><pre class="line-numbers language-none"><code class="language-none">Ctrl+Shift+P: 打开命令面板。
+
+Ctrl+Shift+N: 新建窗口。
+
+Ctrl+Shift+W: 关闭窗口。
+
+切分窗口：Ctrl+1/Ctrl+3/Ctrl+3
+
+Ctrl+H：最小化窗口
+
+Ctrl+B：显示/隐藏侧边栏
+
+Ctrl+"+/-"：放大/缩小界面<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h4><pre class="line-numbers language-none"><code class="language-none">Ctrl+N：新建文件
+
+Ctrl+W：关闭文件
+
+Ctrl+Tab：文件切换<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="格式调整"><a href="#格式调整" class="headerlink" title="格式调整"></a>格式调整</h4><pre class="line-numbers language-none"><code class="language-none">Ctrl+C/Ctrl+V：复制或剪切当前行/当前选中内容
+
+Alt+Up/Down：向上/下移动一行
+
+Shift+Alt+Up//Down：向上/下复制一行
+
+Ctrl+Delete：删除当前行
+
+Shift+Alt+Left/Right：从光标开始向左/右选择内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="代码编辑"><a href="#代码编辑" class="headerlink" title="代码编辑"></a>代码编辑</h4><pre class="line-numbers language-none"><code class="language-none">Ctrl+D：选中下一个相同内容
+
+Ctrl+Shift+L：选中所有相同内容
+
+Ctrl+F：查找内容
+
+Ctrl+Shit+F：在整个文件夹中查找内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><ol>
+<li><p>检查本机是否有ssh key设置，打开git bash客户端：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">cd <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span>ssh或cd <span class="token punctuation">.</span>ssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li><p>使用Git Bash生成新的ssh key</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">cd <span class="token operator">~</span>  <span class="token comment">#保证当前路径在”~”下</span>
+ssh<span class="token operator">-</span>keygen <span class="token operator">-</span>t rsa <span class="token operator">-</span>C <span class="token string">"xxxxxx@yy.com"</span>  <span class="token comment">#填写自己真实有效的邮箱地址</span>
+Generating public<span class="token operator">/</span>private rsa key pair<span class="token punctuation">.</span>
+Enter <span class="token builtin">file</span> <span class="token keyword">in</span> which to save the key <span class="token punctuation">(</span><span class="token operator">/</span>c<span class="token operator">/</span>Users<span class="token operator">/</span>xxxx_000<span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#不填直接回车</span>
+Enter passphrase <span class="token punctuation">(</span>empty <span class="token keyword">for</span> no passphrase<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#输入密码（可以为空）</span>
+Enter same passphrase again<span class="token punctuation">:</span>   <span class="token comment">#再次确认密码（可以为空）</span>
+Your identification has been saved <span class="token keyword">in</span> <span class="token operator">/</span>c<span class="token operator">/</span>Users<span class="token operator">/</span>xxxx_000<span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa<span class="token punctuation">.</span>   <span class="token comment">#生成的id_rsa文件为密钥</span>
+Your public key has been saved <span class="token keyword">in</span> <span class="token operator">/</span>c<span class="token operator">/</span>Users<span class="token operator">/</span>xxxx_000<span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa<span class="token punctuation">.</span>pub<span class="token punctuation">.</span>  <span class="token comment">#生成的id_rsa.pub公钥</span>
+The key fingerprint <span class="token keyword">is</span><span class="token punctuation">:</span>
+e3<span class="token punctuation">:</span><span class="token number">51</span><span class="token punctuation">:</span><span class="token number">33</span><span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xxx<span class="token punctuation">:</span><span class="token number">61</span><span class="token punctuation">:</span><span class="token number">28</span><span class="token punctuation">:</span><span class="token number">83</span><span class="token punctuation">:</span>e2<span class="token punctuation">:</span><span class="token number">81</span> xxxxxx@yy<span class="token punctuation">.</span>com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li><p>配置GitHub账户</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">git config <span class="token operator">-</span><span class="token operator">-</span><span class="token keyword">global</span> user<span class="token punctuation">.</span>name “your_username”  <span class="token comment">#设置用户名</span>
+git config <span class="token operator">-</span><span class="token operator">-</span><span class="token keyword">global</span> user<span class="token punctuation">.</span>email “your_registered_github_Email”  <span class="token comment">#设置邮箱地址(建议用注册giuhub的邮箱)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>测试ssh keys是否设置成功</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">ssh <span class="token operator">-</span>T git@github<span class="token punctuation">.</span>com
+The authenticity of host <span class="token string">'github.com (192.30.252.129)'</span> can't be established<span class="token punctuation">.</span>
+RSA key fingerprint <span class="token keyword">is</span> <span class="token number">16</span><span class="token punctuation">:</span><span class="token number">27</span><span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>4d<span class="token punctuation">:</span>eb<span class="token punctuation">:</span>df<span class="token punctuation">:</span>a6<span class="token punctuation">:</span><span class="token number">48.</span>
+Are you sure you want to <span class="token keyword">continue</span> connecting <span class="token punctuation">(</span>yes<span class="token operator">/</span>no<span class="token punctuation">)</span>? yes <span class="token comment">#确认你是否继续联系，输入yes</span>
+Warning<span class="token punctuation">:</span> Permanently added <span class="token string">'github.com,192.30.252.129'</span> <span class="token punctuation">(</span>RSA<span class="token punctuation">)</span> to the <span class="token builtin">list</span> of known hosts<span class="token punctuation">.</span>
+Enter passphrase <span class="token keyword">for</span> key <span class="token string">'/c/Users/xxxx_000/.ssh/id_rsa'</span><span class="token punctuation">:</span>  <span class="token comment">#生成ssh kye是密码为空则无此项，若设置有密码则有此项且，输入生成ssh key时设置的密码即可。</span>
+Hi xxx! You've successfully authenticated<span class="token punctuation">,</span> but GitHub does <span class="token keyword">not</span> provide shell access<span class="token punctuation">.</span> <span class="token comment">#出现词句话，说明设置成功。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Reference: [<a href="https://segmentfault.com/a/1190000004564905">Windows下配置Git连接上github - SegmentFault 思否</a>]:</p>
+</li>
+</ol>
+<h2 id="文档写作"><a href="#文档写作" class="headerlink" title="文档写作"></a>文档写作</h2><h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><p>配置快捷设置字体颜色</p>
+<p>快捷键：</p>
+<ul>
+<li>Ctrl+Alt+o 橙色</li>
+<li>Ctrl+Alt+r 红色</li>
+<li>Ctrl+Alt+b 浅蓝色</li>
+</ul>
+<p>Reference：</p>
+<ul>
+<li><p><a href="https://blog.csdn.net/u010886217/article/details/109661322">Typora修改字体颜色快捷键设置</a></p>
+</li>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git常用命令</title>
+    <url>/2022/06/04/ji-zhu-kai-fa/git-ming-ling/</url>
+    <content><![CDATA[<h1 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h1><p>初始化一个git项目时的操作</p>
+<pre class="line-numbers language-git" data-language="git"><code class="language-git"><span class="token comment"># 创建本地分支并 </span>
+git checkout -b main 新建main分支，并转至main分支
+<span class="token comment"># 查看本地分支</span>
+git branch
+<span class="token comment"># 查看远程分支</span>
+git branch -a
+<span class="token comment"># 切换分支</span>
+git checkout <span class="token string">'branch name'</span>
+<span class="token comment"># 删除本地分支</span>
+git branch -d branch_name
+<span class="token comment"># git push origin &lt;指定的本地分支名&gt;</span>
+<span class="token comment"># 强行让本地分支覆盖远程分支(出现hint错误)</span>
+git push origin &lt;指定的分支名&gt; -f
+<span class="token comment"># 从远程指定分支上拉取代码</span>
+git clone -b  &lt;指定分支名&gt;  &lt;ssh或者http地址&gt; 
+
+<span class="token comment"># 查看当前配置了哪些远程仓库</span>
+git remote -v
+<span class="token comment"># 提交代码</span>
+git push &lt;远程仓库名&gt; &lt;本地仓库名&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="拉取分支"><a href="#拉取分支" class="headerlink" title="拉取分支"></a>拉取分支</h2><p>拉取远程仓库的代码到本地</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> pull<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>如果修改了拉取的代码，但是不希望远程的代码覆盖本地修改的部分</p>
+<p>参考链接：<a href="https://blog.csdn.net/zhouzhiwengang/article/details/124447081">https://blog.csdn.net/zhouzhiwengang/article/details/124447081</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash											<span class="token comment"># 备份当前修改的内容</span>
+<span class="token function">git</span> stash save <span class="token string">'备注'</span>					<span class="token comment"># 暂存时，添加备注信息</span>
+<span class="token function">git</span> stash list								<span class="token comment"># 查看暂存列表</span>
+<span class="token function">git</span> stash pop									<span class="token comment"># 将暂存区最新的代码恢复到工作区（暂存区相应的代码会删除）</span>
+<span class="token function">git</span> stash pop --index 				<span class="token comment"># 将指定的暂存区代码恢复到工作区</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+]]></content>
+      <categories>
+        <category>技术开发</category>
+      </categories>
+      <tags>
+        <tag>开发工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Paper for Fun</title>
     <url>/2021/06/16/xue-zhu/paper-for-fun/</url>
     <content><![CDATA[<h1 id="Paper-for-Fun"><a href="#Paper-for-Fun" class="headerlink" title="Paper for Fun"></a>Paper for Fun</h1><h2 id="SCI分区"><a href="#SCI分区" class="headerlink" title="SCI分区"></a>SCI分区</h2><table>
@@ -497,52 +995,6 @@
       </tags>
   </entry>
   <entry>
-    <title>git常用命令</title>
-    <url>/2022/06/04/ji-zhu-kai-fa/git-ming-ling/</url>
-    <content><![CDATA[<h1 id="git常用命令"><a href="#git常用命令" class="headerlink" title="git常用命令"></a>git常用命令</h1><p>初始化一个git项目时的操作</p>
-<pre class="line-numbers language-git" data-language="git"><code class="language-git"><span class="token comment"># 创建本地分支并 </span>
-git checkout -b main 新建main分支，并转至main分支
-<span class="token comment"># 查看本地分支</span>
-git branch
-<span class="token comment"># 查看远程分支</span>
-git branch -a
-<span class="token comment"># 切换分支</span>
-git checkout <span class="token string">'branch name'</span>
-<span class="token comment"># 删除本地分支</span>
-git branch -d branch_name
-<span class="token comment"># git push origin &lt;指定的本地分支名&gt;</span>
-<span class="token comment"># 强行让本地分支覆盖远程分支(出现hint错误)</span>
-git push origin &lt;指定的分支名&gt; -f
-<span class="token comment"># 从远程指定分支上拉取代码</span>
-git clone -b  &lt;指定分支名&gt;  &lt;ssh或者http地址&gt; 
-
-<span class="token comment"># 查看当前配置了哪些远程仓库</span>
-git remote -v
-<span class="token comment"># 提交代码</span>
-git push &lt;远程仓库名&gt; &lt;本地仓库名&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="拉取分支"><a href="#拉取分支" class="headerlink" title="拉取分支"></a>拉取分支</h2><p>拉取远程仓库的代码到本地</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> pull<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>如果修改了拉取的代码，但是不希望远程的代码覆盖本地修改的部分</p>
-<p>参考链接：<a href="https://blog.csdn.net/zhouzhiwengang/article/details/124447081">https://blog.csdn.net/zhouzhiwengang/article/details/124447081</a></p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> stash											<span class="token comment"># 备份当前修改的内容</span>
-<span class="token function">git</span> stash save <span class="token string">'备注'</span>					<span class="token comment"># 暂存时，添加备注信息</span>
-<span class="token function">git</span> stash list								<span class="token comment"># 查看暂存列表</span>
-<span class="token function">git</span> stash pop									<span class="token comment"># 将暂存区最新的代码恢复到工作区（暂存区相应的代码会删除）</span>
-<span class="token function">git</span> stash pop --index 				<span class="token comment"># 将指定的暂存区代码恢复到工作区</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-]]></content>
-      <categories>
-        <category>技术开发</category>
-      </categories>
-      <tags>
-        <tag>开发工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>算法与数据结构(JavaScript实现)</title>
     <url>/2022/03/16/suan-fa/javascript-suan-fa-yu-shu-ju-jie-gou/</url>
     <content><![CDATA[<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><blockquote>
@@ -837,12 +1289,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li><p>宽度优先遍历（层序遍历）</p>
 </li>
 </ol>
-<div class="admonition warning"><p class="admonition-title">“注意”
-</p></div>
+<div class="admonition warning"><p class="admonition-title">注意
+</p><p>不要跟<a href="https://leetcode.cn/problems/symmetric-tree/">对称二叉树</a>弄混了，对称二叉树才需要对比内侧和外侧。</p>
+</div>
 
-<p>​    不要跟<a href="https://leetcode.cn/problems/symmetric-tree/">对称二叉树</a>弄混了，对称二叉树才需要对比内侧和外侧。</p>
 <hr>
-<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h3><p><a href="https://leetcode.cn/problems/maximum-subarray/">leetcode</a></p>
+<hr>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h3><h4 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h4><p><a href="https://leetcode.cn/problems/maximum-subarray/">leetcode</a></p>
 <p><a href="https://leetcode.cn/problems/maximum-subarray/solution/zui-da-zi-xu-he-cshi-xian-si-chong-jie-fa-bao-li-f/">题解</a></p>
 <p>【提示】目前只实现了暴力双循环和贪心的解法，还有动态规划和分治法两种解法。</p>
 <p>（1）贪心</p>
@@ -894,7 +1347,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
-<h3 id="5-最长回文子串"><a href="#5-最长回文子串" class="headerlink" title="5. 最长回文子串"></a>5. 最长回文子串</h3><p><a href="https://leetcode.cn/problems/longest-palindromic-substring/">leetcode</a></p>
+<h4 id="5-最长回文子串"><a href="#5-最长回文子串" class="headerlink" title="5. 最长回文子串"></a>5. 最长回文子串</h4><p><a href="https://leetcode.cn/problems/longest-palindromic-substring/">leetcode</a></p>
 <p><a href="https://leetcode.cn/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-fa-he-dong-tai-gui-hua-by-reedfa/">题解</a></p>
 <p>【提示】中心向两边扩散（双指针），使用动态规划优化（空间换时间）</p>
 <p>中心向两边扩散，定义left和right指针，分别指向当前字符的左右字符；</p>
@@ -921,7 +1374,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
-<h3 id="416-分割等和子集"><a href="#416-分割等和子集" class="headerlink" title="416. 分割等和子集"></a>416. 分割等和子集</h3><p><a href="https://leetcode.cn/problems/partition-equal-subset-sum/">leetcode</a></p>
+<h4 id="416-分割等和子集"><a href="#416-分割等和子集" class="headerlink" title="416. 分割等和子集"></a>416. 分割等和子集</h4><p><a href="https://leetcode.cn/problems/partition-equal-subset-sum/">leetcode</a></p>
 <p><a href="https://www.programmercarl.com/0416.%E5%88%86%E5%89%B2%E7%AD%89%E5%92%8C%E5%AD%90%E9%9B%86.html#_01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98">题解</a></p>
 <p>【提示】抽象问题为01背包问题。</p>
 <ul>
@@ -929,12 +1382,28 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>如果dp[sum/2]===sum/2，则return true，否则return false；</li>
 </ul>
 <hr>
-<h3 id="494-目标和"><a href="#494-目标和" class="headerlink" title="494. 目标和"></a>494. 目标和</h3><p><a href="https://leetcode.cn/problems/target-sum/">leetcode</a></p>
+<h4 id="494-目标和"><a href="#494-目标和" class="headerlink" title="494. 目标和"></a>494. 目标和</h4><p><a href="https://leetcode.cn/problems/target-sum/">leetcode</a></p>
 <p><a href="https://www.programmercarl.com/0494.%E7%9B%AE%E6%A0%87%E5%92%8C.html#%E6%80%BB%E7%BB%93">题解</a></p>
 <p>【提示】将问题抽象为01背包。target不能直接作为背包容量，因为此时物品的价值有两种状态。由于nums数组中的数字有正负两种情况，那么构成的表达式可以分成三部分：正数和+负数和=target，而正数和-负数和=sum（数组和）。于是问题转换为求背包容量为正数和时，装满背包有多少种情况。公式化：</p>
 <p>由 $positive+negetive=target, positive-negetive=sum$，有：</p>
 <p>$positive = (sum+target)/2$</p>
 <p>这里注意，可能positive&lt;0，此时positive=-positive（转换成正数和，因为数组中都是正整数）</p>
+<hr>
+<h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><h4 id="零钱兑换"><a href="#零钱兑换" class="headerlink" title="零钱兑换"></a>零钱兑换</h4><p><a href="https://leetcode.cn/problems/coin-change/">leetcode</a></p>
+<p><a href="https://www.programmercarl.com/0279.%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0.html#google_vignette">题解</a></p>
+<p>【提示】抽象问题为完全背包，amount为背包容量，求最小的个数。</p>
+<p>递推公式：dp[j] = min(dp[j], dp[j - coins[i]] + 1)；</p>
+<p>初始化：dp[0] = 0，其他的dp[j] = Infinity；</p>
+<hr>
+<h4 id="279-完全平方数"><a href="#279-完全平方数" class="headerlink" title="279. 完全平方数"></a>279. 完全平方数</h4><p><a href="https://leetcode.cn/problems/perfect-squares/">leetcode</a></p>
+<p><a href="https://www.programmercarl.com/0279.%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0.html">题解</a></p>
+<p>【提示】抽象为完全背包问题，求最小个数。</p>
+<p>递推公式：dp[j] = min(dp[j], dp[j - i * i] + 1)；</p>
+<p>初始化：dp[0] = 0，其他dp[j] = Infinity；</p>
+<div class="admonition warning"><p class="admonition-title">注意
+</p><p>这里的物品应该抽象为i * i，即完全平方数，因为背包里面只能装完全平方数。</p>
+</div>
+
 <hr>
 <h2 id="深度优先搜索（回溯）"><a href="#深度优先搜索（回溯）" class="headerlink" title="深度优先搜索（回溯）"></a>深度优先搜索（回溯）</h2><h3 id="200-岛屿数量"><a href="#200-岛屿数量" class="headerlink" title="200. 岛屿数量"></a>200. 岛屿数量</h3><p><a href="https://leetcode.cn/problems/number-of-islands/">leetcode</a></p>
 <p>题解1-<a href="https://leetcode.cn/problems/number-of-islands/solution/dao-yu-lei-wen-ti-de-tong-yong-jie-fa-dfs-bian-li-/">通用解法</a></p>
@@ -984,6 +1453,31 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
+<h3 id="463-岛屿的周长"><a href="#463-岛屿的周长" class="headerlink" title="463. 岛屿的周长"></a>463. 岛屿的周长</h3><p><a href="https://leetcode.cn/problems/island-perimeter/">leetcode</a></p>
+<p><a href="https://leetcode.cn/problems/number-of-islands/solution/dao-yu-lei-wen-ti-de-tong-yong-jie-fa-dfs-bian-li-/">题解</a></p>
+<p>【提示】其实求岛屿的周长就是求与边界相邻的岛屿的边缘和与海洋相邻的岛屿的边缘，如图所示</p>
+<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20220726200101.jpeg" alt="将岛屿周长中的边分为两类"></p>
+<p>当dfs即遇到上图两种情况时返回1，即周长加1。</p>
+<hr>
+<h3 id="236-二叉树的最近公共祖先"><a href="#236-二叉树的最近公共祖先" class="headerlink" title="236. 二叉树的最近公共祖先"></a>236. 二叉树的最近公共祖先</h3><p><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/">leetcode</a></p>
+<p>【提示】后序遍历，把整棵树分为三部分：左子树、根节点、右子树。</p>
+<ul>
+<li><p>递归参数：root, p, q；返回值：root（最近公共祖先）；</p>
+</li>
+<li><p>退出条件：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">===</span> p <span class="token operator">||</span> root <span class="token operator">===</span> q <span class="token operator">||</span> root <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>后序遍历，分别得到左右子树递归的结果，然后判断左右子树值的情况；</p>
+<ul>
+<li>left和right都不为空，则返回root；</li>
+<li>left为空，right不为空，则返回right；</li>
+<li>left不为空，right为空，则返回left；</li>
+<li>left和right都为空，则返回null；</li>
+</ul>
+</li>
+</ul>
+<hr>
 ]]></content>
       <categories>
         <category>算法</category>
@@ -995,9 +1489,15 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <entry>
     <title>算法题技巧总结</title>
     <url>/2022/07/22/suan-fa/shua-ti-zong-jie/</url>
-    <content><![CDATA[<h1 id="算法题技巧总结"><a href="#算法题技巧总结" class="headerlink" title="算法题技巧总结"></a>算法题技巧总结</h1><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h3><blockquote>
-<p>有n件物品和一个最多能背重量为w 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品只能用一次</strong>，求解将哪些物品装入背包里物品价值总和最大。</p>
-</blockquote>
+    <content><![CDATA[<h1 id="算法题技巧总结"><a href="#算法题技巧总结" class="headerlink" title="算法题技巧总结"></a>算法题技巧总结</h1><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><ol>
+<li>确定递归函数的参数和返回值：确定每次递归中需要处理的参数，并且要想清楚每次递归的返回值来确定递归函数的返回值类型；</li>
+<li>确定终止条件：递归在什么条件下停止并返回；</li>
+<li>确定单层递归的逻辑：确定每一层递归需要处理的信息，这里是递归重复调用的代码。</li>
+</ol>
+<hr>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h3><div class="admonition info"><p>有n件物品和一个最多能背重量为w 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品只能用一次</strong>，求解将哪些物品装入背包里物品价值总和最大。</p>
+</div>
+
 <p>二维<code>dp</code>数组：</p>
 <ul>
 <li><p><code>dp[i][j]</code>表示从下标<code>[0, i]</code>的物品里任意取，放进容量为<code>j</code>的背包，价值总和最大为<code>dp[i][j]</code>。</p>
@@ -1019,6 +1519,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
+<div class="admonition warning"><p>二维dp数组的两个for遍历的先后顺序可以颠倒，一维dp数组的两个for循环先后顺序一定是先遍历物品，再遍历背包容量。</p>
+</div>
+
 <p>一维dp数组：</p>
 <ul>
 <li><p><code>dp[j]</code>表示：容量为<code>j</code>的背包，所背的物品价值最大为<code>dp[j]</code>；</p>
@@ -1034,527 +1537,28 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ul>
 <hr>
+<h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><div class="admonition info"><p>有N件物品和一个最多能背重量为W的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品都有无限个（也就是可以放入背包多次）</strong>，求解将哪些物品装入背包里物品价值总和最大。<u><strong>完全背包和01背包问题唯一不同的地方就是，每种物品有无限件</strong>。</u></p>
+</div>
+
+<p>==01背包和完全背包唯一不同就是体现在遍历顺序上。==</p>
+<p>01背包内嵌的循环是从大到小遍历，为了保证每个物品仅被添加一次。而完全背包的物品是可以添加多次的，所以要从小到大去遍历，即：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 先遍历物品，再遍历背包</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span>int i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> weight<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历物品</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span>int j <span class="token operator">=</span> weight<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> bagWeight <span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历背包容量</span>
+    dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>j <span class="token operator">-</span> weight<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">+</span> value<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<div class="admonition warning"><p>在完全背包中，对于一维dp数组来说，遍历顺序可以交换。</p>
+</div>
+
 ]]></content>
       <categories>
         <category>算法</category>
       </categories>
       <tags>
         <tag>总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows 安装Tensorflow GPU版本</title>
-    <url>/2021/06/16/huan-jing-pei-zhi/windows-an-zhuang-tensorflow-gpu-ban-ben/</url>
-    <content><![CDATA[<h1 id="Windows-安装Tensorflow-GPU版本"><a href="#Windows-安装Tensorflow-GPU版本" class="headerlink" title="Windows 安装Tensorflow GPU版本"></a>Windows 安装Tensorflow GPU版本</h1><h2 id="安装CUDA"><a href="#安装CUDA" class="headerlink" title="安装CUDA"></a>安装CUDA</h2><p><a href="https://developer.nvidia.com/cuda-toolkit-archive">历史版本</a></p>
-<p><a href="https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html">驱动版本要求</a></p>
-<hr>
-<h2 id="安装cuDNN"><a href="#安装cuDNN" class="headerlink" title="安装cuDNN"></a>安装cuDNN</h2><p><a href="https://developer.nvidia.com/cudnn">历史版本</a></p>
-<ul>
-<li>需要下载与CUDA对应的版本</li>
-</ul>
-<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092349.png" alt="image-20200718171010579"></p>
-<ul>
-<li>将解压出来的文件夹下的lib, include, bin目录下的文件粘贴到CUDA的文件夹下（C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.2 | 环境变量PATH中可以看到）</li>
-</ul>
-<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092402.png" alt="image-20200718181032861"></p>
-<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092415.png" alt="image-20200718181057262"></p>
-<hr>
-<h2 id="安装tensorflow-gpu"><a href="#安装tensorflow-gpu" class="headerlink" title="安装tensorflow-gpu"></a>安装tensorflow-gpu</h2><p><a href="https://morvanzhou.github.io/tutorials/machine-learning/tensorflow/1-2-install/">参考</a></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">pip3 install <span class="token operator">-</span><span class="token operator">-</span>upgrade tensorflow<span class="token operator">-</span>gpu<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<hr>
-<h3 id="可能出现的问题"><a href="#可能出现的问题" class="headerlink" title="可能出现的问题"></a>可能出现的问题</h3><p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092603.png" alt="image-20200718181842958"></p>
-<p>分析：</p>
-<ol>
-<li><p>检查安装的Python版本是否为3.6以上的64bit</p>
-<ul>
-<li><p>使用命令python -v查看</p>
-<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20210610092618.png" alt="image-20200718182013302"></p>
-</li>
-</ul>
-</li>
-<li><p>检查使用的pip镜像（亲测华为的镜像不行）</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span><span class="token keyword">global</span><span class="token punctuation">]</span>
-index<span class="token operator">-</span>url <span class="token operator">=</span> http<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>pypi<span class="token operator">/</span>simple<span class="token operator">/</span>
-trusted<span class="token operator">-</span>host <span class="token operator">=</span> mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com
-timeout <span class="token operator">=</span> <span class="token number">120</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<hr>
-</li>
-</ol>
-<h2 id="目前的环境"><a href="#目前的环境" class="headerlink" title="目前的环境"></a>目前的环境</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">CUDA Toolkit<span class="token punctuation">:</span> <span class="token number">10.1</span> 
-cuDNN<span class="token punctuation">:</span> v7<span class="token punctuation">.</span><span class="token number">6.5</span>
-python<span class="token punctuation">:</span> <span class="token number">3.7</span><span class="token number">.0</span> x64  
-pip<span class="token punctuation">:</span> <span class="token number">20.1</span><span class="token number">.1</span> 
-Pycharm<span class="token punctuation">:</span> <span class="token number">2020.1</span><span class="token number">.2</span> x64<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">Could <span class="token keyword">not</span> load dynamic library <span class="token string">'cudart64_101.dll'</span><span class="token punctuation">;</span> dlerror<span class="token punctuation">:</span> cudart64_101<span class="token punctuation">.</span>dll <span class="token keyword">not</span> found<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-]]></content>
-      <categories>
-        <category>Deep Learning</category>
-      </categories>
-      <tags>
-        <tag>环境配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端开发配置</title>
-    <url>/2022/05/15/huan-jing-pei-zhi/qian-duan-kai-fa-pei-zhi/</url>
-    <content><![CDATA[<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h2 id="Vue和Vue-CLI版本"><a href="#Vue和Vue-CLI版本" class="headerlink" title="Vue和Vue-CLI版本"></a>Vue和Vue-CLI版本</h2><ul>
-<li>安装Vue-CLI</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">npm install -g @vue/cli （安装的是最新版）
-npm install vue-cli@2.9.6 （指定版本安装【指定版本为3.0以下版本】，其中2.9.6为版本号）
-npm install -g @vue/cli@3.11.0（指定版本安装【指定版本为3.0以上版本】，其中3.11.0为版本号）<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li>Vue-CLI版本查看</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">vue -V<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<ul>
-<li>对应关系</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">Vue CLI 4.5以下---Vue2
-Vue CLI 4.5及以上---Vue3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p><strong>【注】：</strong>当使用Vue-CLI进行快速原型开发的时候，如果使用<code>vue serve</code>后报错，看看Vue-CLI与Vue的版本是否对应。</p>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
-<li><a href="https://www.cnblogs.com/xiluhua/p/14600292.html">xiluhua-博客园-vue &amp; vue Cli 版本对应关系</a></li>
-</ul>
-<hr>
-]]></content>
-      <categories>
-        <category>技术开发</category>
-      </categories>
-      <tags>
-        <tag>环境配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>开发环境配置汇总</title>
-    <url>/2021/06/16/huan-jing-pei-zhi/kai-fa-huan-jing-pei-zhi-hui-zong/</url>
-    <content><![CDATA[<h1 id="开发环境配置汇总"><a href="#开发环境配置汇总" class="headerlink" title="开发环境配置汇总"></a>开发环境配置汇总</h1><h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><div class="info">
-
-<blockquote>
-<p>下载了JDK，安装时不需要再安装jre了 </p>
-</blockquote>
-</div>
-
-  
-
-<ol>
-<li>JAVA_HOME<ul>
-<li>JDK安装的目录</li>
-</ul>
-</li>
-<li>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin<ul>
-<li>添加到PATH中</li>
-</ul>
-</li>
-<li>CLASSPATH<ul>
-<li>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar</li>
-</ul>
-</li>
-</ol>
-<h3 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h3><div class="warning">
-
-<blockquote>
-<p>可使用国内镜像源下载，官网下载比较慢    </p>
-</blockquote>
-</div>
-
-<ol>
-<li><p>MAVEN_HOME</p>
-<ul>
-<li>maven的安装目录</li>
-</ul>
-</li>
-<li><p>%MAVEN_HOME%\bin</p>
-<ul>
-<li>添加到PATH中去</li>
-</ul>
-</li>
-<li><p>MAVEN_OPTS</p>
-<ul>
-<li>-Xms128m -Xmx512m</li>
-</ul>
-</li>
-<li><p>生成.m2文件（默认在C盘）</p>
-<ul>
-<li><p>执行命令：mvn help:system（可中断），目的是生成C盘中的.m2文件夹</p>
-</li>
-<li><p>将安装目录下的conf中的settings.xml拷贝到.m2文件夹下 。前者是全局的，后者是当前用户的。 </p>
-</li>
-<li><p>在settings.xml中改镜像和本地仓库位置</p>
-</li>
-</ul>
- <pre class="line-numbers language-none"><code class="language-none">&lt;!-- 配置中央仓库的镜像（改用：阿里云中央仓库镜像）--&gt;
-&lt;mirror&gt;        
-  &lt;id&gt;alimaven&lt;/id&gt;
-  &lt;name&gt;aliyun-maven&lt;/name&gt;
-  &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
-  &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public&lt;/url&gt;
-&lt;/mirror&gt;
-
-&lt;!-- 设置本地仓库位置 --&gt;
-&lt;localRepository&gt;D:\maven-local-repository&lt;/localRepository&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>IDEA中的配置</p>
-</li>
-</ol>
-<h3 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h3><hr>
-<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><h3 id="pip换源"><a href="#pip换源" class="headerlink" title="pip换源"></a>pip换源</h3><p>​    在C:\Users\当前用户名\pip下新建一个pip.ini文件，写入以下内容</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">[</span><span class="token keyword">global</span><span class="token punctuation">]</span>
-index<span class="token operator">-</span>url <span class="token operator">=</span> http<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>pypi<span class="token operator">/</span>simple<span class="token operator">/</span>
-trusted<span class="token operator">-</span>host <span class="token operator">=</span> mirrors<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com
-timeout <span class="token operator">=</span> <span class="token number">120</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="pip离线安装"><a href="#pip离线安装" class="headerlink" title="pip离线安装"></a>pip离线安装</h2><p>查看当前python版本支持的离线文件类型</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pip<span class="token punctuation">.</span>_internal
-<span class="token keyword">print</span><span class="token punctuation">(</span>pip<span class="token punctuation">.</span>_internal<span class="token punctuation">.</span>pep425tags<span class="token punctuation">.</span>get_supported<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="pip安装requirements"><a href="#pip安装requirements" class="headerlink" title="pip安装requirements"></a>pip安装requirements</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python">pip install <span class="token operator">-</span>r requirements<span class="token punctuation">.</span>txt<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="Anacond"><a href="#Anacond" class="headerlink" title="Anacond"></a>Anacond</h2><p>一、安装Pytorch</p>
-<pre class="line-numbers language-none"><code class="language-none">Solving environment: failed with current_repodata.json, will retry with next repodata source.
-Initial quick solve with frozen env failed.  Unfreezing env and trying again.
-
-解决：conda update --all<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>二、安装package</p>
-<pre class="line-numbers language-none"><code class="language-none">PackagesNotFoundError
-解决：
-1. anaconda search -t conda package
-2. anaconda show "conda-forge/pydap"(根据查出来的结果选择)
-3. 根据提示安装<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>三、环境管理</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> 克隆环境
-conda create <span class="token operator">-</span>n BBB <span class="token operator">-</span><span class="token operator">-</span>clone AAA
-<span class="token operator">*</span> BBB是自己要创建的环境名称
-<span class="token operator">*</span> AAA是已经存在的环境名称
-<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 删除环境
-conda remove <span class="token operator">-</span>n env_name <span class="token operator">-</span><span class="token operator">-</span><span class="token builtin">all</span>
-<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> 环境迁移
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>Linux<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-<span class="token number">1.</span> conda pack <span class="token operator">-</span>n my_env<span class="token punctuation">(</span>要打包的环境<span class="token punctuation">)</span> <span class="token operator">-</span>o my_env<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz<span class="token punctuation">(</span>自定义打包后的环境名称<span class="token punctuation">)</span>
-<span class="token number">2.</span> 在env目录下<span class="token punctuation">,</span> mkdir <span class="token operator">-</span>p my_env
-<span class="token number">3.</span> tar <span class="token operator">-</span>xzvf my_env<span class="token punctuation">.</span>tar<span class="token punctuation">.</span>gz <span class="token operator">-</span>C my_env
-<span class="token number">4.</span> source <span class="token punctuation">.</span><span class="token operator">/</span>my_env<span class="token operator">/</span><span class="token builtin">bin</span><span class="token operator">/</span>activate
-<span class="token number">5.</span> conda activate my_env
-<span class="token number">6.</span><span class="token punctuation">(</span>my_env<span class="token punctuation">)</span> $ conda<span class="token operator">-</span>unpack
-
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>Windows<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-<span class="token number">1.</span> 同上进行打包<span class="token punctuation">,</span> 可打包为<span class="token builtin">zip</span>
-<span class="token number">2.</span> 将<span class="token builtin">zip</span>文件解压到envs目录下
-<span class="token number">3.</span> 进入base环境
-<span class="token number">4.</span> conda env <span class="token builtin">list</span>
-<span class="token number">5.</span> 进入envs目录
-<span class="token number">6.</span> <span class="token punctuation">.</span>\my_env\Scripts\activate<span class="token punctuation">.</span>bat
-<span class="token number">7.</span> <span class="token punctuation">.</span>\my_env\Scripts\conda<span class="token operator">-</span>unpack<span class="token punctuation">.</span>exe
-<span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
-reference<span class="token punctuation">:</span> https<span class="token punctuation">:</span><span class="token operator">//</span>zhuanlan<span class="token punctuation">.</span>zhihu<span class="token punctuation">.</span>com<span class="token operator">/</span>p<span class="token operator">/</span><span class="token number">87344422</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>四、镜像管理</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">.</span>condarc配置
-show_channel_urls<span class="token punctuation">:</span> true
-channels<span class="token punctuation">:</span>
-  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>conda<span class="token operator">-</span>forge<span class="token operator">/</span>
-  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>msys2<span class="token operator">/</span>
-  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>bioconda<span class="token operator">/</span>
-  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>menpo<span class="token operator">/</span>
-  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>cloud<span class="token operator">/</span>pytorch<span class="token operator">/</span>
-  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>pkgs<span class="token operator">/</span>free<span class="token operator">/</span>
-  <span class="token operator">-</span> https<span class="token punctuation">:</span><span class="token operator">//</span>mirrors<span class="token punctuation">.</span>tuna<span class="token punctuation">.</span>tsinghua<span class="token punctuation">.</span>edu<span class="token punctuation">.</span>cn<span class="token operator">/</span>anaconda<span class="token operator">/</span>pkgs<span class="token operator">/</span>main<span class="token operator">/</span>
-  <span class="token operator">-</span> defaults
-<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> 查看当前channel
-conda config <span class="token operator">-</span><span class="token operator">-</span>show<span class="token operator">-</span>sources
-<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span> 添加源
-conda config <span class="token operator">-</span><span class="token operator">-</span>add channels
-<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span> 移除源
-conda config <span class="token operator">-</span><span class="token operator">-</span>remove channels<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h2><ol>
-<li>检查是否安装成功<ul>
-<li>node -v</li>
-<li>npm -v</li>
-</ul>
-</li>
-<li>换源<ul>
-<li>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></li>
-<li>测试是否安装成功<ul>
-<li>cnpm</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>设置npm全局模块路径（自定义路径）<ul>
-<li>在NodeJS安装路径下新建两个文件夹： node_globle, node_cache</li>
-<li>npm config set prefix “D:\Environments\nodejs\node_globle”</li>
-<li>npm config set cache “D:\Environments\nodejs\node_cache”</li>
-</ul>
-</li>
-<li>添加环境变量<ul>
-<li>NODE_PATH<ul>
-<li>D:\Enviroment\NodeJs\node_globle\node_modules</li>
-</ul>
-</li>
-<li>PATH<ul>
-<li>D:\Enviroment\NodeJs\node_globle\</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><ol>
-<li>cnpm install -g hexo-cli</li>
-<li>hexo -v</li>
-<li>hexo init (在指定的存放博客目录下使用)</li>
-<li>hexo s</li>
-<li>localhost:4000测试</li>
-<li>常用命令</li>
-</ol>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token operator">*</span> hexo c 	<span class="token comment">// 清理缓存文件</span>
-<span class="token operator">*</span> hexo g	<span class="token comment">// 生成文件</span>
-<span class="token operator">*</span> hexo s	<span class="token comment">// 运行本地服务器</span>
-<span class="token operator">*</span> hexo d	<span class="token comment">// 上传到服务器</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<hr>
-<h3 id="Hexo迁移"><a href="#Hexo迁移" class="headerlink" title="Hexo迁移"></a>Hexo迁移</h3><div class="info">
-
-<blockquote>
-<p>将电脑上的博客迁移到另一台电脑</p>
-</blockquote>
-</div>
-
-<ol>
-<li>备份原来的博客文件夹，清单如下：<ul>
-<li>_config.yml</li>
-<li>package.json</li>
-<li>scaffolds/</li>
-<li>source/</li>
-<li>themes/</li>
-</ul>
-</li>
-<li>在新电脑上安装环境（node，hexo）</li>
-<li>在博客目录下（与原来的博客路径保持一致最好，不同的话没试过）<ul>
-<li>cnpm install –save hexo-deployer-git</li>
-<li>hexo c<ul>
-<li>这里会报错，缺少相关依赖，根据提示安装即可</li>
-<li>再次执行hexo c</li>
-</ul>
-</li>
-<li>hexo g</li>
-<li>hexo s</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="VS-Code"><a href="#VS-Code" class="headerlink" title="VS Code"></a>VS Code</h2><h3 id="安装的插件"><a href="#安装的插件" class="headerlink" title="安装的插件"></a>安装的插件</h3><blockquote>
-<ol>
-<li><p>open-in-browser 在浏览器中查看</p>
-</li>
-<li><p>Auto Close Tag 自动闭合标签</p>
-</li>
-<li><p>Auto Rename Tag 尾部闭合标签同步修改</p>
-</li>
-<li><p>Bracket Pair Colorizer 用不同颜色高亮显示匹配的括号</p>
-</li>
-<li><p>Highlight Matching Tag 高亮显示匹配标签</p>
-</li>
-<li><p>Vscode-icons VSCode 文件图标</p>
-</li>
-<li><p>TODO Highlight 高亮</p>
-</li>
-<li><p>Code Spell Checker 单词拼写检查</p>
-</li>
-<li><p>Code Runner 运行选中代码段</p>
-</li>
-</ol>
-<ul>
-<li>Python开发时的配置</li>
-<li>输出时中文乱码<ul>
-<li>“code-runner.runInTerminal”: true</li>
-</ul>
-</li>
-</ul>
-<ol start="10">
-<li><p>Improt Cost 成本提示</p>
-</li>
-<li><p>WakaTime 计算代码工作量</p>
-</li>
-<li><p>Settings Sync 同步扩展配置到GitHub</p>
-</li>
-</ol>
-</blockquote>
-<p><a href="https://www.cnblogs.com/lychee/p/11214032.html">参考</a></p>
-<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><h4 id="编辑器与窗口管理"><a href="#编辑器与窗口管理" class="headerlink" title="编辑器与窗口管理"></a>编辑器与窗口管理</h4><pre class="line-numbers language-none"><code class="language-none">Ctrl+Shift+P: 打开命令面板。
-
-Ctrl+Shift+N: 新建窗口。
-
-Ctrl+Shift+W: 关闭窗口。
-
-切分窗口：Ctrl+1/Ctrl+3/Ctrl+3
-
-Ctrl+H：最小化窗口
-
-Ctrl+B：显示/隐藏侧边栏
-
-Ctrl+"+/-"：放大/缩小界面<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h4 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h4><pre class="line-numbers language-none"><code class="language-none">Ctrl+N：新建文件
-
-Ctrl+W：关闭文件
-
-Ctrl+Tab：文件切换<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h4 id="格式调整"><a href="#格式调整" class="headerlink" title="格式调整"></a>格式调整</h4><pre class="line-numbers language-none"><code class="language-none">Ctrl+C/Ctrl+V：复制或剪切当前行/当前选中内容
-
-Alt+Up/Down：向上/下移动一行
-
-Shift+Alt+Up//Down：向上/下复制一行
-
-Ctrl+Delete：删除当前行
-
-Shift+Alt+Left/Right：从光标开始向左/右选择内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h4 id="代码编辑"><a href="#代码编辑" class="headerlink" title="代码编辑"></a>代码编辑</h4><pre class="line-numbers language-none"><code class="language-none">Ctrl+D：选中下一个相同内容
-
-Ctrl+Shift+L：选中所有相同内容
-
-Ctrl+F：查找内容
-
-Ctrl+Shit+F：在整个文件夹中查找内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><ol>
-<li><p>检查本机是否有ssh key设置，打开git bash客户端：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">cd <span class="token operator">~</span><span class="token operator">/</span><span class="token punctuation">.</span>ssh或cd <span class="token punctuation">.</span>ssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
-<li><p>使用Git Bash生成新的ssh key</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">cd <span class="token operator">~</span>  <span class="token comment">#保证当前路径在”~”下</span>
-ssh<span class="token operator">-</span>keygen <span class="token operator">-</span>t rsa <span class="token operator">-</span>C <span class="token string">"xxxxxx@yy.com"</span>  <span class="token comment">#填写自己真实有效的邮箱地址</span>
-Generating public<span class="token operator">/</span>private rsa key pair<span class="token punctuation">.</span>
-Enter <span class="token builtin">file</span> <span class="token keyword">in</span> which to save the key <span class="token punctuation">(</span><span class="token operator">/</span>c<span class="token operator">/</span>Users<span class="token operator">/</span>xxxx_000<span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#不填直接回车</span>
-Enter passphrase <span class="token punctuation">(</span>empty <span class="token keyword">for</span> no passphrase<span class="token punctuation">)</span><span class="token punctuation">:</span>   <span class="token comment">#输入密码（可以为空）</span>
-Enter same passphrase again<span class="token punctuation">:</span>   <span class="token comment">#再次确认密码（可以为空）</span>
-Your identification has been saved <span class="token keyword">in</span> <span class="token operator">/</span>c<span class="token operator">/</span>Users<span class="token operator">/</span>xxxx_000<span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa<span class="token punctuation">.</span>   <span class="token comment">#生成的id_rsa文件为密钥</span>
-Your public key has been saved <span class="token keyword">in</span> <span class="token operator">/</span>c<span class="token operator">/</span>Users<span class="token operator">/</span>xxxx_000<span class="token operator">/</span><span class="token punctuation">.</span>ssh<span class="token operator">/</span>id_rsa<span class="token punctuation">.</span>pub<span class="token punctuation">.</span>  <span class="token comment">#生成的id_rsa.pub公钥</span>
-The key fingerprint <span class="token keyword">is</span><span class="token punctuation">:</span>
-e3<span class="token punctuation">:</span><span class="token number">51</span><span class="token punctuation">:</span><span class="token number">33</span><span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xxx<span class="token punctuation">:</span><span class="token number">61</span><span class="token punctuation">:</span><span class="token number">28</span><span class="token punctuation">:</span><span class="token number">83</span><span class="token punctuation">:</span>e2<span class="token punctuation">:</span><span class="token number">81</span> xxxxxx@yy<span class="token punctuation">.</span>com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-<li><p>配置GitHub账户</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">git config <span class="token operator">-</span><span class="token operator">-</span><span class="token keyword">global</span> user<span class="token punctuation">.</span>name “your_username”  <span class="token comment">#设置用户名</span>
-git config <span class="token operator">-</span><span class="token operator">-</span><span class="token keyword">global</span> user<span class="token punctuation">.</span>email “your_registered_github_Email”  <span class="token comment">#设置邮箱地址(建议用注册giuhub的邮箱)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
-<li><p>测试ssh keys是否设置成功</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">ssh <span class="token operator">-</span>T git@github<span class="token punctuation">.</span>com
-The authenticity of host <span class="token string">'github.com (192.30.252.129)'</span> can't be established<span class="token punctuation">.</span>
-RSA key fingerprint <span class="token keyword">is</span> <span class="token number">16</span><span class="token punctuation">:</span><span class="token number">27</span><span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>xx<span class="token punctuation">:</span>4d<span class="token punctuation">:</span>eb<span class="token punctuation">:</span>df<span class="token punctuation">:</span>a6<span class="token punctuation">:</span><span class="token number">48.</span>
-Are you sure you want to <span class="token keyword">continue</span> connecting <span class="token punctuation">(</span>yes<span class="token operator">/</span>no<span class="token punctuation">)</span>? yes <span class="token comment">#确认你是否继续联系，输入yes</span>
-Warning<span class="token punctuation">:</span> Permanently added <span class="token string">'github.com,192.30.252.129'</span> <span class="token punctuation">(</span>RSA<span class="token punctuation">)</span> to the <span class="token builtin">list</span> of known hosts<span class="token punctuation">.</span>
-Enter passphrase <span class="token keyword">for</span> key <span class="token string">'/c/Users/xxxx_000/.ssh/id_rsa'</span><span class="token punctuation">:</span>  <span class="token comment">#生成ssh kye是密码为空则无此项，若设置有密码则有此项且，输入生成ssh key时设置的密码即可。</span>
-Hi xxx! You've successfully authenticated<span class="token punctuation">,</span> but GitHub does <span class="token keyword">not</span> provide shell access<span class="token punctuation">.</span> <span class="token comment">#出现词句话，说明设置成功。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>Reference: [<a href="https://segmentfault.com/a/1190000004564905">Windows下配置Git连接上github - SegmentFault 思否</a>]:</p>
-</li>
-</ol>
-<h2 id="文档写作"><a href="#文档写作" class="headerlink" title="文档写作"></a>文档写作</h2><h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><p>配置快捷设置字体颜色</p>
-<p>快捷键：</p>
-<ul>
-<li>Ctrl+Alt+o 橙色</li>
-<li>Ctrl+Alt+r 红色</li>
-<li>Ctrl+Alt+b 浅蓝色</li>
-</ul>
-<p>Reference：</p>
-<ul>
-<li><p><a href="https://blog.csdn.net/u010886217/article/details/109661322">Typora修改字体颜色快捷键设置</a></p>
-</li>
-<li></li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术开发</category>
-      </categories>
-      <tags>
-        <tag>环境配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>前端进阶</title>
-    <url>/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/jin-jie/</url>
-    <content><![CDATA[<h1 id="进阶内容"><a href="#进阶内容" class="headerlink" title="进阶内容"></a>进阶内容</h1><h2 id="Vue原理"><a href="#Vue原理" class="headerlink" title="Vue原理"></a>Vue原理</h2><h3 id="响应式原理"><a href="#响应式原理" class="headerlink" title="响应式原理"></a>响应式原理</h3><hr>
-<h2 id="浏览器原理"><a href="#浏览器原理" class="headerlink" title="浏览器原理"></a>浏览器原理</h2><hr>
-<h2 id="Web安全"><a href="#Web安全" class="headerlink" title="Web安全"></a>Web安全</h2><hr>
-<h2 id="JavaScript引擎"><a href="#JavaScript引擎" class="headerlink" title="JavaScript引擎"></a>JavaScript引擎</h2><hr>
-<h2 id="项目工程化"><a href="#项目工程化" class="headerlink" title="项目工程化"></a>项目工程化</h2><h3 id="Mock-js的使用"><a href="#Mock-js的使用" class="headerlink" title="Mock.js的使用"></a>Mock.js的使用</h3><hr>
-<h3 id="打包构建"><a href="#打包构建" class="headerlink" title="打包构建"></a>打包构建</h3><p>webpack</p>
-<p>babel</p>
-<p>Sass</p>
-<hr>
-<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><hr>
-<h2 id="招聘要求"><a href="#招聘要求" class="headerlink" title="招聘要求"></a>招聘要求</h2><p>精通HTML、CSS、JS，熟悉页面架构和布局，熟悉HTML5/CSS3等常用技术，，具备浏览器兼容处理能力；</p>
-<p>能熟练掌握至少一种主流前端框架React、Vue、Angular等，并了解其特性原理，有移动端App开发经验者优先  </p>
-<ul>
-<li>深入应用并深入理解其设计原理</li>
-</ul>
-<p>具备跨浏览器、跨终端的前端开发经验</p>
-<p>UI框架：</p>
-<ul>
-<li>bootstrap</li>
-<li>pure</li>
-<li>kendo</li>
-</ul>
-<p>构建工具：</p>
-<ul>
-<li>Grunt</li>
-<li>Gulp</li>
-<li>Webpack</li>
-<li>Rollup</li>
-</ul>
-<p>NodeJS：</p>
-<ul>
-<li>Koa</li>
-</ul>
-<p>Server端语言</p>
-<ul>
-<li>Node.JS</li>
-<li>PHP</li>
-<li>Python</li>
-<li>Java</li>
-<li>Ruby</li>
-<li>C</li>
-<li>C++</li>
-<li>C#</li>
-</ul>
-<hr>
-<p>加分项：</p>
-<ul>
-<li>对编程语言设计有了解，对抽象语法树（AST）有一定的认知</li>
-<li>对网站性能优化有所研究，在实际项目中有经验者优先</li>
-<li>熟练掌握基于 Node.js 的 SSR技术及原理，对 Node.js 的性能调优，问题诊断有经验者优先</li>
-<li>有 Flutter 的开发经验，在 Web 与 Native 技术的融合上有自己的探索</li>
-</ul>
-]]></content>
-      <categories>
-        <category>技术沉淀</category>
-      </categories>
-      <tags>
-        <tag>入坑指南</tag>
       </tags>
   </entry>
   <entry>
@@ -1662,15 +1666,277 @@ Hi xxx! You've successfully authenticated<span class="token punctuation">,</span
       </tags>
   </entry>
   <entry>
-    <title>Vue源码阅读之虚拟DOM</title>
-    <url>/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/vue-xu-ni-dom/</url>
-    <content><![CDATA[<h1 id="Vue虚拟DOM"><a href="#Vue虚拟DOM" class="headerlink" title="Vue虚拟DOM"></a>Vue虚拟DOM</h1><p>函数柯里化</p>
+    <title>web性能的衡量</title>
+    <url>/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/web-xing-neng-de-heng-liang/</url>
+    <content><![CDATA[<h1 id="web性能的衡量"><a href="#web性能的衡量" class="headerlink" title="web性能的衡量"></a>web性能的衡量</h1><p>衡量性能提供了一个重要的指标来帮助您评估应用程序、站点或 Web 服务的成功。</p>
+<p>例如，您可以使用性能指标来确定您的应用程序如何执行与竞争对手相比，或者您可以比较您的应用程序的性能跨版本。您选择度量的指标应该与您的用户、站点和业务目标相关。应该以一致的方式收集和测量它们，并以非技术涉众可以使用和理解的格式进行分析。</p>
+<p>本文介绍了 Web 性能指标，您可以使用这些指标来衡量和优化站点的性能。</p>
+<hr>
+<h2 id="Performance-APIs"><a href="#Performance-APIs" class="headerlink" title="Performance APIs"></a>Performance APIs</h2><p>在为 Web 编写代码时，可以使用大量的 Web API 来创建自己的性能度量工具。</p>
+<p>您可以使用导航定时 API 来衡量客户端 Web 性能; 包括卸载前一页所需的时间、域查找所需的时间、执行窗口的加载处理程序所花的总时间等等。您可以将 API 用于与下图中显示的所有导航事件相关的度量。</p>
+<p><img src="https://developer.mozilla.org/en-US/docs/Learn/Performance/Measuring_performance/navigationtimingapi.jpg" alt="浏览器导航事件"></p>
+<p>Performance API 提供对当前页的性能相关信息的访问，包括 Performance Timeline API、导航计时 API、用户计时 API 和资源计时 API。这些接口允许精确测量 JavaScript 任务完成所需的时间。</p>
+<p>PerformanceEntry 对象是性能时间线的一部分。性能条目可以通过在应用程序的显式点上创建性能标记或度量(例如通过调用 mark ()方法)来直接创建。性能条目也是以间接的方式创建的; 例如加载资源，比如图像。</p>
+<p>PerformanceObserver API 可以用来观察性能测量事件，当新的性能条目记录在浏览器的性能时间表中时，它可以通知您。</p>
+<p>虽然本文不深入讨论如何使用这些 API，但了解它们的存在是很有用的。您还可以参考导航和计时文章，以获得有关使用性能 WebAPI 的进一步示例。</p>
+<hr>
+<h2 id="Tools-and-metrics"><a href="#Tools-and-metrics" class="headerlink" title="Tools and metrics"></a>Tools and metrics</h2><p>有许多不同的工具可以帮助您提高性能。一般可分为两类:</p>
+<ul>
+<li>指示或衡量性能的工具，例如 <a href="https://pagespeed.web.dev/">PageSpeed Insights</a> 或 Firefox <a href="https://firefox-source-docs.mozilla.org/devtools-user/network_monitor/index.html">Network Monitor</a> 和 <a href="https://firefox-source-docs.mozilla.org/devtools-user/performance/index.html">Performance Monitor</a>。这些工具可显示 Web 应用或网站加载的速度或速度。它们还指示可以改进以优化 Web 应用的区域。</li>
+<li>用于更新代码以使您的 Web 应用或网站性能更好的工具。例如，捆绑工具将代码打包到单个文件中，以减少 HTTP 请求的数量，或者从代码中删除所有空格以使文件变小的缩微器。</li>
+</ul>
+<p>我们将在本课程中讨论这两个类别。除了讨论性能指标，我们当然还会讨论用来衡量网站性能是否有所提高的指标。</p>
+<hr>
+<h3 id="General-performance-reporting-tools"><a href="#General-performance-reporting-tools" class="headerlink" title="General performance reporting tools"></a>General performance reporting tools</h3><p>像 PageSpeed Insights 这样的工具可以衡量网站的性能。您可以输入一个 URL 并在几秒钟内得到一个性能报告。该报告包含有关您的网站如何执行的分数，无论是在移动和桌面。这是一个很好的开始，让你了解你已经做得很好的地方和可以改进的地方。</p>
+<p>在撰写本文时，MDN 的业绩报告摘要与下列内容类似:</p>
+<p><img src="https://developer.mozilla.org/en-US/docs/Learn/Performance/Measuring_performance/pagespeed-insight-mozilla-homepage.png" alt="MDN网站的性能表现"></p>
+<p>性能报告包含诸如用户在页面上显示任何内容之前需要等待多长时间、显示页面需要下载多少字节等信息。它还让您知道测量值被认为是好的还是坏的。</p>
+<p>Webpagetest.org 是自动测试站点并返回有用指标的工具的另一个例子。</p>
+<p>现在试着在 webpagetest.org 和 PageSpeed Insights 上运行你最喜欢的网站，看看得分是多少。</p>
+<hr>
+<h3 id="Network-tools"><a href="#Network-tools" class="headerlink" title="Network tools"></a>Network tools</h3><p>大多数浏览器都有可用的工具，您可以使用这些工具来对加载的页面运行并确定它们的执行情况。例如，Firefox 网络监视器返回从网络下载的所有资产的详细信息，以及显示每个资产下载所用时间的时间图。</p>
+<p><img src="https://developer.mozilla.org/en-US/docs/Learn/Performance/Measuring_performance/network-monitor.png" alt="浏览器的网络工具示例"></p>
+<p>当您执行不同的操作时，您还可以使用 Performance Monitor 来度量 Web 应用程序或站点的用户界面的性能。这表明可能会减慢你的网络应用程序或网站的功能。</p>
+<hr>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>本文提供了 Web 性能指标的简要概述，以帮助您了解在 Web 应用程序或站点上可以衡量什么。接下来，您将了解感知性能和一些技术，以使不可避免的性能损害对用户显得不那么严重，或者完全掩盖它们。</p>
 ]]></content>
       <categories>
         <category>技术沉淀</category>
       </categories>
       <tags>
-        <tag>虚拟DOM</tag>
+        <tag>web性能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>web性能</title>
+    <url>/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/web-xing-neng/</url>
+    <content><![CDATA[<div class="admonition info"><p class="admonition-title">info</p><p>本文翻译自<a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/What_is_web_performance">MDN</a>。</p>
+</div>
+
+<h1 id="web性能"><a href="#web性能" class="headerlink" title="web性能"></a>web性能</h1><p>​        Web 性能就是让网站变得更快，包括让缓慢的过程看起来更快。网站是否加载迅速，允许用户快速开始与其交互，并且如果某些东西需要花时间加载(例如加载微调器) ，是否能提供令人放心的反馈？滚动和动画是否流畅？这篇文章提供了一个客观的，可测量的网络性能的简要介绍 * ，看看什么技术，技术和工具涉及到网络优化。</p>
+<p>* 相对于主观的，感知的表现，将在下一篇文章中讨论。</p>
+<h2 id="什么是网络性能？"><a href="#什么是网络性能？" class="headerlink" title="什么是网络性能？"></a>什么是网络性能？</h2><p>Web 性能是对网站或应用程序的客观测量和感知用户体验。这包括以下主要领域:</p>
+<ul>
+<li><strong>减少整体负载时间</strong>：呈现网站所需的文件需要多长时间才能下载到用户的计算机上？这往往会受到<a href="https://developer.mozilla.org/en-US/docs/Web/Performance/Understanding_latency">延迟</a>，文件有多大，文件数量以及其他因素的影响。一般的策略是使文件尽可能小，尽可能减少HTTP请求的数量，并采用巧妙的加载技术（如<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload">预加载</a>）来使文件更快地可用。</li>
+<li><strong>使网站尽快可用：</strong>这基本上意味着以合理的顺序加载您的网站资源，以便用户可以非常快速地开始实际使用它。当用户继续执行主要任务时，任何其他资产都可以继续在后台加载，有时我们只在实际需要时才加载资产（这称为<a href="https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading">延迟加载</a>）。<u>测量网站在开始加载后需要多长时间才能达到可用开始的时间称为<a href="https://developer.mozilla.org/en-US/docs/Glossary/Time_to_interactive">交互时间</a>。</u></li>
+<li><strong>流畅性和互动性</strong>：应用程序使用起来是否可靠和愉快？滚动是否流畅？按钮是可点击的吗？弹出窗口是否快速打开，它们是否在打开时会顺利地制作动画？在使应用程序感觉流畅时，需要考虑许多最佳实践，例如使用CSS动画而不是JavaScript进行动画，并最大限度地减少由于DOM中的更改而导致的UI所需的重绘次数。</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/Perceived_performance"><strong>感知性能</strong></a>：一个网站在用户看来有多快，对用户体验的影响比网站实际上有多快更大。用户如何看待您的性能与任何客观统计数据一样重要，甚至可能更重要，但这是主观的，不容易衡量。感知性能是用户视角，而不是度量标准。即使一个操作需要很长时间(因为延迟或其他原因) ，在用户等待的时候，通过显示一个加载旋转器，或者一系列有用的提示和技巧(或者笑话，或者其他你认为合适的东西) ，也可以让用户保持忙碌。这种方法比什么都不显示要好得多，因为这会让用户感觉花费的时间长得多，并可能导致用户认为它已经坏了并放弃使用。</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/Measuring_performance"><strong>性能测量</strong></a>：Web 性能涉及测量应用程序的实际速度和感知速度，在可能的情况下进行优化，然后监视性能，以确保优化的内容保持优化。这涉及许多指标（可以指示成功或失败的可衡量指标）和用于衡量这些指标的工具，我们将在本模块中讨论这些指标。</li>
+</ul>
+<p>总之，许多特性会影响性能，包括延迟、应用程序大小、 DOM 节点的数量、发出的资源请求的数量、 JavaScript 性能、 CPU 负载等等。重要的是尽量减少加载和响应时间，并添加额外的功能来隐藏延迟，使体验尽可能可用和交互，尽快，同时异步加载在较长的尾部部分的体验。</p>
+<div class="admonition warning"><p class="admonition-title">注意
+</p><p>Web 性能既包括加载时间、每秒帧数和<a href="https://developer.mozilla.org/en-US/docs/Glossary/Time_to_interactive">交互时间</a>等客观度量，也包括加载内容所花费多长时间的主观体验。</p>
+</div>
+
+<hr>
+<h2 id="内容的呈现方式"><a href="#内容的呈现方式" class="headerlink" title="内容的呈现方式"></a>内容的呈现方式</h2><p>​        为了有效地理解Web性能，其背后的问题以及我们上面提到的主要主题领域，您确实应该了解有关浏览器如何工作的一些细节。这包括：</p>
+<ul>
+<li><strong>浏览器的工作原理</strong>。当您请求URL并点击/时，浏览器会找出保存该网站文件的服务器的位置，建立与该网站的连接并请求文件。有关详细概述<a href="https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work">，请参阅填充页面：浏览器的工作原理</a>。</li>
+<li><strong>源顺序</strong>。HTML 索引文件的源顺序会显著影响性能。从索引文件链接到的其他资源的下载通常是顺序的，基于源顺序，但这可以纵并且绝对应该优化，意识到某些资源会阻止其他下载，直到其内容被解析和执行。</li>
+<li><strong>关键路径</strong>。这是浏览器在从服务器下载文件后用来构造 Web 文档的过程。浏览器遵循一组明确定义的步骤，优化关键呈现路径以优先显示与当前用户操作相关的内容，将显著缩短内容呈现时间。有关详细信息<a href="https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path">，请参阅关键渲染路径</a>。</li>
+<li><strong>文档对象模型</strong>。文档对象模型 （DOM） 是一种树结构，它将 HTML 的内容和元素表示为节点树。这包括所有 HTML 属性和节点之间的关系。加载页面后进行广泛的 DOM 操作（例如，添加、删除或移动节点）可能会影响性能，因此有必要了解如何使用 DOM，以及如何缓解此类问题。有关详细信息，请参阅<a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">文档对象模型</a>。</li>
+<li><strong>延迟</strong>。我们之前简要提到了这一点，但简而言之，延迟是您的网站资源从服务器传输到用户计算机所需的时间。建立TCP和HTTP连接涉及开销，并且在网络上来回推送请求和响应字节时存在一些不可避免的延迟，但是有一些方法可以减少延迟（例如，通过下载更少的文件来减少HTTP请求的数量，使用<a href="https://developer.mozilla.org/en-US/docs/Glossary/CDN">CDN</a>使您的网站在全球范围内更加普遍地执行， 并使用 HTTP/2 从服务器更有效地提供文件）。您可以在<a href="https://developer.mozilla.org/en-US/docs/Web/Performance/Understanding_latency">了解延迟</a>中阅读有关此主题的所有信息。</li>
+</ul>
+<hr>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>到此为止，我们希望我们对 Web 性能主题的简要概述能够帮助您了解它的全部内容，并使您对学习更多内容感到兴奋。接下来，我们将看看感知性能，以及如何使用一些聪明的技术，使一些不可避免的性能损害对用户显得不那么严重，或者完全掩盖它们。</p>
+]]></content>
+      <categories>
+        <category>技术沉淀</category>
+      </categories>
+      <tags>
+        <tag>web性能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多媒体-图像与影片</title>
+    <url>/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/duo-mei-ti-tu-xiang-yu-ying-pian/</url>
+    <content><![CDATA[<h1 id="多媒体：图像与影片"><a href="#多媒体：图像与影片" class="headerlink" title="多媒体：图像与影片"></a>多媒体：图像与影片</h1><p>媒体，换句话说就是图像跟影片，平均占了网站超过 70%的下载流量。以下载的效能来考虑的话，减少媒体数量和档案大小是一个简单可以实现的目标。 这篇文章聚焦在优化图像跟影片来改善网站的效能。</p>
+<div class="admonition info"><p class="admonition-title">备注
+</p><p>这是一篇进阶的在 web 上优化多媒体的介绍，包含基本的原则还有技巧，想了更多的话，可以看 <a href="https://images.guide/">https://images.guide</a>。</p>
+</div>
+
+<hr>
+<h2 id="为什么要优化你的多媒体"><a href="#为什么要优化你的多媒体" class="headerlink" title="为什么要优化你的多媒体"></a>为什么要优化你的多媒体</h2><p>对于平均的网站, <a href="https://discuss.httparchive.org/t/state-of-the-web-top-image-optimization-strategies/1367">51% 的频宽消耗来自图像, 而影像则是 25%</a>，所以我们可以说处理和优化你的多媒体是很重要的。</p>
+<p>你必须考虑流量的使用. 很多的人都是使用流量有限制的上网方案， 或是用多少付多少的上网方案，也就是根据用了多少 MB 来付费。这样的问题不是只发生在新兴国家的市场. 在 2018 年, <a href="https://www.ofcom.org.uk/__data/assets/pdf_file/0021/113169/Technology-Tracker-H1-2018-data-tables.pdf">英国仍有 24% 在使用「用多少付多少」的方案</a>。</p>
+<p>你还需要考虑记忆体的问题，因为许多移动设备的 RAM 都有限。有一件很重要的事你必须要记住，下载的图像是被储存在记忆体裡的。</p>
+<hr>
+<h2 id="优化图像传输"><a href="#优化图像传输" class="headerlink" title="优化图像传输"></a>优化图像传输</h2><p>儘管是频宽的最大消耗者，但因为图像是非同步载入的，所以访问者可以在下载的同时看到页面。因此，它们对<a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/Perceived_performance">感知性能的影响</a>远低于许多人的预期。 然而，图像在内容中很常被使用，因此，重要的应该是让访问者尽快地看到它们，以获得良好的体验。</p>
+<h3 id="载入策略"><a href="#载入策略" class="headerlink" title="载入策略"></a>载入策略</h3><p>对于大多数网站来说，最大改进之一是将不在视窗裡的图像做 lazy-loading ，而不是在初始页面载入时就全部下载下来，不管访问者是否之后会往下滚动查看它们。 许多 JavaScript 函式库都可以为你实现这个功能，例如说 lazysize，并且浏览器的供应商也正在着手原生的 <code>lazyload</code> 属性，然而目前还处于实验阶段。</p>
+<p>除了载入图像的子集之外，接下来您还应该研究一下图像本身的格式：</p>
+<ul>
+<li>你是否正在载入最佳格式？ （见下文）</li>
+<li>你载入的尺寸正确吗？</li>
+<li>你已经压缩图像了吗？ (查看 <a href="https://imageoptim.com/">ImageOptim</a>)</li>
+</ul>
+<h3 id="最佳格式"><a href="#最佳格式" class="headerlink" title="最佳格式"></a>最佳格式</h3><p>这非常值得用一个章节来介绍。因为为图像选择正确的格式可能很棘手。格式通常取决于图像的用途：</p>
+<ul>
+<li><strong>Progressive JPEG</strong>—不需要移动卷轴就能看到的网页图像。</li>
+<li><strong>WebP / JPEG-XR / JPEG2000</strong>—往下移动卷轴才能看到网页图像。</li>
+<li><strong>PNG / WebP</strong>—有透明度的图像。</li>
+<li><strong>SVG</strong>—向量图, 图示 (备注： SVGs 比 icon fonts 还要好得多！).</li>
+</ul>
+<p>优先在不需要移动卷轴就能看到的网页区域使用 Progressive JPEG 的原因是因为它们会逐渐地进行渲染（因此得名），这意味着用户可以先看到低解析度的版本，然后再逐渐地变得清晰。而不是从顶部一行一行的以最高解析度来载入图像，或甚至只有在完全下载好后才显示。</p>
+<h3 id="控制下载图像的优先级别（和顺序）"><a href="#控制下载图像的优先级别（和顺序）" class="headerlink" title="控制下载图像的优先级别（和顺序）"></a>控制下载图像的优先级别（和顺序）</h3><p>将最重要的图像更早地呈现在访问者面前，可以改善感知性能。</p>
+<p>第一件要确认的事情是，你的前景图像标籤 <code>&lt;img /&gt;</code> 跟你定义在 CSS 裡 <code>background-image</code> 的背景图像 — 前景图像比背景图像被赋予更高的优先级别。</p>
+<p>其次，通过采用优先级别提示，你可以在图像标籤中添加<code>importance</code> 属性来进一步控制优先级别。轮播是一个在图像上使用优先级别提示的例子，它的第一个图像的优先级高于其他的图像。</p>
+<h3 id="渲染策略"><a href="#渲染策略" class="headerlink" title="渲染策略"></a>渲染策略</h3><p>由于图像是非同步载入的，并且会在第一次渲染后继续载入，因此，如果在载入之前未定义尺寸的话，则可能会导致页面内容的重新编排。比如说，当图像载入时，文字内容可能会被挤压到下面。所以， 很重要的是，定义 <code>width</code> 跟 <code>height</code> 或是新的 <code>intrinsicsize</code> 属性。</p>
+<p>对于任何的背景图像，设置 <code>background-color</code> 的值非常重要，因为在图像下载之前，它能让上面的内容是能够被阅读的。</p>
+<h2 id="优化影像传送"><a href="#优化影像传送" class="headerlink" title="优化影像传送"></a>优化影像传送</h2><p>为了确保您不会将不必要的大文件发送给用户，最好<a href="https://developer.mozilla.org/zh-TW/docs/Learn/Performance/Multimedia#compress"> 压缩所有你要传输的影像</a>，<a href="https://developer.mozilla.org/zh-TW/docs/Learn/Performance/Multimedia#omptimize">优化<code>&lt;source&gt;</code> 顺序</a>, 设定 <a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/Multimedia#video_autoplay">autoplay</a>, <a href="https://developer.mozilla.org/zh-TW/docs/Learn/Performance/Multimedia#muted">移除静音影像的声音</a>, <a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/Multimedia#video_preload">优化影像预载</a>, 还有 <a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/Multimedia#consider_streaming">考虑串流</a> 这部影像。</p>
+<h3 id="压缩所有影像"><a href="#压缩所有影像" class="headerlink" title="压缩所有影像"></a>压缩所有影像</h3><p>大多数的影像压缩工作都包含，比较影像裡的相邻帧，并删除原始帧和后续帧中相同的细节。你想同时压缩影像并将其汇出为多种影像格式, 包含 WebM，MPEG-4/H.264，以及 Ogg/Theora.</p>
+<p>你用来创建影像的软体可能包含优化档案大小的功能。如果没有的话，那么可以考虑几种线上工具，像是之后篇章会讨论的 <a href="https://www.ffmpeg.org/">FFmpeg</a>，他可以协助编码，解码，转换，以及呈现其他神奇的功能。</p>
+<h3 id="优化-lt-source-gt-顺序"><a href="#优化-lt-source-gt-顺序" class="headerlink" title="优化 <source> 顺序"></a>优化 &lt;source&gt; 顺序</h3><p>从最小到最大来排序影像的来源。例如说，给定三个压缩影像，分别为 10 MB，12MB，以及 13MB, 把最小的摆在第一个，最大的摆在最后一格。</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>400<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>300<span class="token punctuation">"</span></span> <span class="token attr-name">controls</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>controls<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- WebM: 10 MB --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.webm<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/webm<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token comment">&lt;!-- MPEG-4/H.264: 12 MB --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/mp4<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token comment">&lt;!-- Ogg/Theora: 13 MB --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video.ogv<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/ogv<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>就顺序的角度来说，浏览器会下载它看到的第一个影像来源，因此先让他载入一个较小的影像。就＂最小＂的角度来说，要确认你的压缩影响仍然看起来不会太糟。有几个演算法可能会让你的影像看起来像是个会动的 gif 。虽然 128 Kb 的影像可能在用户体验上会比 10 MB 的影像好，可是把看起来像是 gif 粒状的影像放在内容后面，也可能会对你的品牌产生负面影响。</p>
+<p>查看 <a href="http://caniuse.com/#search=video">CanIUse.com</a> 来确认现今浏览器对于影像以及不同媒体格式的支持。</p>
+<h3 id="影像自动播放"><a href="#影像自动播放" class="headerlink" title="影像自动播放"></a>影像自动播放</h3><p>为了确保循环播放背景影像，你需要向影像标籤裡添加多个属性： <code>autoplay</code>, <code>muted</code>, 以及 <code>playsinline.</code></p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">autoplay</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">loop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">muted</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">playsinline</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>backgroundvideo.mp4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>虽然属性 <code>loop</code> 和 <code>autoplay</code> 在对于影像的循环跟自动播放很合理，可是 <code>muted</code> 属性在行动装置的浏览器裡是必须添加的。</p>
+<p><code>Playsinline</code> 在行动装置裡的 Safari 是必须的，他让影像可以在不需要全萤幕的模式下被播放。</p>
+<h3 id="移除静音影像的声音"><a href="#移除静音影像的声音" class="headerlink" title="移除静音影像的声音"></a>移除静音影像的声音</h3><p>如果你有一个 <code>hero-video</code> 或是其他静音影片, 请将声音从影像中移除。</p>
+<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">autoplay</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">loop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">muted</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">playsinline</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hero-video<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>banner_video.webm<span class="token punctuation">"</span></span>
+          <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">'</span>video/webm; codecs=<span class="token punctuation">"</span>vp8, vorbis<span class="token punctuation">"</span><span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>web_banner.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/mp4<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这段 <code>hero-video</code> 代码, 常出现在许多研讨会网站以及公司的主页， 它是个包括自动播放，循环播放和静音的影像。它不包含任何控制选单，因此无法收听声音。通常它是没有声音的，但仍然存在音轨，因此它仍会消耗频宽。然而，我们没有理由将频宽分给静音影像的声音。移除声音可以节省 20% 的频宽。这代表，如果你的影像是 10 MB，则节省了 2 MB。</p>
+<p>根据您的影像创作软体，你也许可以在汇出和压缩过程中删除声音。 如果没有，那么有一个免费的工具 <a href="https://www.ffmpeg.org/">FFmpeg</a> ，可以使用以下指令来为你完成此任务</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ffmpeg -i original.mp4 -an -c:v copy audioFreeVersion.mp4<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><code>FFmpeg</code> 称自己为＂用于记录，转换和串流音频和影像的完整，跨平台解决方案＂。</p>
+<h3 id="影像预载"><a href="#影像预载" class="headerlink" title="影像预载"></a>影像预载</h3><p>preload 属性具有 3 个可用选项：<code>auto</code>|<code>metadata</code>|<code>none</code>。预设选项是 <code>metadata</code>.</p>
+<p>将选项更改为 <code>auto</code> 会告诉浏览器自动下载整个影像。仅有在极有可能播放时才应该执行此操作，否则会浪费大量的频宽。</p>
+<p><code>preload="metadata"</code> 最多可让 3％ 的影像在页面加载时被下载。 然后对于较大的影像来说，这可能或是大量的频宽。</p>
+<p><code>preload="none"</code> 不会在播放之前下载任何的影像。 这会延迟影像的啟动时间，但能够为播放可能性较低的影像保存大量的频宽。</p>
+<h3 id="考虑串流"><a href="#考虑串流" class="headerlink" title="考虑串流"></a>考虑串流</h3><p><a href="https://www.smashingmagazine.com/2018/10/video-playback-on-the-web-part-2/">串流影像让适当的影像大小和频宽</a> (根据网路速度) 被传递给用户。 就像使用响应式图像一样，正确大小的影像将被传递到浏览器，从而确保用户的快速影像啟动、低缓衝以及优化的播放。</p>
+]]></content>
+      <categories>
+        <category>技术沉淀</category>
+      </categories>
+      <tags>
+        <tag>web性能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>感知性能</title>
+    <url>/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/gan-zhi-xing-neng/</url>
+    <content><![CDATA[<div class="admonition info"><p class="admonition-title">info</p><p>本文翻译自<a href="https://developer.mozilla.org/zh-CN/docs/Learn/Performance/Perceived_performance">MDN</a>。</p>
+</div>
+
+<h1 id="感知性能"><a href="#感知性能" class="headerlink" title="感知性能"></a>感知性能</h1><p>​        <a href="https://developer.mozilla.org/en-US/docs/Glossary/Perceived_performance"><strong>感知性能 (en-US)</strong></a>是用户对网站速度的感受。用户如何看待性能与任何客观统计数据一样重要，甚至更重要，但它是主观的，并且不易测量。感知性能是用户视角，而不是指标。</p>
+<p>​        本文简要介绍了感知性能，着眼于用户的感知，以及可以使用哪些客观工具来衡量这类主观因素。</p>
+<p>​        性能是关于用户视角的。网站加载和渲染的速度比网站实际加载和渲染的速度对用户体验的影响更大。即使一个操作需要很长时间(因为延迟或者主线程不可用) ，在用户等待的时候，通过显示加载旋转器，或者一系列有用的提示和技巧(或者笑话，或者其他你认为合适的东西) ，也可以让用户保持忙碌。这种方法比什么都不显示要好得多，因为这会让用户感觉花费的时间长得多，并可能导致用户认为它已经坏了并放弃使用。</p>
+<p>​        了解您的网站加载速度以及对用户交互的响应程度至关重要;更重要的是实际下载时间，但难以量化。您网站的某些区域可能无法更快地完成，但即使othser部分中讨论的指标无法改进，您也可以使其<em>感觉</em>更快。</p>
+<p>​        没有独角兽度量标准可以衡量用户的感受，但是度量标准在衡量改进(和回归)方面是有用的。相关的测量包括第一次有意义的绘制(FMP) ，最大满意度绘制(LCP) ，交互时间(TTI) ，渲染开始，DOM 交互和速度指数。</p>
+<p>​        浏览器会报告第一次绘制，并提供页面开始变化的时间(以毫秒为单位) ; 但这种变化可以是简单的背景颜色更新，或者是更不明显的变化。它不表示完整性，并且可能报告没有绘制任何可见内容的时间。First Contentful Paint (FCP)报告了浏览器第一次渲染任何重要内容的时间，包括文本、前景或背景图像、画布或 SVG; 捕捉了加载体验的开始。但是，仅仅因为有内容，并不意味着它是有用的内容或者用户有内容可以消费。第一个有意义的绘制，或 FMP，是当内容出现在屏幕上，实际上是有意义的; 这是一个更好的衡量用户感知加载体验，但仍然不理想。最大内容绘图(LCP)度量，在最大内容绘图 API 中定义，报告在 viewport 中可见的最大内容元素的呈现时间。</p>
+<p>​        速度指数还用于近似感知性能: 它测量可见屏幕上要绘制的像素的平均时间。它没有考虑到抖动，也没有权衡哪些内容对用户更重要，所以它不是一个完美的度量。</p>
+<p>​        这些指标与初始负载和渲染有关。同样重要的是，一旦用户开始与站点交互，要确保站点感觉快速。因此，交互时间是一个很好的度量标准; 它是加载过程的最后一个长任务完成的时刻，UI 可用于用户交互，但有延迟。</p>
+<p>​        用户界面缺乏或响应能力不足和恶搞都会损害感知性能。尽管一项任务可能需要很长的时间，但是有很多方法可以让它看起来更快。有几个提高感知性能的技巧。</p>
+<h2 id="提高感知性能"><a href="#提高感知性能" class="headerlink" title="提高感知性能"></a>提高感知性能</h2><p>​        了解网络、浏览器的工作原理、用户对时间的感知等，可以帮助您更好地理解如何改进用户交互。然而，你并不需要知道一切事物的来龙去脉，包括人类大脑是如何工作的，来提高对速度的感知。</p>
+<p>​        感觉某件事发生的快慢很大程度上取决于用户是主动还是被动地等待这件事发生。等待可以有一个主动和被动阶段。当用户处于活动状态——移动鼠标、思考、被入侵时，他们处于活动状态。被动阶段发生在用户被动地等待时，就像盯着单色屏幕一样。如果被动和主动等待时间在客观上相等，用户会估计被动等待时间长于主动等待时间。如果不能客观地进一步减少加载、呈现或响应时间，那么将等待转换为主动等待而不是被动等待可以使其感觉更快。</p>
+<p>​        这里有一些技巧和窍门可以遵循。如果你想深入研究，这些快速提示中的一些有完整的文章。</p>
+<p>​        尽可能快地显示内容，或者至少显示页面的某些部分，指示内容正在加载，对于提高感知性能至关重要。例如，因为页面渲染是通过加载和解析 CSS 和 JavaScript 来阻塞的，所以最小化需要加载的 CSS 和 JS 的数量将对提高感知性能产生重大影响。尽管字节可能是相同的，但是不阻止页面呈现会使加载感觉更快。</p>
+<p>​        这里有一些技巧有助于提升性能：</p>
+<h3 id="最小化初始加载"><a href="#最小化初始加载" class="headerlink" title="最小化初始加载"></a>最小化初始加载</h3><p>​        要提升可感知性能，请最小化页面初始加载。换句话说，首先下载将实际显示的所有内容，但仅下载实际使用的内容，然后下载其余内容。因为最终要下载所有资源，所以实际上资源总量并没有改善——实际上还需要增加一些代码。但因为暂不需要的资源被延后加载了，所以用户并不会感知资源量的增加，而会感受到页面加载更快了。</p>
+<p>​        为了最大程度地<a href="https://onilab.com/blog/perceived-performance-vs-actual-load-time-5-secrets-of-lightning-fast-magento-store/">减少初始加载资源</a>，请从内容中分离交互式功能，以便优先加载初始化时所需的可见内容——文本、样式和图像。延迟加载其余资源。</p>
+<p>​        不要加载初始页面未使用或看不到的图像或脚本，而在页面可用后延时加载，或在需要使用时按需加载。 在初始页面加载之后加载其他资源可提高感知性能。 在初始请求中加载基本数据，并仅根据需要逐步加载功能部件和数据，有助于改善低带宽和低规格硬件的体验。</p>
+<p>​        此外，您应该优化需加载的资源。图片和视频应以最佳格式、压缩后的大小和正确尺寸进行投放。</p>
+<h3 id="防止内容跳转和其他重排"><a href="#防止内容跳转和其他重排" class="headerlink" title="防止内容跳转和其他重排"></a>防止内容跳转和其他重排</h3><p>​        图片或其他资产导致内容被下推或跳转到不同的位置，如加载第三方广告，可以使页面感觉它仍在加载，并对感知性能有害。当不由用户交互启动时，内容重流对用户体验尤其不利。如果某些资产的加载速度比其他资产慢，在其他内容已经绘制到屏幕上之后加载元素，提前计划并在布局中为它们留出空间，这样内容就不会跳跃或调整大小，特别是在网站变得交互性之后。</p>
+<h3 id="避免字体文件延迟"><a href="#避免字体文件延迟" class="headerlink" title="避免字体文件延迟"></a>避免字体文件延迟</h3><p>​        字体的使用既有助于用户体验，也有害于用户体验。选择正确的字体是一种艺术形式，可以大大改善用户体验。字体也可能损害用户体验，特别是如果使用的字体需要导入，如果导入不是最佳的，或者如果使用 Comic Sans (开玩笑)。无样式文本的闪烁和文本丢失都会损害性能。</p>
+<p>​        使备用字体的大小和效果相同，以便当字体加载页面变化不太明显。</p>
+<h3 id="交互类元素是可交互的"><a href="#交互类元素是可交互的" class="headerlink" title="交互类元素是可交互的"></a>交互类元素是可交互的</h3><p>​        确保可见的交互元素始终是交互式和响应式的。如果输入元素是可见的，那么用户应该能够毫无延迟地与它们进行交互。当用户花费超过50毫秒的时间做出反应时，他们会感到某些东西滞后。当内容重新绘制的速度低于16.67 ms (或60帧率)或者重新绘制的时间间隔不均匀时，他们会觉得页面很糟糕。</p>
+<h3 id="使任务启动器显得更具交互性"><a href="#使任务启动器显得更具交互性" class="headerlink" title="使任务启动器显得更具交互性"></a>使任务启动器显得更具交互性</h3><p>​        在按下按键而不是等待按键弹起时发出请求，可以使感知的内容加载减少 200 毫秒。在 KEYUP 后添加一个有趣但不显眼的 200 毫秒动画，甚至可以再降低 200 毫秒的加载感知。您并没有节省 400 毫秒的时间，但是用户直到真正等待内容时，才感觉到他们在等待内容。</p>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>​        通过将尽可能多的下载、渲染和等待时间转换为主动阶段，并减少任何被动等待，即使客观测量保持不变，用户也会感觉内容下载、渲染和响应更快。现在我们知道了应该加快什么，让我们看看一些度量标准，并了解如何度量这些事件。</p>
+]]></content>
+      <categories>
+        <category>技术沉淀</category>
+      </categories>
+      <tags>
+        <tag>web性能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>渲染页面：浏览器的工作原理</title>
+    <url>/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/liu-lan-qi-yuan-li/</url>
+    <content><![CDATA[<h1 id="浏览器工作原理"><a href="#浏览器工作原理" class="headerlink" title="浏览器工作原理"></a>浏览器工作原理</h1>]]></content>
+      <categories>
+        <category>技术沉淀</category>
+      </categories>
+      <tags>
+        <tag>浏览器工作原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端进阶</title>
+    <url>/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/jin-jie/</url>
+    <content><![CDATA[<h1 id="进阶内容"><a href="#进阶内容" class="headerlink" title="进阶内容"></a>进阶内容</h1><h2 id="Vue原理"><a href="#Vue原理" class="headerlink" title="Vue原理"></a>Vue原理</h2><h3 id="响应式原理"><a href="#响应式原理" class="headerlink" title="响应式原理"></a>响应式原理</h3><hr>
+<h2 id="浏览器原理"><a href="#浏览器原理" class="headerlink" title="浏览器原理"></a>浏览器原理</h2><hr>
+<h2 id="Web安全"><a href="#Web安全" class="headerlink" title="Web安全"></a>Web安全</h2><hr>
+<h2 id="JavaScript引擎"><a href="#JavaScript引擎" class="headerlink" title="JavaScript引擎"></a>JavaScript引擎</h2><hr>
+<h2 id="项目工程化"><a href="#项目工程化" class="headerlink" title="项目工程化"></a>项目工程化</h2><h3 id="Mock-js的使用"><a href="#Mock-js的使用" class="headerlink" title="Mock.js的使用"></a>Mock.js的使用</h3><hr>
+<h3 id="打包构建"><a href="#打包构建" class="headerlink" title="打包构建"></a>打包构建</h3><p>webpack</p>
+<p>babel</p>
+<p>Sass</p>
+<hr>
+<h2 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h2><hr>
+<h2 id="招聘要求"><a href="#招聘要求" class="headerlink" title="招聘要求"></a>招聘要求</h2><p>精通HTML、CSS、JS，熟悉页面架构和布局，熟悉HTML5/CSS3等常用技术，，具备浏览器兼容处理能力；</p>
+<p>能熟练掌握至少一种主流前端框架React、Vue、Angular等，并了解其特性原理，有移动端App开发经验者优先  </p>
+<ul>
+<li>深入应用并深入理解其设计原理</li>
+</ul>
+<p>具备跨浏览器、跨终端的前端开发经验</p>
+<p>UI框架：</p>
+<ul>
+<li>bootstrap</li>
+<li>pure</li>
+<li>kendo</li>
+</ul>
+<p>构建工具：</p>
+<ul>
+<li>Grunt</li>
+<li>Gulp</li>
+<li>Webpack</li>
+<li>Rollup</li>
+</ul>
+<p>NodeJS：</p>
+<ul>
+<li>Koa</li>
+</ul>
+<p>Server端语言</p>
+<ul>
+<li>Node.JS</li>
+<li>PHP</li>
+<li>Python</li>
+<li>Java</li>
+<li>Ruby</li>
+<li>C</li>
+<li>C++</li>
+<li>C#</li>
+</ul>
+<hr>
+<p>加分项：</p>
+<ul>
+<li>对编程语言设计有了解，对抽象语法树（AST）有一定的认知</li>
+<li>对网站性能优化有所研究，在实际项目中有经验者优先</li>
+<li>熟练掌握基于 Node.js 的 SSR技术及原理，对 Node.js 的性能调优，问题诊断有经验者优先</li>
+<li>有 Flutter 的开发经验，在 Web 与 Native 技术的融合上有自己的探索</li>
+</ul>
+]]></content>
+      <categories>
+        <category>技术沉淀</category>
+      </categories>
+      <tags>
+        <tag>入坑指南</tag>
       </tags>
   </entry>
   <entry>
@@ -1711,9 +1977,9 @@ Hi xxx! You've successfully authenticated<span class="token punctuation">,</span
 <hr>
 <h2 id="init模块"><a href="#init模块" class="headerlink" title="init模块"></a>init模块</h2><p>包含的关键函数：</p>
 <ul>
-<li><strong>createElm</strong>：根据传入的vnode递归创建一颗DOM树；</li>
-<li><strong>updateChildren</strong>：对比更新传入的parentElm的子节点；</li>
-<li><strong>patchVnode</strong>：比较新老节点的差异；</li>
+<li><strong>createElm</strong>：根据传入的vnode递归创建一颗真实DOM树；</li>
+<li><strong>updateChildren</strong>：递归比较新传入的新旧节点以及子节点的差异（diff算法）；</li>
+<li><strong>patchVnode</strong>：比较新老节点的差异（比较是否有子节点以及文本内容，新旧节点都有子节点时调用updateChildren）；</li>
 <li><strong>patch</strong>：init模块导出的函数</li>
 </ul>
 <hr>
@@ -1747,7 +2013,21 @@ Hi xxx! You've successfully authenticated<span class="token punctuation">,</span
 <p>（3）旧前与新后；</p>
 <p>（4）旧后与新前；</p>
 <p><strong>（1）旧前与新前；</strong></p>
-<hr>
+<p><strong>（2）旧后与新后</strong></p>
+<p><strong>（3）旧前与新后</strong></p>
+<p><strong>（4）旧后与新前</strong></p>
+]]></content>
+      <categories>
+        <category>技术沉淀</category>
+      </categories>
+      <tags>
+        <tag>虚拟DOM</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue源码阅读之虚拟DOM</title>
+    <url>/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/vue-xu-ni-dom/</url>
+    <content><![CDATA[<h1 id="Vue虚拟DOM"><a href="#Vue虚拟DOM" class="headerlink" title="Vue虚拟DOM"></a>Vue虚拟DOM</h1><p>函数柯里化</p>
 ]]></content>
       <categories>
         <category>技术沉淀</category>

@@ -414,21 +414,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-24
+                    2022-07-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    356
+                    770
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -451,9 +451,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="算法题技巧总结"><a href="#算法题技巧总结" class="headerlink" title="算法题技巧总结"></a>算法题技巧总结</h1><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h3><blockquote>
-<p>有n件物品和一个最多能背重量为w 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品只能用一次</strong>，求解将哪些物品装入背包里物品价值总和最大。</p>
-</blockquote>
+                <h1 id="算法题技巧总结"><a href="#算法题技巧总结" class="headerlink" title="算法题技巧总结"></a>算法题技巧总结</h1><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><ol>
+<li>确定递归函数的参数和返回值：确定每次递归中需要处理的参数，并且要想清楚每次递归的返回值来确定递归函数的返回值类型；</li>
+<li>确定终止条件：递归在什么条件下停止并返回；</li>
+<li>确定单层递归的逻辑：确定每一层递归需要处理的信息，这里是递归重复调用的代码。</li>
+</ol>
+<hr>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h3><div class="admonition info"><p>有n件物品和一个最多能背重量为w 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品只能用一次</strong>，求解将哪些物品装入背包里物品价值总和最大。</p>
+</div>
+
 <p>二维<code>dp</code>数组：</p>
 <ul>
 <li><p><code>dp[i][j]</code>表示从下标<code>[0, i]</code>的物品里任意取，放进容量为<code>j</code>的背包，价值总和最大为<code>dp[i][j]</code>。</p>
@@ -475,6 +481,9 @@
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
+<div class="admonition warning"><p>二维dp数组的两个for遍历的先后顺序可以颠倒，一维dp数组的两个for循环先后顺序一定是先遍历物品，再遍历背包容量。</p>
+</div>
+
 <p>一维dp数组：</p>
 <ul>
 <li><p><code>dp[j]</code>表示：容量为<code>j</code>的背包，所背的物品价值最大为<code>dp[j]</code>；</p>
@@ -490,6 +499,22 @@
 </li>
 </ul>
 <hr>
+<h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><div class="admonition info"><p>有N件物品和一个最多能背重量为W的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品都有无限个（也就是可以放入背包多次）</strong>，求解将哪些物品装入背包里物品价值总和最大。<u><strong>完全背包和01背包问题唯一不同的地方就是，每种物品有无限件</strong>。</u></p>
+</div>
+
+<p>==01背包和完全背包唯一不同就是体现在遍历顺序上。==</p>
+<p>01背包内嵌的循环是从大到小遍历，为了保证每个物品仅被添加一次。而完全背包的物品是可以添加多次的，所以要从小到大去遍历，即：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 先遍历物品，再遍历背包</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span>int i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> weight<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历物品</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span>int j <span class="token operator">=</span> weight<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> j <span class="token operator">&lt;=</span> bagWeight <span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历背包容量</span>
+    dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>j <span class="token operator">-</span> weight<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">+</span> value<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<div class="admonition warning"><p>在完全背包中，对于一维dp数组来说，遍历顺序可以交换。</p>
+</div>
+
 
                 
             </div>
@@ -566,7 +591,7 @@
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="qq,qzone,wechat" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/libs/share/js/social-share.min.js"></script>
     
 
@@ -1461,16 +1486,16 @@ $(function () {
       <ul>
       <li class="tree-list-item">
         <i class="toggle-post-icon gg-folder-add"></i>
-        <a class="tree-list-link" href="/categories/Deep-Learning/">
-          Deep Learning
-        </a>
-      <span class="tree-list-count">5</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/paper-for-fun/" title="Paper for Fun"><i class="post-icon gg-file-document"></i>Paper for Fun</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/paper-ju-zi/" title="paper写作词汇及句子"><i class="post-icon gg-file-document"></i>paper写作词汇及句子</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/21/xue-zhu/zen-yang-kan-lun-wen/" title="怎样看论文"><i class="post-icon gg-file-document"></i>怎样看论文</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/shen-du-lian-dan-zhi-bei/" title="深度炼丹指北"><i class="post-icon gg-file-document"></i>深度炼丹指北</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/huan-jing-pei-zhi/windows-an-zhuang-tensorflow-gpu-ban-ben/" title="Windows 安装Tensorflow GPU版本"><i class="post-icon gg-file-document"></i>Windows 安装Tensorflow GPU版本</a></li></ul></li>
-      <li class="tree-list-item">
-        <i class="toggle-post-icon gg-folder-add"></i>
         <a class="tree-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/">
           技术开发
         </a>
-      <span class="tree-list-count">3</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/06/04/ji-zhu-kai-fa/git-ming-ling/" title="git常用命令"><i class="post-icon gg-file-document"></i>git常用命令</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/15/huan-jing-pei-zhi/qian-duan-kai-fa-pei-zhi/" title="前端开发配置"><i class="post-icon gg-file-document"></i>前端开发配置</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/huan-jing-pei-zhi/kai-fa-huan-jing-pei-zhi-hui-zong/" title="开发环境配置汇总"><i class="post-icon gg-file-document"></i>开发环境配置汇总</a></li></ul></li>
+      <span class="tree-list-count">3</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/15/huan-jing-pei-zhi/qian-duan-kai-fa-pei-zhi/" title="前端开发配置"><i class="post-icon gg-file-document"></i>前端开发配置</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/huan-jing-pei-zhi/kai-fa-huan-jing-pei-zhi-hui-zong/" title="开发环境配置汇总"><i class="post-icon gg-file-document"></i>开发环境配置汇总</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/06/04/ji-zhu-kai-fa/git-ming-ling/" title="git常用命令"><i class="post-icon gg-file-document"></i>git常用命令</a></li></ul></li>
+      <li class="tree-list-item">
+        <i class="toggle-post-icon gg-folder-add"></i>
+        <a class="tree-list-link" href="/categories/Deep-Learning/">
+          Deep Learning
+        </a>
+      <span class="tree-list-count">5</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/huan-jing-pei-zhi/windows-an-zhuang-tensorflow-gpu-ban-ben/" title="Windows 安装Tensorflow GPU版本"><i class="post-icon gg-file-document"></i>Windows 安装Tensorflow GPU版本</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/paper-for-fun/" title="Paper for Fun"><i class="post-icon gg-file-document"></i>Paper for Fun</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/paper-ju-zi/" title="paper写作词汇及句子"><i class="post-icon gg-file-document"></i>paper写作词汇及句子</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/21/xue-zhu/zen-yang-kan-lun-wen/" title="怎样看论文"><i class="post-icon gg-file-document"></i>怎样看论文</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/shen-du-lian-dan-zhi-bei/" title="深度炼丹指北"><i class="post-icon gg-file-document"></i>深度炼丹指北</a></li></ul></li>
       <li class="tree-list-item">
         <i class="toggle-post-icon gg-folder-add"></i>
         <a class="tree-list-link" href="/categories/%E7%AE%97%E6%B3%95/">
@@ -1482,7 +1507,7 @@ $(function () {
         <a class="tree-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%B2%89%E6%B7%80/">
           技术沉淀
         </a>
-      <span class="tree-list-count">4</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/jin-jie/" title="前端进阶"><i class="post-icon gg-file-document"></i>前端进阶</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/19/ji-zhu-chen-dian/vue-li-jie/vue-gai-lan/" title="Vue概览"><i class="post-icon gg-file-document"></i>Vue概览</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/vue-xu-ni-dom/" title="Vue源码阅读之虚拟DOM"><i class="post-icon gg-file-document"></i>Vue源码阅读之虚拟DOM</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/snabbdom/" title="snabbdom源码总结"><i class="post-icon gg-file-document"></i>snabbdom源码总结</a></li></ul></li></ul>
+      <span class="tree-list-count">9</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/19/ji-zhu-chen-dian/vue-li-jie/vue-gai-lan/" title="Vue概览"><i class="post-icon gg-file-document"></i>Vue概览</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/web-xing-neng-de-heng-liang/" title="web性能的衡量"><i class="post-icon gg-file-document"></i>web性能的衡量</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/web-xing-neng/" title="web性能"><i class="post-icon gg-file-document"></i>web性能</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/duo-mei-ti-tu-xiang-yu-ying-pian/" title="多媒体-图像与影片"><i class="post-icon gg-file-document"></i>多媒体-图像与影片</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/gan-zhi-xing-neng/" title="感知性能"><i class="post-icon gg-file-document"></i>感知性能</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/liu-lan-qi-yuan-li/" title="渲染页面：浏览器的工作原理"><i class="post-icon gg-file-document"></i>渲染页面：浏览器的工作原理</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/jin-jie/" title="前端进阶"><i class="post-icon gg-file-document"></i>前端进阶</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/snabbdom/" title="snabbdom源码总结"><i class="post-icon gg-file-document"></i>snabbdom源码总结</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/vue-xu-ni-dom/" title="Vue源码阅读之虚拟DOM"><i class="post-icon gg-file-document"></i>Vue源码阅读之虚拟DOM</a></li></ul></li></ul>
         <div id="widget-tree-button">
           <i class="gg-chevron-right"></i>
         </div>

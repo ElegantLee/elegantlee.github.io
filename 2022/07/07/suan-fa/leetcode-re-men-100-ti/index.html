@@ -414,21 +414,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-24
+                    2022-07-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    2.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 
@@ -643,12 +643,13 @@
 <li><p>宽度优先遍历（层序遍历）</p>
 </li>
 </ol>
-<div class="admonition warning"><p class="admonition-title">“注意”
-</p></div>
+<div class="admonition warning"><p class="admonition-title">注意
+</p><p>不要跟<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/symmetric-tree/">对称二叉树</a>弄混了，对称二叉树才需要对比内侧和外侧。</p>
+</div>
 
-<p>​    不要跟<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/symmetric-tree/">对称二叉树</a>弄混了，对称二叉树才需要对比内侧和外侧。</p>
 <hr>
-<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/">leetcode</a></p>
+<hr>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h3><h4 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/">leetcode</a></p>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/solution/zui-da-zi-xu-he-cshi-xian-si-chong-jie-fa-bao-li-f/">题解</a></p>
 <p>【提示】目前只实现了暴力双循环和贪心的解法，还有动态规划和分治法两种解法。</p>
 <p>（1）贪心</p>
@@ -700,7 +701,7 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
-<h3 id="5-最长回文子串"><a href="#5-最长回文子串" class="headerlink" title="5. 最长回文子串"></a>5. 最长回文子串</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-palindromic-substring/">leetcode</a></p>
+<h4 id="5-最长回文子串"><a href="#5-最长回文子串" class="headerlink" title="5. 最长回文子串"></a>5. 最长回文子串</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-palindromic-substring/">leetcode</a></p>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-palindromic-substring/solution/zhong-xin-kuo-san-fa-he-dong-tai-gui-hua-by-reedfa/">题解</a></p>
 <p>【提示】中心向两边扩散（双指针），使用动态规划优化（空间换时间）</p>
 <p>中心向两边扩散，定义left和right指针，分别指向当前字符的左右字符；</p>
@@ -727,7 +728,7 @@
   <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
-<h3 id="416-分割等和子集"><a href="#416-分割等和子集" class="headerlink" title="416. 分割等和子集"></a>416. 分割等和子集</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/partition-equal-subset-sum/">leetcode</a></p>
+<h4 id="416-分割等和子集"><a href="#416-分割等和子集" class="headerlink" title="416. 分割等和子集"></a>416. 分割等和子集</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/partition-equal-subset-sum/">leetcode</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.programmercarl.com/0416.%E5%88%86%E5%89%B2%E7%AD%89%E5%92%8C%E5%AD%90%E9%9B%86.html#_01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98">题解</a></p>
 <p>【提示】抽象问题为01背包问题。</p>
 <ul>
@@ -735,12 +736,28 @@
 <li>如果dp[sum/2]===sum/2，则return true，否则return false；</li>
 </ul>
 <hr>
-<h3 id="494-目标和"><a href="#494-目标和" class="headerlink" title="494. 目标和"></a>494. 目标和</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/target-sum/">leetcode</a></p>
+<h4 id="494-目标和"><a href="#494-目标和" class="headerlink" title="494. 目标和"></a>494. 目标和</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/target-sum/">leetcode</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.programmercarl.com/0494.%E7%9B%AE%E6%A0%87%E5%92%8C.html#%E6%80%BB%E7%BB%93">题解</a></p>
 <p>【提示】将问题抽象为01背包。target不能直接作为背包容量，因为此时物品的价值有两种状态。由于nums数组中的数字有正负两种情况，那么构成的表达式可以分成三部分：正数和+负数和=target，而正数和-负数和=sum（数组和）。于是问题转换为求背包容量为正数和时，装满背包有多少种情况。公式化：</p>
 <p>由 $positive+negetive=target, positive-negetive=sum$，有：</p>
 <p>$positive = (sum+target)/2$</p>
 <p>这里注意，可能positive&lt;0，此时positive=-positive（转换成正数和，因为数组中都是正整数）</p>
+<hr>
+<h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><h4 id="零钱兑换"><a href="#零钱兑换" class="headerlink" title="零钱兑换"></a>零钱兑换</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/coin-change/">leetcode</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.programmercarl.com/0279.%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0.html#google_vignette">题解</a></p>
+<p>【提示】抽象问题为完全背包，amount为背包容量，求最小的个数。</p>
+<p>递推公式：dp[j] = min(dp[j], dp[j - coins[i]] + 1)；</p>
+<p>初始化：dp[0] = 0，其他的dp[j] = Infinity；</p>
+<hr>
+<h4 id="279-完全平方数"><a href="#279-完全平方数" class="headerlink" title="279. 完全平方数"></a>279. 完全平方数</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/perfect-squares/">leetcode</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.programmercarl.com/0279.%E5%AE%8C%E5%85%A8%E5%B9%B3%E6%96%B9%E6%95%B0.html">题解</a></p>
+<p>【提示】抽象为完全背包问题，求最小个数。</p>
+<p>递推公式：dp[j] = min(dp[j], dp[j - i * i] + 1)；</p>
+<p>初始化：dp[0] = 0，其他dp[j] = Infinity；</p>
+<div class="admonition warning"><p class="admonition-title">注意
+</p><p>这里的物品应该抽象为i * i，即完全平方数，因为背包里面只能装完全平方数。</p>
+</div>
+
 <hr>
 <h2 id="深度优先搜索（回溯）"><a href="#深度优先搜索（回溯）" class="headerlink" title="深度优先搜索（回溯）"></a>深度优先搜索（回溯）</h2><h3 id="200-岛屿数量"><a href="#200-岛屿数量" class="headerlink" title="200. 岛屿数量"></a>200. 岛屿数量</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-islands/">leetcode</a></p>
 <p>题解1-<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-islands/solution/dao-yu-lei-wen-ti-de-tong-yong-jie-fa-dfs-bian-li-/">通用解法</a></p>
@@ -789,6 +806,31 @@
   <span class="token keyword">return</span> <span class="token punctuation">(</span>myRow <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> myRow <span class="token operator">&lt;</span> row<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span>myColumn <span class="token operator">&gt;=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> myColumn <span class="token operator">&lt;</span> column<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<hr>
+<h3 id="463-岛屿的周长"><a href="#463-岛屿的周长" class="headerlink" title="463. 岛屿的周长"></a>463. 岛屿的周长</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/island-perimeter/">leetcode</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-islands/solution/dao-yu-lei-wen-ti-de-tong-yong-jie-fa-dfs-bian-li-/">题解</a></p>
+<p>【提示】其实求岛屿的周长就是求与边界相邻的岛屿的边缘和与海洋相邻的岛屿的边缘，如图所示</p>
+<p><img src="https://typora-lee.oss-cn-chengdu.aliyuncs.com/img-typora/20220726200101.jpeg" alt="将岛屿周长中的边分为两类"></p>
+<p>当dfs即遇到上图两种情况时返回1，即周长加1。</p>
+<hr>
+<h3 id="236-二叉树的最近公共祖先"><a href="#236-二叉树的最近公共祖先" class="headerlink" title="236. 二叉树的最近公共祖先"></a>236. 二叉树的最近公共祖先</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/">leetcode</a></p>
+<p>【提示】后序遍历，把整棵树分为三部分：左子树、根节点、右子树。</p>
+<ul>
+<li><p>递归参数：root, p, q；返回值：root（最近公共祖先）；</p>
+</li>
+<li><p>退出条件：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">===</span> p <span class="token operator">||</span> root <span class="token operator">===</span> q <span class="token operator">||</span> root <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> root<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>后序遍历，分别得到左右子树递归的结果，然后判断左右子树值的情况；</p>
+<ul>
+<li>left和right都不为空，则返回root；</li>
+<li>left为空，right不为空，则返回right；</li>
+<li>left不为空，right为空，则返回left；</li>
+<li>left和right都为空，则返回null；</li>
+</ul>
+</li>
+</ul>
 <hr>
 
                 
@@ -866,7 +908,7 @@
 <div id="article-share">
 
     
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <div class="social-share" data-sites="qq,qzone,wechat" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
     <script src="/libs/share/js/social-share.min.js"></script>
     
 
@@ -1761,16 +1803,16 @@ $(function () {
       <ul>
       <li class="tree-list-item">
         <i class="toggle-post-icon gg-folder-add"></i>
-        <a class="tree-list-link" href="/categories/Deep-Learning/">
-          Deep Learning
-        </a>
-      <span class="tree-list-count">5</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/paper-for-fun/" title="Paper for Fun"><i class="post-icon gg-file-document"></i>Paper for Fun</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/paper-ju-zi/" title="paper写作词汇及句子"><i class="post-icon gg-file-document"></i>paper写作词汇及句子</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/21/xue-zhu/zen-yang-kan-lun-wen/" title="怎样看论文"><i class="post-icon gg-file-document"></i>怎样看论文</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/shen-du-lian-dan-zhi-bei/" title="深度炼丹指北"><i class="post-icon gg-file-document"></i>深度炼丹指北</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/huan-jing-pei-zhi/windows-an-zhuang-tensorflow-gpu-ban-ben/" title="Windows 安装Tensorflow GPU版本"><i class="post-icon gg-file-document"></i>Windows 安装Tensorflow GPU版本</a></li></ul></li>
-      <li class="tree-list-item">
-        <i class="toggle-post-icon gg-folder-add"></i>
         <a class="tree-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/">
           技术开发
         </a>
-      <span class="tree-list-count">3</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/06/04/ji-zhu-kai-fa/git-ming-ling/" title="git常用命令"><i class="post-icon gg-file-document"></i>git常用命令</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/15/huan-jing-pei-zhi/qian-duan-kai-fa-pei-zhi/" title="前端开发配置"><i class="post-icon gg-file-document"></i>前端开发配置</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/huan-jing-pei-zhi/kai-fa-huan-jing-pei-zhi-hui-zong/" title="开发环境配置汇总"><i class="post-icon gg-file-document"></i>开发环境配置汇总</a></li></ul></li>
+      <span class="tree-list-count">3</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/15/huan-jing-pei-zhi/qian-duan-kai-fa-pei-zhi/" title="前端开发配置"><i class="post-icon gg-file-document"></i>前端开发配置</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/huan-jing-pei-zhi/kai-fa-huan-jing-pei-zhi-hui-zong/" title="开发环境配置汇总"><i class="post-icon gg-file-document"></i>开发环境配置汇总</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/06/04/ji-zhu-kai-fa/git-ming-ling/" title="git常用命令"><i class="post-icon gg-file-document"></i>git常用命令</a></li></ul></li>
+      <li class="tree-list-item">
+        <i class="toggle-post-icon gg-folder-add"></i>
+        <a class="tree-list-link" href="/categories/Deep-Learning/">
+          Deep Learning
+        </a>
+      <span class="tree-list-count">5</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/huan-jing-pei-zhi/windows-an-zhuang-tensorflow-gpu-ban-ben/" title="Windows 安装Tensorflow GPU版本"><i class="post-icon gg-file-document"></i>Windows 安装Tensorflow GPU版本</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/paper-for-fun/" title="Paper for Fun"><i class="post-icon gg-file-document"></i>Paper for Fun</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/paper-ju-zi/" title="paper写作词汇及句子"><i class="post-icon gg-file-document"></i>paper写作词汇及句子</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/21/xue-zhu/zen-yang-kan-lun-wen/" title="怎样看论文"><i class="post-icon gg-file-document"></i>怎样看论文</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/shen-du-lian-dan-zhi-bei/" title="深度炼丹指北"><i class="post-icon gg-file-document"></i>深度炼丹指北</a></li></ul></li>
       <li class="tree-list-item">
         <i class="toggle-post-icon gg-folder-add"></i>
         <a class="tree-list-link" href="/categories/%E7%AE%97%E6%B3%95/">
@@ -1782,7 +1824,7 @@ $(function () {
         <a class="tree-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%B2%89%E6%B7%80/">
           技术沉淀
         </a>
-      <span class="tree-list-count">4</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/jin-jie/" title="前端进阶"><i class="post-icon gg-file-document"></i>前端进阶</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/19/ji-zhu-chen-dian/vue-li-jie/vue-gai-lan/" title="Vue概览"><i class="post-icon gg-file-document"></i>Vue概览</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/vue-xu-ni-dom/" title="Vue源码阅读之虚拟DOM"><i class="post-icon gg-file-document"></i>Vue源码阅读之虚拟DOM</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/snabbdom/" title="snabbdom源码总结"><i class="post-icon gg-file-document"></i>snabbdom源码总结</a></li></ul></li></ul>
+      <span class="tree-list-count">9</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/19/ji-zhu-chen-dian/vue-li-jie/vue-gai-lan/" title="Vue概览"><i class="post-icon gg-file-document"></i>Vue概览</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/web-xing-neng-de-heng-liang/" title="web性能的衡量"><i class="post-icon gg-file-document"></i>web性能的衡量</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/web-xing-neng/" title="web性能"><i class="post-icon gg-file-document"></i>web性能</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/duo-mei-ti-tu-xiang-yu-ying-pian/" title="多媒体-图像与影片"><i class="post-icon gg-file-document"></i>多媒体-图像与影片</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/gan-zhi-xing-neng/" title="感知性能"><i class="post-icon gg-file-document"></i>感知性能</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/liu-lan-qi-yuan-li/" title="渲染页面：浏览器的工作原理"><i class="post-icon gg-file-document"></i>渲染页面：浏览器的工作原理</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/jin-jie/" title="前端进阶"><i class="post-icon gg-file-document"></i>前端进阶</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/snabbdom/" title="snabbdom源码总结"><i class="post-icon gg-file-document"></i>snabbdom源码总结</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/vue-xu-ni-dom/" title="Vue源码阅读之虚拟DOM"><i class="post-icon gg-file-document"></i>Vue源码阅读之虚拟DOM</a></li></ul></li></ul>
         <div id="widget-tree-button">
           <i class="gg-chevron-right"></i>
         </div>
