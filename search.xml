@@ -1668,7 +1668,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <entry>
     <title>web性能的衡量</title>
     <url>/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/web-xing-neng-de-heng-liang/</url>
-    <content><![CDATA[<h1 id="web性能的衡量"><a href="#web性能的衡量" class="headerlink" title="web性能的衡量"></a>web性能的衡量</h1><p>衡量性能提供了一个重要的指标来帮助您评估应用程序、站点或 Web 服务的成功。</p>
+    <content><![CDATA[<div class="admonition info"><p>本文翻译自<a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/Measuring_performance">MDN</a>。</p>
+</div>
+
+<h1 id="web性能的衡量"><a href="#web性能的衡量" class="headerlink" title="web性能的衡量"></a>web性能的衡量</h1><p>衡量性能提供了一个重要的指标来帮助您评估应用程序、站点或 Web 服务的成功。</p>
 <p>例如，您可以使用性能指标来确定您的应用程序如何执行与竞争对手相比，或者您可以比较您的应用程序的性能跨版本。您选择度量的指标应该与您的用户、站点和业务目标相关。应该以一致的方式收集和测量它们，并以非技术涉众可以使用和理解的格式进行分析。</p>
 <p>本文介绍了 Web 性能指标，您可以使用这些指标来衡量和优化站点的性能。</p>
 <hr>
@@ -1710,7 +1713,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <entry>
     <title>web性能</title>
     <url>/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/web-xing-neng/</url>
-    <content><![CDATA[<div class="admonition info"><p class="admonition-title">info</p><p>本文翻译自<a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/What_is_web_performance">MDN</a>。</p>
+    <content><![CDATA[<div class="admonition info"><p>本文翻译自<a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/What_is_web_performance">MDN</a>。</p>
 </div>
 
 <h1 id="web性能"><a href="#web性能" class="headerlink" title="web性能"></a>web性能</h1><p>​        Web 性能就是让网站变得更快，包括让缓慢的过程看起来更快。网站是否加载迅速，允许用户快速开始与其交互，并且如果某些东西需要花时间加载(例如加载微调器) ，是否能提供令人放心的反馈？滚动和动画是否流畅？这篇文章提供了一个客观的，可测量的网络性能的简要介绍 * ，看看什么技术，技术和工具涉及到网络优化。</p>
@@ -8736,6 +8739,151 @@ arr<span class="token punctuation">.</span><span class="token function">join</sp
       </categories>
       <tags>
         <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS性能特点</title>
+    <url>/2022/07/27/ji-zhu-chen-dian/qian-duan-jin-jie/css-xing-neng-te-dian/</url>
+    <content><![CDATA[<div class="admonition info"><p>本文翻译自<a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/CSS">MDN</a>。中文<a href="https://developer.mozilla.org/zh-CN/docs/Learn/Performance/CSS">MDN</a>。</p>
+</div>
+
+<h1 id="CSS性能优化"><a href="#CSS性能优化" class="headerlink" title="CSS性能优化"></a>CSS性能优化</h1><p>绘制未设置样式的页面，然后在解析样式后重新绘制，这将是一种糟糕的用户体验。因此，CSS 是渲染阻塞，除非浏览器知道当前不需要 CSS。一旦下载了 CSS 并构建了 CSS 对象模型，浏览器就可以绘制页面。浏览器遵循特定的渲染路径：绘制仅在布局后发生，而布局是在创建渲染树后发生的，而渲染树又需要 DOM 树和 CSSOM 树。要优化 CSSOM 构造，请删除不必要的样式，缩小、压缩和缓存它，并将页面加载时不需要的 CSS 拆分为其他文件，以减少 CSS 渲染阻塞。</p>
+<hr>
+<h2 id="优化渲染块"><a href="#优化渲染块" class="headerlink" title="优化渲染块"></a>优化渲染块</h2><p>CSS 可以通过媒体查询将样式范围扩展到特定条件。媒体查询对于快速响应的 web 设计非常重要，可以帮助我们优化关键的渲染路径。浏览器会阻止渲染，直到解析所有这些样式，但不会阻止对其知道不会使用的样式（例如打印样式表）的渲染。通过基于媒体查询将CSS拆分为多个文件，可以防止在下载未使用的 CSS 时出现渲染阻塞。要创建非阻塞 CSS 链接，请将未立即使用的样式（如打印样式）移动到单独的文件中，在 HTML 标记中添加一个链接，并添加一个媒体查询，在本例中表示它是一个打印样式表。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">"stylesheet"</span> href<span class="token operator">=</span><span class="token string">"styles.css"</span><span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> blocking <span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">"stylesheet"</span> href<span class="token operator">=</span><span class="token string">"print.css"</span> media<span class="token operator">=</span><span class="token string">"print"</span><span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> not blocking <span class="token operator">--</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>link rel<span class="token operator">=</span><span class="token string">"stylesheet"</span> href<span class="token operator">=</span><span class="token string">"mobile.css"</span> media<span class="token operator">=</span><span class="token string">"screen and (max-width: 480px)"</span><span class="token operator">&gt;</span> <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> not blocking on large screens <span class="token operator">--</span><span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>默认情况下，浏览器假设每个指定的样式表都是渲染块。通过在<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">媒体查询</a>中添加属性，告诉浏览器何时应用样式表。当浏览器看到样式表时，它知道它只需要将其应用于特定场景，它仍会下载样式表，但不会渲染块。通过将CSS分离为多个文件，在本例中，主渲染块文件要小得多，从而减少了渲染被阻塞的时间。<code>media styles.CSS</code></p>
+<hr>
+<h2 id="在GPU上设置动画"><a href="#在GPU上设置动画" class="headerlink" title="在GPU上设置动画"></a>在GPU上设置动画</h2><p>浏览器经过优化，可以处理 CSS 动画，并且可以很好地处理不触发回流（因此也可以重新绘制）的动画属性。为了提高性能，可以将正在设置动画的节点从主线程移动到 GPU 上。导致合成的属性包括3D变换（<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">transform:translateZ()</a>、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/rotate3d">rotate3d()</a>等）、animating transform 和 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/opacity"><code>opacity</code></a>、 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position"><code>position: fixed</code></a>，<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/will-change"><code>will-change</code></a> 和 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter"><code>filter</code></a>。一些元素，包括<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video"><code>&lt;video&gt;</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas"><code>&lt;canvas&gt;</code></a> 和  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"><code>&lt;iframe&gt;</code></a>，也在它们自己的层上。当元素升级为层（也称为合成层）时，将在 GPU 中对变换属性设置动画，从而提高性能，尤其是在移动设备上。</p>
+<hr>
+<h2 id="will-change-属性"><a href="#will-change-属性" class="headerlink" title="will-change 属性"></a>will-change 属性</h2><p>CSS 的 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/will-change">will-change</a> 属性告知浏览器元素的预期更改方式。浏览器可能会在实际更改元素之前进行优化。这些类型的优化可以通过在实际需要之前进行潜在的昂贵工作来提高页面的响应能力。</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token property">will-change</span><span class="token punctuation">:</span> opacity<span class="token punctuation">,</span> transform<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<div class="admonition info"><p>注：<code>will-change</code> 旨在作为解决现有性能问题的最后手段。它不应用于预测性能问题。</p>
+</div>
+
+<hr>
+<h2 id="font-display-属性"><a href="#font-display-属性" class="headerlink" title="font-display 属性"></a>font-display 属性</h2><p>应用于 @font-face 规则，字体显示属性定义了浏览器加载和显示字体文件的方式，允许在加载字体或无法加载字体时，文本以回退字体显示。这通过使文本可见而不是空白屏幕来提高性能，取舍是闪烁未设置样式的文本。</p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
+  <span class="token property">font-family</span><span class="token punctuation">:</span> someFont<span class="token punctuation">;</span>
+  <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>/path/to/fonts/someFont.woff<span class="token punctuation">)</span></span> <span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'woff'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> 400<span class="token punctuation">;</span>
+  <span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span>
+  <span class="token property">font-display</span><span class="token punctuation">:</span> fallback<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h2 id="contain-属性"><a href="#contain-属性" class="headerlink" title="contain 属性"></a>contain 属性</h2><p><code>contain</code> CSS 属性允许作者指示元素及其内容尽可能独立于文档树的其余部分。这允许浏览器为 DOM 的有限区域而不是整个页面重新计算布局、样式、绘制、大小或它们的任何组合。</p>
+<hr>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2>]]></content>
+      <categories>
+        <category>技术沉淀</category>
+      </categories>
+      <tags>
+        <tag>web性能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML性能特点</title>
+    <url>/2022/07/27/ji-zhu-chen-dian/qian-duan-jin-jie/html-xing-neng-te-dian/</url>
+    <content><![CDATA[<div class="admonition info"><p>本文翻译自<a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/HTML">MDN</a>。</p>
+</div>
+
+<h1 id="HTML性能特点"><a href="#HTML性能特点" class="headerlink" title="HTML性能特点"></a>HTML性能特点</h1><p>默认情况下，HTML是快速且可访问的。作为开发人员，我们的工作是确保在创建或编辑 HTML 代码时保留这两个属性。例如，当<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video"><code>&lt;video&gt;</code></a>嵌入的文件大小太大，或者网页未针对移动设备进行优化时，可能会发生复杂情况。本模块旨在引导您完成可以大大提高网页质量的关键HTML性能功能。</p>
+<hr>
+<h2 id="影响性能的元素和属性"><a href="#影响性能的元素和属性" class="headerlink" title="影响性能的元素和属性"></a>影响性能的元素和属性</h2><ul>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture">The `` Element</a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video">The `` Element</a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source">The `` Element</a></p>
+</li>
+<li><p>The <code>&lt;img&gt; srcset</code> attribute</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images">Responsive images</a></li>
+</ul>
+</li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types/preload">Preloading content with <code>rel="preload"</code></a> - <a href="https://w3c.github.io/preload/">(https://w3c.github.io/preload/</a>)</p>
+</li>
+<li><p><code>async</code> / <code>defer</code> attributes</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"><code>&lt;iframe&gt;</code></a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object"><code>&lt;object&gt;</code></a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script"><code>script</code></a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel"><code>rel</code> attribute</a></p>
+</li>
+</ul>
+<hr>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2>]]></content>
+      <categories>
+        <category>技术沉淀</category>
+      </categories>
+      <tags>
+        <tag>web性能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>web性能的商业案例</title>
+    <url>/2022/07/27/ji-zhu-chen-dian/qian-duan-jin-jie/web-xing-neng-de-shang-ye-an-li/</url>
+    <content><![CDATA[<div class="admonition info"><p>本文翻译自<a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/business_case_for_performance">MDN</a>。</p>
+</div>
+
+<h1 id="web性能的商业案例"><a href="#web性能的商业案例" class="headerlink" title="web性能的商业案例"></a>web性能的商业案例</h1><p>我们已经讨论了web性能的重要性。您已经了解了需要做什么来优化web性能。但是，你如何说服你的客户和/或管理层对性能进行优先排序和投资？在本节中，我们将讨论创建一个明确的商业案例，以说服决策者进行投资。</p>
+<hr>
+<h2 id="将性能作为业务重点"><a href="#将性能作为业务重点" class="headerlink" title="将性能作为业务重点"></a>将性能作为业务重点</h2><p>我们已经讨论了优先考虑性能如何改善用户体验，从而提高收入。我们知道，不优先考虑web性能可能会导致业务收入损失。本文讨论了某些业务指标如何与用户的web性能体验直接相关，以及如何应用服务设计来提升用户的web性能体验。它强调了理解累积体验如何影响转化率和保留率的重要性。</p>
+<hr>
+<h3 id="性能预算"><a href="#性能预算" class="headerlink" title="性能预算"></a>性能预算</h3><p>设置 web 性能预算可以帮助您确保团队保持网站正常运行，并有助于防止倒退。性能预算是一组限制，用于指定必须维护的限制，例如允许的最大 HTTP 请求数、所有组合资源的最大总大小、特定设备上允许的最小 FPS 等。预算可以应用于单个文件、文件类型、页面上加载的所有文件、特定指标或一段时间内的阈值。预算反映了可实现的目标；无论是基于时间、数量还是基于规则。</p>
+<p>定义和推广预算有助于性能支持者在竞争利益（如营销、销售，甚至其他可能想要添加视频、第三方脚本甚至框架的开发人员）面前获得良好的用户体验。性能预算有助于开发团队保护用户的最佳性能，同时使企业能够开拓新市场并提供定制体验。</p>
+<hr>
+<h2 id="关键性能指标（-Key-Performance-Indicators-）"><a href="#关键性能指标（-Key-Performance-Indicators-）" class="headerlink" title="关键性能指标（ Key Performance Indicators ）"></a>关键性能指标（ Key Performance Indicators ）</h2><p>将关键绩效指标（KPI）设置为目标可以突出同时也是业务目标的绩效目标。KPI可以是一组重要的业务指标，用于衡量用户体验和性能对业务一线的影响，也可以是一种展示性能优先级优势的方法。以下是需要考虑的一些关键绩效指标：</p>
+<p><strong>转换率</strong> （<strong>Conversion Rate</strong>）</p>
+<p>采取预期行动的流量的百分比，例如完成购买或注册新闻稿。当业务站点运行缓慢时，可能会阻止用户完成预期的任务。这可能导致较低的转换率。</p>
+<p><strong>现场时间</strong> （<strong>Time on Site</strong>）</p>
+<p>您的用户在您的网站上总共花费的平均时间。当一个网站的性能缓慢，用户更有可能放弃网站过早，这可能导致低时间的网站指标。</p>
+<p><strong>Net Promotion Score</strong></p>
+<p>Net Promotion Score (NPS) 是评估公司品牌、产品或服务的顾客忠诚度的指标。糟糕的用户表现体验可以与糟糕的品牌声誉相提并论。</p>
+<p>设置转化率，现场时间，和/或净推广得分作为 KPI 给予财务和其他业务目标价值的网络绩效工作，并得到帮助促进买入，与指标证明的努力值得。</p>
+]]></content>
+      <categories>
+        <category>技术沉淀</category>
+      </categories>
+      <tags>
+        <tag>web性能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript性能</title>
+    <url>/2022/07/27/ji-zhu-chen-dian/qian-duan-jin-jie/javascript-xing-neng/</url>
+    <content><![CDATA[<div class="admonition info"><p>本文翻译自<a href="https://developer.mozilla.org/en-US/docs/Learn/Performance/JavaScript">MDN</a>。</p>
+</div>
+
+<h1 id="JavaScript性能"><a href="#JavaScript性能" class="headerlink" title="JavaScript性能"></a>JavaScript性能</h1><p>虽然图像和视频占了平均网站下载字节数的70% 以上，但是 JavaScript 对性能有更大的负面影响。本文将介绍由脚本引起的性能问题，并介绍为 Web 性能优化 JavaScript 的技巧和窍门。</p>
+<p>与图像和视频类似，提高性能的最佳方法是省略实际上不必要的内容。但并非所有下载的字节都具有相同的影响。必须下载、解析和执行 JavaScript 字节。JavaScript 影响下载性能。我们将介绍一些技巧和窍门，以尽量减少对下载的影响。但是 JavaScript 也会消耗主线程、 CPU 和电池。它可以使用户界面感觉没有反应或者很糟糕。我们还将介绍处理这个问题的概念。</p>
+<hr>
+<h2 id="下载的影响"><a href="#下载的影响" class="headerlink" title="下载的影响"></a>下载的影响</h2><p>Web 应用程序包含很多 JavaScript。许多应用程序都是使用 JavaScript 框架或多个框架构建的，还有一些附加的依赖项。通常会添加第三方脚本和 API，包括 A/B 测试、跟踪像素以及地图和支持特性等特性。所有这些 JavaScript 都必须下载。最终会的。</p>
+<p>性能优化应包括：</p>
+<ul>
+<li><strong>减少所需的 JavaScript 数量。</strong>一些需要复杂JavaScript的功能可以通过几行JavaScript来完成。需要一个用于其他功能的库可能会改善开发人员的体验，但这一切都需要JavaScript吗？有更轻的重量或自制的解决方案吗？有些功能可能不是必需的，尽管它们可能会增加一些闪光点，但就性能而言，该功能的成本值得吗？</li>
+<li><strong>删除未使用的代码。</strong></li>
+<li><strong>将 JavaScript 拆分为较小的文件。</strong>将 JavaScript 代码拆分为关键部分和非关键部分。像webpack这样的模 module bundlers 支持代码拆分。</li>
+<li><strong>优化这些较小的文件。</strong><a href="https://developer.mozilla.org/en-US/docs/Glossary/minification">Mnification</a> 减少了文件中的字符数，从而减少了 JavaScript 的字节数或占比。<a href="https://developer.mozilla.org/en-US/docs/Glossary/GZip_compression">Gzipping</a> 会进一步压缩文件，即使您不缩小，也应该使用。<a href="https://developer.mozilla.org/en-US/docs/Glossary/brotli_compression">Brotli</a> 类似于 Gzip，通常优于 Gzip 的压缩。</li>
+</ul>
+<hr>
+<h2 id="渲染效果"><a href="#渲染效果" class="headerlink" title="渲染效果"></a>渲染效果</h2><p>Web 应用程序包含大量的 JavaScript。许多应用程序都是使用一个或多个 JavaScript 框架构建的，并具有几个额外的依赖项。通常会添加第三方脚本和 API，包括 A/B 测试、跟踪像素以及地图和支持功能等功能。</p>
+<hr>
+<h2 id="Battery-impact"><a href="#Battery-impact" class="headerlink" title="Battery impact"></a>Battery impact</h2><hr>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>虽然优化媒体文件和脚本将使您在Web性能优化方面走得很远，但触及网页的所有内容都会影响性能。在下一篇文章中，我们将介绍一些可能影响性能的 HTML 功能，包括一些专门为提高性能而创建的属性。</p>
+]]></content>
+      <categories>
+        <category>技术沉淀</category>
+      </categories>
+      <tags>
+        <tag>web性能</tag>
       </tags>
   </entry>
 </search>
