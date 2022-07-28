@@ -414,21 +414,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-26
+                    2022-07-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    3.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    13 分
                 </div>
                 
 
@@ -648,6 +648,62 @@
 </div>
 
 <hr>
+<h3 id="538-把二叉搜索树转换为累加树"><a href="#538-把二叉搜索树转换为累加树" class="headerlink" title="538. 把二叉搜索树转换为累加树"></a>538. 把二叉搜索树转换为累加树</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-bst-to-greater-tree/">leetcode</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.programmercarl.com/0538.%E6%8A%8A%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E8%BD%AC%E6%8D%A2%E4%B8%BA%E7%B4%AF%E5%8A%A0%E6%A0%91.html#%E9%80%92%E5%BD%92">题解</a></p>
+<p>【提示】<code>BST</code> 的中序遍历是有序的。将 <code>BST</code> 看成一个递增的有序数组，要让有序数组的每个元素是比它大的元素的累加和，则从后往前遍历这个数组即可。类比数组的遍历，<code>BST</code> 的中序遍历是递增的，那么将中序遍历倒置，即先遍历右子树再遍历左子树，在”倒中序遍历位置“累加和。</p>
+<hr>
+<h3 id="543-二叉树的直径"><a href="#543-二叉树的直径" class="headerlink" title="543. 二叉树的直径"></a>543. 二叉树的直径</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/diameter-of-binary-tree/">leetcode</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/diameter-of-binary-tree/solution/er-cha-shu-de-zhi-jing-by-leetcode-solution/">题解</a></p>
+<p>【提示】按递归三要素来分析：</p>
+<ol>
+<li>递归函数的参数：节点 <code>node</code>；</li>
+<li>每个节点的处理逻辑：全局设置一个数 <code>maxPath</code>。后序遍历位置，分别得到当前节点左右子树的深度 <code>L</code> 和 <code>R</code>，则当前节点的直径为 <code>max(maxPath, L + R - 1)</code>；</li>
+<li>返回值：节点的深度 <code>max(L, R) + 1</code>；</li>
+</ol>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> <span class="token function-variable function">diameterOfBinaryTree</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">root</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> maxPath <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> <span class="token function-variable function">traverse</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">let</span> <span class="token constant">L</span> <span class="token operator">=</span> <span class="token function">traverse</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> <span class="token constant">R</span> <span class="token operator">=</span> <span class="token function">traverse</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    maxPath <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>maxPath<span class="token punctuation">,</span> <span class="token constant">L</span> <span class="token operator">+</span> <span class="token constant">R</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token constant">L</span><span class="token punctuation">,</span> <span class="token constant">R</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">traverse</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> maxPath <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h3 id="617-合并二叉树"><a href="#617-合并二叉树" class="headerlink" title="617. 合并二叉树"></a>617. 合并二叉树</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/merge-two-binary-trees/">leetcode</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/merge-two-binary-trees/solution/dong-hua-yan-shi-di-gui-die-dai-617he-bing-er-cha-/">题解</a></p>
+<p>【提示】同时遍历两棵树，用 <code>root1.left</code> 和 <code>root1.right</code> “接住”递归返回的节点。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/**
+ * @param {TreeNode} root1
+ * @param {TreeNode} root2
+ * @return {TreeNode}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">mergeTrees</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">root1<span class="token punctuation">,</span> root2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>root1 <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">||</span> root2 <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> root1 <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> root2 <span class="token operator">:</span> root1<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>root1 <span class="token operator">!==</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> root2 <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    root1<span class="token punctuation">.</span>val <span class="token operator">+=</span> root2<span class="token punctuation">.</span>val<span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span>
+
+  root1<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token function">mergeTrees</span><span class="token punctuation">(</span>root1<span class="token punctuation">.</span>left<span class="token punctuation">,</span> root2<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  root1<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token function">mergeTrees</span><span class="token punctuation">(</span>root1<span class="token punctuation">.</span>right<span class="token punctuation">,</span> root2<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> root1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <hr>
 <h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h3><h4 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/">leetcode</a></p>
 <p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/solution/zui-da-zi-xu-he-cshi-xian-si-chong-jie-fa-bao-li-f/">题解</a></p>
