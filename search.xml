@@ -1606,9 +1606,33 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<div class="admonition warning"><p>在完全背包中，对于一维dp数组来说，遍历顺序可以交换。</p>
+<div class="admonition warning"><p>在完全背包中，对于一维dp数组来说，遍历顺序可以交换。
+<strong>如果求组合数就是外层for循环遍历物品，内层for遍历背包</strong>，<strong>如果求排列数就是外层for遍历背包，内层for循环遍历物品</strong>。为什么是这样的？因为如果在先遍历物品的话，那么物品放入背包的顺序是固定的；而内层遍历物品则会出现同样的物品，放入顺序不同。</p>
 </div>
 
+<h4 id="完全背包问题的子问题"><a href="#完全背包问题的子问题" class="headerlink" title="完全背包问题的子问题"></a>完全背包问题的子问题</h4><p>一、装满背包至少需要多少个物品的问题</p>
+<pre><code>1. dp[j]: 装满容量为j的背包至少需要的物品个数；
+1. 递推公式：dp[j] = min(dp[j], dp[j - weight[i]] + 1);
+1. 初始化：dp[0] = 1；（这是一般情况，具体需要结合题意）
+1. 遍历顺序：都可以。
+</code></pre>
+<p>题目：<a href="https://leetcode.cn/problems/coin-change/">322. 零钱兑换 - 力扣（LeetCode）</a>、<a href="https://leetcode.cn/problems/perfect-squares/">279. 完全平方数 - 力扣（LeetCode）</a></p>
+<p>二、装满背包有多少种方法的问题</p>
+<ol>
+<li>dp[i]: 装满容量为 i 的背包有 dp[i] 种方法；</li>
+<li>递推公式：dp[i] += dp[i - weight[j]]；</li>
+<li>初始化：dp[0] = 1;</li>
+<li>遍历顺序：外层物品内层背包求组合数，外层背包内层物品求排列数；</li>
+</ol>
+<p>题目：<a href="https://leetcode.cn/problems/combination-sum-iv/">377. 组合总和 Ⅳ - 力扣（LeetCode）</a></p>
+<p>三、物品能否装满背包的问题</p>
+<ol>
+<li>dp[i]: 利用已有的物品可以装满容量为 i 的背包；</li>
+<li>递推公式：dp[i] = true；（判断什么条件下可以装满背包需要结合题意）</li>
+<li>初始化：dp[0] = true；</li>
+<li>遍历顺序：如果装满背包对放入物品的顺序有要求，那么外层背包内层物品，否则一般是外层物品内层背包；</li>
+</ol>
+<p>题目：<a href="https://leetcode.cn/problems/word-break/">139. 单词拆分 - 力扣（LeetCode）</a></p>
 ]]></content>
       <categories>
         <category>算法</category>
