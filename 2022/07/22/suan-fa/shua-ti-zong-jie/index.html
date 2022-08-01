@@ -414,21 +414,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-29
+                    2022-08-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -498,6 +498,7 @@
 <li><p>从后往前遍历，保证物品只放入一次；</p>
 </li>
 </ul>
+<h4 id="01-背包的子问题"><a href="#01-背包的子问题" class="headerlink" title="01 背包的子问题"></a>01 背包的子问题</h4><p>（1）物品能否装满背包问题（最多能装多少物品）</p>
 <hr>
 <h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><div class="admonition info"><p>有N件物品和一个最多能背重量为W的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品都有无限个（也就是可以放入背包多次）</strong>，求解将哪些物品装入背包里物品价值总和最大。<u><strong>完全背包和01背包问题唯一不同的地方就是，每种物品有无限件</strong>。</u></p>
 </div>
@@ -517,11 +518,12 @@
 </div>
 
 <h4 id="完全背包问题的子问题"><a href="#完全背包问题的子问题" class="headerlink" title="完全背包问题的子问题"></a>完全背包问题的子问题</h4><p>一、装满背包至少需要多少个物品的问题</p>
-<pre><code>1. dp[j]: 装满容量为j的背包至少需要的物品个数；
-1. 递推公式：dp[j] = min(dp[j], dp[j - weight[i]] + 1);
-1. 初始化：dp[0] = 1；（这是一般情况，具体需要结合题意）
-1. 遍历顺序：都可以。
-</code></pre>
+<ol>
+<li>dp[j]: 装满容量为j的背包至少需要的物品个数；</li>
+<li>递推公式：dp[j] = min(dp[j], dp[j - weight[i]] + 1);</li>
+<li> 初始化：dp[0] = 1；（这是一般情况，具体需要结合题意）</li>
+<li> 遍历顺序：都可以。</li>
+</ol>
 <p>题目：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/coin-change/">322. 零钱兑换 - 力扣（LeetCode）</a>、<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/perfect-squares/">279. 完全平方数 - 力扣（LeetCode）</a></p>
 <p>二、装满背包有多少种方法的问题</p>
 <ol>
@@ -539,6 +541,27 @@
 <li>遍历顺序：如果装满背包对放入物品的顺序有要求，那么外层背包内层物品，否则一般是外层物品内层背包；</li>
 </ol>
 <p>题目：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/word-break/">139. 单词拆分 - 力扣（LeetCode）</a></p>
+<hr>
+<h3 id="多重背包"><a href="#多重背包" class="headerlink" title="多重背包"></a>多重背包</h3><p>有 <code>N</code> 种物品和一个容量为 <code>V</code> 的背包。第i种物品最多有 <code>Mi</code> 件可用，每件耗费的空间是 <code>Ci </code>，价值是 <code>Wi</code> 。求解将哪些物品装入背包可使这些物品的耗费的空间 总和不超过背包容量，且价值总和最大。</p>
+<p>将不同数量的物品展开，多重背包问题就转换成 01 背包问题了。</p>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> length <span class="token operator">=</span> amountArr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>amountArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      weightArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>weightArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      valueArr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>valueArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      amountArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> goodsNum<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">=</span> weightArr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> dp<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Array</span></span><span class="token punctuation">(</span>bagSize <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 遍历物品</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> goodsNum<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 遍历背包容量</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> bagSize<span class="token punctuation">;</span> j <span class="token operator">&gt;=</span> weightArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>dp<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span>j <span class="token operator">-</span> weightArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">+</span> valueArr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
