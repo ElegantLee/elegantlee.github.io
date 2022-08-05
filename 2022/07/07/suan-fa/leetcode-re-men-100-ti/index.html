@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><!-- hexo injector head_begin start --><link href="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.2.2/css/index.css" rel="stylesheet"/><!-- hexo injector head_begin end -->
+<head>
     <meta charset="utf-8">
     <meta name="keywords" content="Leetcode热门100题刷题笔记(JavaScript实现), elegantlee,Blog,博客,elegantlee.github.io,前端,Deep Learning,Machine Learning,Python,JavaScript">
     <meta name="description" content="Leetcode热门100题刷题笔记，方便查阅">
@@ -24,7 +24,7 @@
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
@@ -414,21 +414,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-01
+                    2022-08-02
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    4.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    19 分
                 </div>
                 
 
@@ -703,6 +703,140 @@
 
   <span class="token keyword">return</span> root1<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h3 id="437-路径总和-III"><a href="#437-路径总和-III" class="headerlink" title="437. 路径总和 III"></a>437. 路径总和 III</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/path-sum-iii/">leetcode</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/path-sum-iii/solution/lu-jing-zong-he-iii-by-leetcode-solution-z9td/">题解</a></p>
+<p>【提示】两种解法：深度优先搜索和前缀和。</p>
+<p>（1）深度优先搜索</p>
+<p>计算每个节点作为路径起点时的路径和，计算量大，耗时。</p>
+<ol>
+<li>递归函数的参数：节点 root，路径总和 target；</li>
+<li>返回值：路径总和满足 target 的路径数量；</li>
+<li>退出条件：递归到空节点，返回 0；</li>
+<li>单层逻辑：当前节点的值是否等于 target（target 在每次递归时减去当前路径起点的 val）；</li>
+</ol>
+<div class="admonition warning"><p class="admonition-title">注意
+</p><p>主函数中也有递归的逻辑，遍历每个节点，以每个节点作为路径起点计算满足路径和为 target 的路径数量。</p>
+</div>
+
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/* 主函数 */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">pathSum</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">root<span class="token punctuation">,</span> targetSum</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token function">rootSum</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> targetSum<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 以 root 为路径起点</span>
+    res <span class="token operator">+=</span>  <span class="token function">pathSum</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> targetSum<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// root 的左子树每个节点作为路径起点</span>
+    res <span class="token operator">+=</span> <span class="token function">pathSum</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> targetSum<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// root 的右子树每个节点作为路径起点</span>
+
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* 以某个节点作为路径起点时，计算满足路径总和的路径数量 */</span>
+<span class="token keyword">function</span> <span class="token function">rootSum</span><span class="token punctuation">(</span><span class="token parameter">root<span class="token punctuation">,</span> targetSum</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+		
+  	<span class="token comment">// 前序遍历位置</span>
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token punctuation">.</span>val <span class="token operator">===</span> targetSum<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        res<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    res <span class="token operator">+=</span> <span class="token function">rootSum</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> targetSum <span class="token operator">-</span> root<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    res <span class="token operator">+=</span> <span class="token function">rootSum</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">,</span> targetSum <span class="token operator">-</span> root<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>（2）前缀和</p>
+<p>也是递归，计算每个并存储每个节点的前缀和。</p>
+<ol>
+<li>递归参数：节点 <code>node</code>，前缀和 <code>prefix（hash表）</code>，当前节点的前缀和 <code>curSum</code>，路径总和 <code>targetSum</code>。</li>
+<li>返回值：满足 <code>targetSum</code> 的路径数量；</li>
+<li>退出条件：递归到空节点，返回 <code>0</code>；</li>
+<li>单层逻辑：计算当前节点的前缀和，从前缀和中获取前缀和为 <code>(curSum - targetSum)</code> 的值，这个值就是满足条件的路径数量。将当前节点的前缀和存储起来，分别递归当前节点的左右子树，回溯时将相应的前缀和 <code>-1</code>。</li>
+</ol>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/**
+ * @param {TreeNode} root
+ * @param {number} targetSum
+ * @return {number}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">pathSum</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">root<span class="token punctuation">,</span> targetSum</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>root <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">const</span> prefix <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    prefix<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 初始化前缀和</span>
+
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token function">dfs</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span> prefix<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> targetSum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token parameter">node<span class="token punctuation">,</span> prefix<span class="token punctuation">,</span> curSum<span class="token punctuation">,</span> targetSum</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    curSum <span class="token operator">+=</span> node<span class="token punctuation">.</span>val<span class="token punctuation">;</span>
+    res <span class="token operator">=</span> prefix<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>curSum <span class="token operator">-</span> targetSum<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    prefix<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>curSum<span class="token punctuation">,</span> <span class="token punctuation">(</span>prefix<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>curSum<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    res <span class="token operator">+=</span> <span class="token function">dfs</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">,</span> prefix<span class="token punctuation">,</span> curSum<span class="token punctuation">,</span> targetSum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    res <span class="token operator">+=</span> <span class="token function">dfs</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">,</span> prefix<span class="token punctuation">,</span> curSum<span class="token punctuation">,</span> targetSum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    prefix<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>curSum<span class="token punctuation">,</span> <span class="token punctuation">(</span>prefix<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>curSum<span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<hr>
+<h3 id="124-二叉树中的最大路径和"><a href="#124-二叉树中的最大路径和" class="headerlink" title="124. 二叉树中的最大路径和"></a>124. 二叉树中的最大路径和</h3><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-maximum-path-sum/">leetcode</a></p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-maximum-path-sum/solution/er-cha-shu-zhong-de-zui-da-lu-jing-he-by-leetcode-/">题解</a></p>
+<p>【提示】分析最大路径和为：当前节点+左子树+右子树。</p>
+<ul>
+<li>左子树的贡献值（左子树的最大路径和）；</li>
+<li>右子树的贡献值（右子树的最大路径和）；</li>
+</ul>
+<p><strong>递归四部曲：</strong></p>
+<ol>
+<li>递归参数：节点 <code>node</code>；</li>
+<li>返回值：每个节点的最大贡献值，即 <code>node.val + max(leftPathSum, rightPathSum)</code>；</li>
+<li>退出条件：递归到空节点，返回贡献值 <code>0</code>。</li>
+<li>单层逻辑：后序遍历位置，先递归得到左右子树的最大贡献值，然后计算最大路径和 <code>node.val + leftPathSum + rightPathSum</code>，在每个节点处比较得到 <code>maxPathSum</code>。</li>
+</ol>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/**
+ * @param {TreeNode} root
+ * @return {number}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">maxPathSum</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">root</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> maxPathSum <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">Infinity</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">function</span> <span class="token function">traverse</span><span class="token punctuation">(</span><span class="token parameter">node</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>node <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">let</span> leftPathSum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token function">traverse</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> rightPathSum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token function">traverse</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      
+				<span class="token comment">// 后序遍历位置</span>
+        <span class="token keyword">let</span> pathSum <span class="token operator">=</span> node<span class="token punctuation">.</span>val <span class="token operator">+</span> leftPathSum <span class="token operator">+</span> rightPathSum<span class="token punctuation">;</span> <span class="token comment">// 计算最大路径和</span>
+        maxPathSum <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>maxPathSum<span class="token punctuation">,</span> pathSum<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 比较</span>
+        <span class="token keyword">return</span> node<span class="token punctuation">.</span>val <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>leftPathSum<span class="token punctuation">,</span> rightPathSum<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 返回当前节点的最大贡献值</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">traverse</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> maxPathSum<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
 
 <hr>
 <h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h3><h4 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h4><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/">leetcode</a></p>
@@ -1870,7 +2004,7 @@ $(function () {
 
     <script src="/libs/materialize/materialize.min.js"></script>
     <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
@@ -1893,10 +2027,6 @@ $(function () {
     <!-- 鼠标星星特效 -->
     
 
-     
-        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="/libs/others/TencentCaptcha.js"></script>
-        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
     
 
     <!-- Baidu Analytics -->
@@ -1938,35 +2068,6 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-<!-- hexo injector body_end start --><script src="https://cdn.jsdelivr.net/npm/hexo-widget-tree@0.2.2/js/index.js"></script><div id="widget-tree">
-      <ul>
-      <li class="tree-list-item">
-        <i class="toggle-post-icon gg-folder-add"></i>
-        <a class="tree-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/">
-          技术开发
-        </a>
-      <span class="tree-list-count">3</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/15/huan-jing-pei-zhi/qian-duan-kai-fa-pei-zhi/" title="前端开发配置"><i class="post-icon gg-file-document"></i>前端开发配置</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/huan-jing-pei-zhi/kai-fa-huan-jing-pei-zhi-hui-zong/" title="开发环境配置汇总"><i class="post-icon gg-file-document"></i>开发环境配置汇总</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/06/04/ji-zhu-kai-fa/git-ming-ling/" title="git常用命令"><i class="post-icon gg-file-document"></i>git常用命令</a></li></ul></li>
-      <li class="tree-list-item">
-        <i class="toggle-post-icon gg-folder-add"></i>
-        <a class="tree-list-link" href="/categories/Deep-Learning/">
-          Deep Learning
-        </a>
-      <span class="tree-list-count">5</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/huan-jing-pei-zhi/windows-an-zhuang-tensorflow-gpu-ban-ben/" title="Windows 安装Tensorflow GPU版本"><i class="post-icon gg-file-document"></i>Windows 安装Tensorflow GPU版本</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/paper-for-fun/" title="Paper for Fun"><i class="post-icon gg-file-document"></i>Paper for Fun</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/paper-ju-zi/" title="paper写作词汇及句子"><i class="post-icon gg-file-document"></i>paper写作词汇及句子</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/21/xue-zhu/zen-yang-kan-lun-wen/" title="怎样看论文"><i class="post-icon gg-file-document"></i>怎样看论文</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2021/06/16/xue-zhu/shen-du-lian-dan-zhi-bei/" title="深度炼丹指北"><i class="post-icon gg-file-document"></i>深度炼丹指北</a></li></ul></li>
-      <li class="tree-list-item">
-        <i class="toggle-post-icon gg-folder-add"></i>
-        <a class="tree-list-link" href="/categories/%E7%AE%97%E6%B3%95/">
-          算法
-        </a>
-      <span class="tree-list-count">5</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/03/16/suan-fa/javascript-suan-fa-yu-shu-ju-jie-gou/" title="算法与数据结构(JavaScript实现)"><i class="post-icon gg-file-document"></i>算法与数据结构(JavaScript实现)</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/07/suan-fa/leetcode-re-men-100-ti/" title="Leetcode热门100题刷题笔记(JavaScript实现)"><i class="post-icon gg-file-document"></i>Leetcode热门100题刷题笔记(JavaScript实现)</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/22/suan-fa/shua-ti-zong-jie/" title="算法题技巧总结"><i class="post-icon gg-file-document"></i>算法题技巧总结</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/09/suan-fa/jian-zhi-offer-bi-ji/" title="剑指offer-JavaScript刷题笔记"><i class="post-icon gg-file-document"></i>剑指offer-JavaScript刷题笔记</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/03/25/suan-fa/leetcode/" title="LeetCode刷题(JavaScript实现)"><i class="post-icon gg-file-document"></i>LeetCode刷题(JavaScript实现)</a></li></ul></li>
-      <li class="tree-list-item">
-        <i class="toggle-post-icon gg-folder-add"></i>
-        <a class="tree-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E6%B2%89%E6%B7%80/">
-          技术沉淀
-        </a>
-      <span class="tree-list-count">13</span><ul class="tree-list-children"><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/05/19/ji-zhu-chen-dian/vue-li-jie/vue-gai-lan/" title="Vue概览"><i class="post-icon gg-file-document"></i>Vue概览</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/web-xing-neng-de-heng-liang/" title="web性能的衡量"><i class="post-icon gg-file-document"></i>web性能的衡量</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/web-xing-neng/" title="web性能"><i class="post-icon gg-file-document"></i>web性能</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/duo-mei-ti-tu-xiang-yu-ying-pian/" title="多媒体-图像与影片"><i class="post-icon gg-file-document"></i>多媒体-图像与影片</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/gan-zhi-xing-neng/" title="感知性能"><i class="post-icon gg-file-document"></i>感知性能</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/26/ji-zhu-chen-dian/qian-duan-jin-jie/liu-lan-qi-yuan-li/" title="渲染页面：浏览器的工作原理"><i class="post-icon gg-file-document"></i>渲染页面：浏览器的工作原理</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/jin-jie/" title="前端进阶"><i class="post-icon gg-file-document"></i>前端进阶</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/snabbdom/" title="snabbdom源码总结"><i class="post-icon gg-file-document"></i>snabbdom源码总结</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/23/ji-zhu-chen-dian/qian-duan-jin-jie/xu-ni-dom/vue-xu-ni-dom/" title="Vue源码阅读之虚拟DOM"><i class="post-icon gg-file-document"></i>Vue源码阅读之虚拟DOM</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/27/ji-zhu-chen-dian/qian-duan-jin-jie/css-xing-neng-te-dian/" title="CSS性能特点"><i class="post-icon gg-file-document"></i>CSS性能特点</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/27/ji-zhu-chen-dian/qian-duan-jin-jie/html-xing-neng-te-dian/" title="HTML性能特点"><i class="post-icon gg-file-document"></i>HTML性能特点</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/27/ji-zhu-chen-dian/qian-duan-jin-jie/web-xing-neng-de-shang-ye-an-li/" title="web性能的商业案例"><i class="post-icon gg-file-document"></i>web性能的商业案例</a></li><li class="tree-list-item"><a class="tree-list-post-link" href="/2022/07/27/ji-zhu-chen-dian/qian-duan-jin-jie/javascript-xing-neng/" title="JavaScript性能"><i class="post-icon gg-file-document"></i>JavaScript性能</a></li></ul></li></ul>
-        <div id="widget-tree-button">
-          <i class="gg-chevron-right"></i>
-        </div>
-      </div><!-- hexo injector body_end end --></body>
+</body>
 
 </html>
