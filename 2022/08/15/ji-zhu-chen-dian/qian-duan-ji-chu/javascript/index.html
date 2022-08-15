@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript基础与进阶, elegantlee,Blog,博客,elegantlee.github.io,前端,Deep Learning,Machine Learning,Python,JavaScript">
-    <meta name="description" content="记录JavaScript 的基础知识点和高级用法">
+    <meta name="keywords" content="JavaScript 基础与进阶, elegantlee,Blog,博客,elegantlee.github.io,前端,Deep Learning,Machine Learning,Python,JavaScript">
+    <meta name="description" content="记录 JavaScript 的基础用法以及进阶内容的深入理解">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@
 
     
 
-    <title>JavaScript基础与进阶 | One Piece</title>
+    <title>JavaScript 基础与进阶 | One Piece</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -248,7 +248,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = '3ab52f348c08f9ef245a484aefd89713990b9fc6ae6bd3016e3d2f76e3d9a3b0';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -261,12 +261,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaScript基础与进阶</h1>
+                    <h1 class="description center-align post-title">JavaScript 基础与进阶</h1>
                 </div>
             </div>
         </div>
@@ -394,8 +394,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/" class="post-category">
-                                技术开发
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" class="post-category">
+                                前端基础
                             </a>
                         
                     </div>
@@ -407,28 +407,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-05
+                    2022-08-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-05
+                    2022-08-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    25.3k
+                    26k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    97 分
+                    100 分
                 </div>
                 
 
@@ -451,29 +451,29 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p><font color="red">TODO</font>表示需要进一步理解的内容；</p>
-<p>高亮==something==表示已经复习到这里，下一步看这部分的内容。</p>
+                <h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><blockquote>
+<p><font color="red">TODO</font> 表示需要进一步理解的内容；</p>
+<p>高亮 ==something== 表示已经复习到这里，下一步看这部分的内容。</p>
 </blockquote>
-<h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><p>JavaScript 是一个静态作用域语言。</p>
+<p>JavaScript 是一个静态作用域语言。</p>
 <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><ul>
 <li>基本数据类型</li>
 <li>变量的定义</li>
 <li>函数</li>
 <li>数组</li>
 <li>类和对象</li>
-<li>this指向</li>
+<li>this 指向</li>
 <li>作用域和作用域链</li>
 </ul>
 <h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><blockquote>
 <ol>
-<li>8种数据类型及区别;</li>
-<li>数据类型检测的方式</li>
+<li>8种数据类型及区别；</li>
+<li>数据类型检测的方式；</li>
 </ol>
 </blockquote>
-<h4 id="8种数据类型及区别"><a href="#8种数据类型及区别" class="headerlink" title="8种数据类型及区别"></a>8种数据类型及区别</h4><p>JavaScript中的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Data_structures">类型</a>集合包括原始值和对象。</p>
-<p><strong>基本类型(值类型，原始值)：</strong> Number(<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9B%99%E7%B2%BE%E5%BA%A6%E6%B5%AE%E9%BB%9E%E6%95%B8">基于 IEEE 754 标准的双精度 64 位二进制格式的值</a>，<code>-(2^53-1)~2^53-1</code>，+Infinity，-Infinity，NaN，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_VALUE">Number.MAX_VALUE</a>，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_VALUE">Number.MIN_VALUE</a>)，String(字符串，不可改变，对字符串的操作一定是返回一个新字符串)，Boolean(布尔)，Null(空)，Undefined(未定义)，BigInt类型，Symbol(符号)。在内存中占据固定大小，保存在<code>栈内存</code>中（7个）；</p>
-<p>Number类型：<code>MAX_VALUE</code> 属性值接近于 <code>1.79E+308</code>。大于 <code>MAX_VALUE</code> 的值代表 “<code>Infinity</code>“；</p>
+<h4 id="8种数据类型及区别"><a href="#8种数据类型及区别" class="headerlink" title="8种数据类型及区别"></a>8种数据类型及区别</h4><p>JavaScript 中的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Data_structures">类型</a>集合包括原始值和对象。</p>
+<p><strong>基本类型(值类型，原始值)：</strong> Number (<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9B%99%E7%B2%BE%E5%BA%A6%E6%B5%AE%E9%BB%9E%E6%95%B8">基于 IEEE 754 标准的双精度 64 位二进制格式的值</a>，<code>-(2^53-1)~2^53-1</code>，+Infinity，-Infinity，NaN，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_VALUE">Number.MAX_VALUE</a>，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_VALUE">Number.MIN_VALUE</a>)，String (字符串，不可改变，对字符串的操作一定是返回一个新字符串)，Boolean (布尔)，Null (空)，Undefined (未定义)，BigInt 类型，Symbol (符号)。在内存中占据固定大小，保存在<code>栈内存</code>中（7个）；</p>
+<p>Number 类型：<code>MAX_VALUE</code> 属性值接近于 <code>1.79E+308</code>。大于 <code>MAX_VALUE</code> 的值代表 “<code>Infinity</code>“；</p>
 <ul>
 <li>检查值是否在双精度浮点数的取值范围内：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER"><code>Number.MAX_SAFE_INTEGER</code></a> 和 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_SAFE_INTEGER"><code>Number.MIN_SAFE_INTEGER</code></a>， <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger"><code>Number.isSafeInteger()</code></a>。超出这个范围，JavaScript 中的<strong>整数</strong>将不再安全，该值将表示为与该值近似的双精度浮点数。</li>
 </ul>
@@ -483,13 +483,16 @@
 <span class="token operator">-</span><span class="token number">Infinity</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><font color="red">// TODO： 待深入</font></p>
-<p><strong>引用类型(复杂数据类型，对象)：</strong> Object(对象)、Function(函数)。其他还有Array(数组)、Date(日期)、RegExp(正则表达式)、特殊的基本包装类型(String、Number、Boolean) 以及单体内置对象(Global、Math)等引用类型的值是对象保存在<code>堆内存</code>中，栈内存存储的是对象的变量标识符以及对象在堆内存中的存储地址。</p>
-<p><strong><code>null</code>和<code>undefined</code>的区别？</strong></p>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/null">null</a> 是表示缺少的标识，指示变量未指向任何对象。把 <code>null</code> 作为尚未创建的对象，更容易理解。null不是全局对象的一个属性，转为数值时为0；</p>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a>是一个表示”无”的原始值，转为数值时为NaN；</p>
-<p>当声明的变量还未被初始化时，变量的默认值为undefined；</p>
-<p>null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象；</p>
-<p>undefined表示 “缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：</p>
+<p><strong>引用类型(复杂数据类型，对象)：</strong> Object (对象)、Function (函数)。其他还有 Array (数组)、Date (日期)、RegExp (正则表达式)、特殊的基本包装类型（String、Number、Boolean）以及单体内置对象（Global、Math）等引用类型的值是对象保存在<code>堆内存</code>中，栈内存存储的是对象的变量标识符以及对象在堆内存中的存储地址。</p>
+<p>Reference:👉 [浅析JS中的堆内存与栈内存 - 木子墨 - 博客园 (cnblogs.com)](<a target="_blank" rel="noopener" href="https://www.cnblogs.com/heioray/p/9487093.html#:~:text=js%E4%B8%AD%E7%9A%84%E5%A0%86%E5%86%85%E5%AD%98%E4%B8%8E%E6%A0%88%E5%86%85%E5%AD%98">https://www.cnblogs.com/heioray/p/9487093.html#:~:text=js中的堆内存与栈内存</a> 在js引擎中对变量的存储主要有两种位置， 堆内存和栈内存 。 和java中对内存的处理类似，,栈内存 主要用于存储各种 基本类型的 变量，包括Boolean、Number、String、Undefined、Null，**以及对象变量的指针，这时候栈内存给人的感觉就像一个线性排列的空间，每个小单元大小基本 )</p>
+<p><strong><code>null</code> 和 <code>undefined</code> 的区别？</strong></p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/null">null</a> 是表示缺少的标识，指示变量未指向任何对象。把 <code>null</code> 作为尚未创建的对象，更容易理解。null不是全局对象的一个属性，转为数值时为0；<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined">undefined</a> 是一个表示”无”的原始值，转为数值时为 NaN。当声明的变量还未被初始化时，变量的默认值为undefined。</p>
+</li>
+<li><p>null用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象；undefined表示 “缺少值”，就是此处应该有一个值，但是还没有定义。</p>
+</li>
+</ol>
+<p>undefined 的典型用法是：</p>
 <ol>
 <li><p>变量被声明了，但没有赋值时，就等于 undefined</p>
 </li>
@@ -500,7 +503,7 @@
 <li><p>函数没有返回值时，默认返回 undefined</p>
 </li>
 </ol>
-<p>null表示“没有对象”，即该处不应该有值。典型用法是：</p>
+<p>null 表示“没有对象”，即该处不应该有值。典型用法是：</p>
 <ol>
 <li><p>作为函数的参数，表示该函数的参数不是对象</p>
 </li>
@@ -508,21 +511,19 @@
 </li>
 </ol>
 <p><strong>延伸知识点：</strong></p>
-<p>（1）==和===的区别？==会在比较值之前执行数据类型转换（具体转换规则参考<code>红宝书</code>）。</p>
-<p>（2）检查undefined的三种方式？</p>
+<p>（1）== 和  === 的区别？== 会在比较值之前执行数据类型转换（具体转换规则参考<code>红宝书</code>）。</p>
+<p>（2）检查 undefined 的三种方式？</p>
 <ul>
-<li>严格全等===，==会先检查值是否为null，null 不等同于undefined；</li>
+<li>严格全等 ===，== 会先检查值是否为 null，null 不等同于 undefined；</li>
 <li>typeof</li>
-<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/void">void</a> 0得到原始的undefined</li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/void">void</a> 0 得到原始的 undefined</li>
 </ul>
 <p><strong>使用场景：</strong></p>
-<p>Symbol：使用Symbol来作为对象属性名(key)  。利用该特性，把一些不需要对外操作和访问的属性使用Symbol来定义</p>
-<p>BigInt：由于在 Number 与 BigInt 之间进行转换会损失精度，因而建议仅在值可能大于2^53 时使用 BigInt 类型，并且不在两种类型之间进行相互转换。</p>
+<p>Symbol：使用 Symbol 来作为对象属性名（key）。利用该特性，把一些不需要对外操作和访问的属性使用 Symbol 来定义。</p>
+<p>BigInt：由于在 Number 与 BigInt 之间进行转换会损失精度，因而建议仅在值可能大于 2^53 时使用 BigInt 类型，并且不在两种类型之间进行相互转换。</p>
 <p>传送门 👉<a target="_blank" rel="noopener" href="https://juejin.cn/post/7000754813801775111"># JavaScript 数据类型之 Symbol、BigInt</a></p>
 <h4 id="数据类型检测的方式"><a href="#数据类型检测的方式" class="headerlink" title="数据类型检测的方式"></a>数据类型检测的方式</h4><ol>
-<li><p>typeof /instance of</p>
-</li>
-<li><p>typeof null返回什么 ：object</p>
+<li><p>typeof null 返回什么 ：object</p>
 </li>
 <li><p>数据类型检测的方式？（typeof、instanceof、Object.prototype.toString.call）</p>
 </li>
@@ -542,7 +543,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// undefined</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>优点：能够快速区分<code>基本数据类型</code></p>
-<p>缺点：不能将Object、Array和Null区分，都返回object</p>
+<p>缺点：不能区分 Object、Array 和 null，都返回 object</p>
 <p><strong>instanceof</strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token keyword">instanceof</span> <span class="token class-name">Number</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                    <span class="token comment">// false</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token boolean">true</span> <span class="token keyword">instanceof</span> <span class="token class-name">Boolean</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">// false </span>
@@ -551,7 +552,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token keyword">instanceof</span> <span class="token class-name">Function</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">// true</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                   <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>优点：能够区分Array、Object和Function，适合用于判断自定义的类实例对象，用于区分引用类型的数据；</p>
+<p>优点：能够区分 Array、Object 和 Function，适合用于判断自定义的类实例对象，用于区分引用类型的数据；</p>
 <p>缺点：Number，Boolean，String基本数据类型不能判断</p>
 <p><strong>Object.prototype.toString.call()</strong></p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> toString <span class="token operator">=</span> <span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">;</span>
@@ -572,7 +573,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ul>
 <li>prototype：只要创建一个函数就会按特定的规则为这个函数创建一个 prototype 属性（指向原型对象）。</li>
 <li>对象上暴露的 _<em>proto</em>_ 属性，通过这个属性可以访问对象的原型。</li>
-<li>prototype 是构造函数自带的对象，_<em>proto</em>_ 是实例化对象的属性，指向构造函数的 prototype。</li>
+<li>prototype 是类自带的对象，_<em>proto</em>_ 是实例化对象的属性，指向类的 prototype。</li>
 </ul>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">instance_of</span><span class="token punctuation">(</span><span class="token parameter">object<span class="token punctuation">,</span> constructor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//L 表示左表达式，R 表示右表达式</span>
  <span class="token keyword">while</span> <span class="token punctuation">(</span>object <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
@@ -583,50 +584,52 @@ console<span class="token punctuation">.</span><span class="token function">log<
   <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><code>L的__proto__是不是强等于 R.prototype，不等于再找  L.__proto__ .__proto__  直到__proto__ 为null。</code></p>
-<h5 id="instanceof-和-typeof-的区别："><a href="#instanceof-和-typeof-的区别：" class="headerlink" title="instanceof 和 typeof 的区别："></a>instanceof 和 typeof 的区别：</h5><p>typeof 在对值类型 number、string、boolean 、null 、 undefined、 以及引用类型的 function 的反应是精准的；但是，对于对象{ } 、数组[ ] 、null 都会返回object。</p>
-<p>为了弥补这一点，<u>instanceof 从原型的角度，来判断某引用属于哪个构造函数，从而判定它的数据类型</u>。</p>
-<p><font color="red">// TODO: </font>深入理解类的 prototype 属性和对象实例的 _<em>proto</em>_ 属性</p>
-<h3 id="变量的定义"><a href="#变量的定义" class="headerlink" title="变量的定义"></a>变量的定义</h3><h4 id="var-let-const区别"><a href="#var-let-const区别" class="headerlink" title="var let const区别"></a>var let const区别</h4><ol>
-<li> var定义的变量是包含它的函数的局部变量，在函数内定义变量省略var会创建一个全局变量。用var可以重复定义同一个变量。let和const定义的变量，只能在块作用域里访问，不能重复声明同一个变量。const用来定义常量，使用时必须初始化(即必须赋值)，且不能修改。</li>
-<li> 在全局上下文中，基于let声明的全局变量和全局对象GO（window）没有任何关系 ；var声明的变量会和GO有映射关系；</li>
-<li> let和const<code>会产生暂时性死区</code>：在解析代码时，JavaScript引擎也会注意出现在块后面的let声明。在let声明之前的执行瞬间被称为“暂时性死区”（temporal dead zone），在这个阶段引用任何后面才声明的变量都会抛出RefferenceError。</li>
+<h5 id="instanceof-和-typeof-的区别："><a href="#instanceof-和-typeof-的区别：" class="headerlink" title="instanceof 和 typeof 的区别："></a>instanceof 和 typeof 的区别：</h5><p>typeof 在对值类型 number、string、boolean 、null 、 undefined、 以及引用类型的 function 的反应是精准的；但是，对于对象 { } 、数组 [ ] 、null 都会返回object。为了弥补这一点，<u>instanceof 从原型的角度，来判断某引用属于哪个构造函数，从而判定它的数据类型</u>。</p>
+<p><font color="red">// TODO: </font>深入理解类的 prototype 属性和对象实例的 _<em>proto</em>_ 属性。</p>
+<h3 id="变量的定义"><a href="#变量的定义" class="headerlink" title="变量的定义"></a>变量的定义</h3><h4 id="var-let-const-区别"><a href="#var-let-const-区别" class="headerlink" title="var let const 区别"></a>var let const 区别</h4><ol>
+<li> var 定义的变量是包含它的函数的局部变量，在函数内定义变量省略 var 会创建一个全局变量。用 var 可以重复定义同一个变量。let 和 const 定义的变量，只能在块作用域里访问，不能重复声明同一个变量。const 用来定义常量，使用时必须初始化（即必须赋值），且不能修改。</li>
+<li> 在全局上下文中，基于 let 声明的全局变量和全局对象 GO（window）没有任何关系 ；var 声明的变量会和 GO 有映射关系；</li>
+<li> let 和 const <code>会产生暂时性死区</code>：在解析代码时，JavaScript 引擎也会注意出现在块后面的 let 声明。在 let 声明之前的执行瞬间被称为“暂时性死区”（temporal dead zone），在这个阶段引用任何后面才声明的变量都会抛出 RefferenceError。</li>
 </ol>
-<h4 id="作用域和作用域链"><a href="#作用域和作用域链" class="headerlink" title="作用域和作用域链"></a>作用域和作用域链</h4><p><strong>作用域：</strong>简单来说作用域就是变量与函数的可访问范围。作用域最大的用处就是<code>隔离变量</code>，不同作用域下同名变量不会有冲突。</p>
+<h4 id="作用域和作用域链"><a href="#作用域和作用域链" class="headerlink" title="作用域和作用域链"></a>作用域和作用域链</h4><p><strong>作用域：</strong>简单来说<u>作用域就是变量与函数的可访问范围</u>。作用域最大的用处就是<code>隔离变量</code>，不同作用域下同名变量不会有冲突。</p>
 <p><strong>作用域链：</strong>一般情况下，变量到创建该变量的函数的作用域中取值。但是如果在当前作用域中没有查到，就会向上级作用域去查，直到查到全局作用域，这么一个查找过程形成的链条就叫做作用域链。</p>
 <hr>
 <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="箭头函数和普通函数的区别"><a href="#箭头函数和普通函数的区别" class="headerlink" title="箭头函数和普通函数的区别"></a>箭头函数和普通函数的区别</h4><p>特性：</p>
 <ol>
-<li> <code>箭头函数没有constructor</code>，是匿名函数，不能作为构造函数，不能通过new 调用；</li>
-<li> <code>没有new.target 属性</code>。在通过new运算符被初始化的函数或构造方法中，new.target返回一个指向构造方法或函数的引用。在普通的函数调用中，new.target 的值是undefined；</li>
-<li> <code>箭头函数不绑定Arguments 对象</code>。取而代之用rest参数…（剩余参数）解决。</li>
-<li> <code>箭头函数没有自己的this指针</code>，捕获其所在作用域链的上一级作用域中的this。通过 call() 或 apply() 方法调用一个函数时，只能传递参数（不能绑定this），他们的第一个参数会被忽略。（这种现象对于bind方法同样成立）；</li>
-<li> 箭头函数没有原型属性 Fn.prototype 值为 undefined；</li>
-<li> 箭头函数不能当做Generator函数,不能使用yield关键字；</li>
+<li> <strong>箭头函数没有 constructor</strong>，是匿名函数，不能作为构造函数，不能通过 new 调用；</li>
+<li> 没有 new.target 属性。在通过new运算符被初始化的函数或构造方法中，new.target返回一个指向构造方法或函数的引用。在普通的函数调用中，new.target 的值是undefined；</li>
+<li> <strong>箭头函数不绑定 Arguments 对象</strong>。取而代之用 rest 参数…（剩余参数）解决。</li>
+<li> <strong>箭头函数没有自己的 this 指针</strong>，捕获其所在作用域链的上一级作用域中的 this。通过 call() 或 apply() 方法调用一个函数时，只能传递参数（不能绑定this），他们的第一个参数会被忽略。（这种现象对于 bind 方法同样成立）；</li>
+<li> 箭头函数没有原型属性，Fn.prototype 值为 undefined；</li>
+<li> 箭头函数不能当做 Generator 函数,不能使用 yield 关键字；</li>
 </ol>
-<h4 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h4><p>立即执行函数就是声明一个匿名函数，然后马上调用这个匿名函数。</p>
+<h4 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h4><p>立即执行函数表达式（Immediately Invoked Function Expression，IIFE）就是声明一个匿名函数，然后马上调用这个匿名函数。可以创建一个局部作用域。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token function">alert</span><span class="token punctuation">(</span>“这是一个立即执行函数”<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>作用：立即执行函数会形成一个单独的作用域，我们可以封装一些临时变量或者局部变量，避免污染全局变量。</p>
+<p>作用：</p>
+<ol>
+<li>立即执行函数会形成一个单独的作用域，我们可以封装一些临时变量或者局部变量，避免污染全局变量。</li>
+<li>解决 undefined 标识符的默认值被错误覆盖导致的异常。</li>
+</ol>
 <h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><p>手写一个闭包函数</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 	<span class="token keyword">const</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
     <span class="token keyword">function</span> <span class="token function">myClosure</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      	<span class="token comment">// myClosure 是一个闭包 	</span>
         <span class="token keyword">return</span> <span class="token operator">++</span>num<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">return</span> <span class="token function">myClosure</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> myClosure<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-<span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// fn是一个闭包</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+<span class="token keyword">let</span> test <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h5 id="闭包-哪里用到了-为什么用-有什么作用"><a href="#闭包-哪里用到了-为什么用-有什么作用" class="headerlink" title="闭包 哪里用到了 为什么用 有什么作用"></a>闭包 哪里用到了 为什么用 有什么作用</h5><blockquote>
 <p>闭包的特性使得函数可以访问到外层作用域。如果一个内层函数访问外层函数中的变量，外层函数已经执行完毕，但是内层函数还没执行完毕时，内层函数想要访问外层函数中的变量，变量会直到内层函数执行完时它的存储空间才会被收回。</p>
 <p>使用场景：</p>
-<p>（1）浏览器事件的回调函数；</p>
-<p>（2）模拟私有方法</p>
+<p>（1）回调函数；（定时器、事件监听器、Ajax 请求、跨窗口通信、Web Workers 或者任何其他的异步（或者同步）任务中，只要使用了回调函数，实际上就是在使用闭包）</p>
+<p>（2）模拟私有方法（创建模块，封装私有变量和对外开放的 API）；</p>
 <p>性能考量：</p>
 <p>如果不是某些特定任务需要使用闭包，在其它函数中创建函数是不明智的，因为闭包在处理速度和内存消耗方面对脚本性能具有负面影响。</p>
 </blockquote>
@@ -713,15 +716,19 @@ debounce 与 throttle 区别
 节流（throttle）：限制目标函数调用的频率，比如：1s内不能调用2次。
 */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="闭包是什么"><a href="#闭包是什么" class="headerlink" title="闭包是什么"></a>闭包是什么</h5><p>红宝书：闭包是指有权访问另外一个函数作用域中的变量的函数。</p>
-<p>MDN：<em>闭包</em>是由函数以及声明该函数的词法环境组合而成的。该环境包含了这个闭包创建时作用域内的任何局部变量。词法（lexical）一词指的是，词法作用域根据源代码中声明变量的位置来确定该变量在何处可用。嵌套函数可访问声明于它们外部作用域的变量。</p>
-<h5 id="形成原因"><a href="#形成原因" class="headerlink" title="形成原因"></a>形成原因</h5><p>内部的函数存在外部作用域的引用就会导致闭包。</p>
-<h5 id="闭包变量存储的位置"><a href="#闭包变量存储的位置" class="headerlink" title="闭包变量存储的位置"></a>闭包变量存储的位置</h5><p><strong>闭包中的变量存储的位置是堆内存。</strong></p>
-<h5 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h5><ul>
-<li><code>保护</code>函数的私有变量不受外部的干扰。形成不销毁的栈内存。</li>
-<li><code>保存</code>，把一些函数内的值保存下来。闭包可以实现方法和属性的私有化</li>
+<h5 id="闭包是什么"><a href="#闭包是什么" class="headerlink" title="闭包是什么"></a>闭包是什么</h5><p><strong>《JavaScript 高级程序设计（第 4 版）》（红宝书）：</strong>闭包是指有权访问另外一个函数作用域中的变量的函数。</p>
+<p><strong>MDN：</strong><em>闭包</em>是由函数以及声明该函数的词法环境组合而成的。该环境包含了这个闭包创建时作用域内的任何局部变量。词法（lexical）一词指的是，词法作用域根据源代码中声明变量的位置来确定该变量在何处可用。嵌套函数可访问声明于它们外部作用域的变量。</p>
+<p><strong>《你不知道的 JavaScript》：</strong>当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行。</p>
+<p><strong>形成原因：</strong>内部的函数存在所在词法作用域的引用就会导致闭包。</p>
+<p><strong>闭包变量存储的位置：</strong>闭包中的变量存储的位置是堆内存。</p>
+<p><strong>闭包的作用</strong></p>
+<ul>
+<li><code>保护</code>，隐藏内部实现，最小限度地暴露必要的内容。</li>
+<li>避免同名标识符之间的冲突（模块化管理代码时用到）。</li>
+<li><code>保存</code>，保持对函数定义所在的词法作用域的引用。</li>
 </ul>
-<h5 id="闭包缺点"><a href="#闭包缺点" class="headerlink" title="闭包缺点"></a>闭包缺点</h5><p>导致函数的变量一直保存在内存中，过多的闭包可能会导致内存泄漏。开发模式performance 面板 和 memory 面板可以找到泄露的现象和位置。</p>
+<p><strong>闭包的应用：</strong>回调函数和模块化。</p>
+<p><strong>闭包缺点：</strong>导致函数的变量一直保存在内存中，过多的闭包可能会导致内存泄漏。开发模式 performance 面板 和 memory 面板可以找到泄露的现象和位置。</p>
 <h4 id="References"><a href="#References" class="headerlink" title="References"></a>References</h4><p>👉<a target="_blank" rel="noopener" href="https://juejin.cn/post/6937469222251560990">JS 闭包经典使用场景和含闭包必刷题 - 掘金 (juejin.cn)</a></p>
 <p>👉<a target="_blank" rel="noopener" href="https://juejin.cn/post/6948415598632108063">闭包的使用场景，使用闭包需要注意什么 - 掘金 (juejin.cn)</a></p>
 <hr>
@@ -739,8 +746,8 @@ debounce 与 throttle 区别
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="for-in（ES1）"><a href="#for-in（ES1）" class="headerlink" title="for-in（ES1）"></a>for-in（ES1）</h5><p>for-in遍历的不是数组中的value，而是index。</p>
-<p>for-in语句循环一个指定的变量来循环一个对象所有可枚举的属性。</p>
+<h5 id="for-in（ES1）"><a href="#for-in（ES1）" class="headerlink" title="for-in（ES1）"></a>for-in（ES1）</h5><p>for-in 遍历的不是数组中的 value，而是 index。</p>
+<p>for-in 语句循环一个指定的变量来循环一个对象所有可枚举的属性。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 arr<span class="token punctuation">.</span>foo <span class="token operator">=</span> <span class="token string">"hello"</span><span class="token punctuation">;</span>
 
@@ -791,32 +798,36 @@ arr<span class="token punctuation">.</span><span class="token function">forEach<
 </ol>
 <h4 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h4><p>（1）原型</p>
 <p>（2）构造函数</p>
-<p>（3）Array自带的isArray()方法</p>
-<h5 id="1-instanceof运算符"><a href="#1-instanceof运算符" class="headerlink" title="1. instanceof运算符"></a>1. instanceof运算符</h5><p>从构造函数入手:可以判断一个对象是否是在其原型链上原型构造函数中的属性。</p>
+<p>（3）Array 自带的 isArray() 方法</p>
+<h5 id="1-instanceof运算符"><a href="#1-instanceof运算符" class="headerlink" title="1. instanceof运算符"></a>1. instanceof运算符</h5><p>从构造函数入手：可以判断一个对象是否是在其原型链上原型构造函数中的属性。</p>
 <p>typeof 和 instanceof 的区别？ </p>
 <ul>
-<li>两者都可以用来判断变量，typeof会返回基本类型，而instanceof只会返回一个布尔值。</li>
+<li>两者都可以用来判断变量，typeof 会返回基本类型，而 instanceof 只会返回一个布尔值。</li>
 </ul>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// object</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="2-constructor判断"><a href="#2-constructor判断" class="headerlink" title="2. constructor判断"></a>2. constructor判断</h5><p>这个属性是返回对象相对应的构造函数，Object的每个实例都有构造函数 constructor，用于保存着用于创建当前对象的函数。</p>
+<h5 id="2-constructor-判断"><a href="#2-constructor-判断" class="headerlink" title="2. constructor 判断"></a>2. constructor 判断</h5><p>这个属性是返回对象相对应的构造函数，Object的每个实例都有构造函数 constructor，用于保存着用于创建当前对象的函数。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>constructor <span class="token operator">===</span> Array<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h5 id="3-通过数组自带的方法isArray判断（ES5新增，优于instanceof，在浏览器环境中检测数组更好）"><a href="#3-通过数组自带的方法isArray判断（ES5新增，优于instanceof，在浏览器环境中检测数组更好）" class="headerlink" title="3. 通过数组自带的方法isArray判断（ES5新增，优于instanceof，在浏览器环境中检测数组更好）"></a>3. 通过数组自带的方法isArray判断（ES5新增，优于instanceof，在浏览器环境中检测数组更好）</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<h5 id="3-通过数组自带的方法-isArray-判断（ES5-新增，优于-instanceof，在浏览器环境中检测数组更好）"><a href="#3-通过数组自带的方法-isArray-判断（ES5-新增，优于-instanceof，在浏览器环境中检测数组更好）" class="headerlink" title="3. 通过数组自带的方法 isArray 判断（ES5 新增，优于 instanceof，在浏览器环境中检测数组更好）"></a>3. 通过数组自带的方法 isArray 判断（ES5 新增，优于 instanceof，在浏览器环境中检测数组更好）</h5><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h5 id="4-通过isPrototypeOf-方法判断"><a href="#4-通过isPrototypeOf-方法判断" class="headerlink" title="4. 通过isPrototypeOf()方法判断"></a>4. 通过isPrototypeOf()方法判断</h5><p>从原型入手，Array.prototype 属性表示 Array 构造函数的原型，其中有一个方法是 isPrototypeOf() 用于测试一个对象是否存在于另一个对象的原型链上。</p>
+<h5 id="4-通过-isPrototypeOf-方法判断"><a href="#4-通过-isPrototypeOf-方法判断" class="headerlink" title="4. 通过 isPrototypeOf() 方法判断"></a>4. 通过 isPrototypeOf() 方法判断</h5><p>从原型入手，Array.prototype 属性表示 Array 构造函数的原型，其中有一个方法是 isPrototypeOf() 用于测试一个对象是否存在于另一个对象的原型链上。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">isPrototypeOf</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h5 id="通过Object-getPrototypeOf方法判断"><a href="#通过Object-getPrototypeOf方法判断" class="headerlink" title="通过Object.getPrototypeOf方法判断"></a>通过Object.getPrototypeOf方法判断</h5><p>Object.getPrototypeOf() 方法返回指定对象的原型，所以只要跟Array的原型比较即可。</p>
+<div class="admonition warning"><p class="admonition-title">注意
+</p><p><strong>备注：</strong><code>isPrototypeOf()</code> 与 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof"><code>instanceof</code></a> 运算符不同。在表达式 "<code>object instanceof AFunction</code>" 中，<code>object</code> 的原型链是针对 <code>AFunction.prototype</code> 进行检查的，而不是针对 <code>AFunction</code> 本身。</p>
+</div>
+
+<h5 id="通过-Object-getPrototypeOf-方法判断"><a href="#通过-Object-getPrototypeOf-方法判断" class="headerlink" title="通过 Object.getPrototypeOf 方法判断"></a>通过 Object.getPrototypeOf 方法判断</h5><p>Object.getPrototypeOf() 方法返回指定对象的原型，所以只要跟 Array 的原型比较即可。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">getPrototypeOf</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h5 id="通过Object-prototype-toString-call-判断"><a href="#通过Object-prototype-toString-call-判断" class="headerlink" title="通过Object.prototype.toString.call()判断"></a>通过Object.prototype.toString.call()判断</h5><p>虽然Array也继承自Object，但js在Array.prototype上重写了toString，而我们通过toString.call(arr)实际上是通过原型链调用了。可以获取到变量的不同类型。==【还没弄懂】==</p>
+<h5 id="通过-Object-prototype-toString-call-判断"><a href="#通过-Object-prototype-toString-call-判断" class="headerlink" title="通过 Object.prototype.toString.call() 判断"></a>通过 Object.prototype.toString.call() 判断</h5><p>虽然 Array 也继承自 Object，但 js 在 Array.prototype 上重写了 toString，而我们通过 toString.call(arr) 实际上是通过原型链调用了。可以获取到变量的不同类型。==【还没弄懂】==</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'[object Array]'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -867,7 +878,7 @@ arr<span class="token punctuation">.</span><span class="token function">map</spa
 <span class="token keyword">let</span> arr0 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
-<h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>[MDN]</p>
+<h3 id="类和对象"><a href="#类和对象" class="headerlink" title="==类和对象=="></a>==类和对象==</h3><h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>[MDN]</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Working_with_Objects">使用对象</a></li>
 <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Details_of_the_Object_Model">对象模型细节</a></li>
@@ -1327,14 +1338,30 @@ o<span class="token punctuation">.</span>__proto__ <span class="token operator">
 <li>如果直到找到原型链的顶端null也没找到这个属性，则判定该对象没有该属性，返回 undefined。</li>
 </ol>
 <hr>
-<h3 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h3><h4 id="this指向分哪几类情况？"><a href="#this指向分哪几类情况？" class="headerlink" title="this指向分哪几类情况？"></a>this指向分哪几类情况？</h4><ul>
+<h3 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h3><p>如果要判断一个运行中的函数的 this 绑定，就需要找到这个函数的直接调用位置。找到之后就可以顺序应用下面这四条规则来判断 this 的绑定对象：</p>
+<ol>
+<li>由 new 调用？绑定到新创建的对象。</li>
+<li>由 call 或 apply（或 bind） 调用？绑定到指定的对象。</li>
+<li>由上下文对象调用？绑定到那个上下文对象。</li>
+<li>默认：在严格模式下绑定到 undefined，否则绑定到全局对象。</li>
+</ol>
+<div class="admonition warning"><p class="admonition-title">注意
+</p><p>有些调用可能无意中使用默认绑定规则。如果想“更安全”地忽略 this 绑定，你可以使用一个 DMZ（demilitarized zone，非军事区）对象，如<code>tmp=Object.create(null)</code>，以保护全局对象。</p>
+</div>
+
+<p>ES6 中的箭头函数不会使用以上四条标准的绑定规则，而是根据当前的词法作用域来决定 this，即箭头函数会继承外层函数调用的 this 绑定（无论 this 绑定到什么）。这其实和 ES6 之前代码中的 <code>self = this</code> 机制一样。</p>
+<h4 id="绑定的例外"><a href="#绑定的例外" class="headerlink" title="绑定的例外"></a>绑定的例外</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token function">foo</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 实际应用的是默认绑定</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="this指向分哪几类情况？"><a href="#this指向分哪几类情况？" class="headerlink" title="this指向分哪几类情况？"></a>this指向分哪几类情况？</h4><ul>
 <li>全局环境下调用this（全局对象）</li>
-<li>函数作为对象方法被调用（指向该对象）</li>
-<li>通过call、apply和bind方法显式指定this</li>
-<li>作为构造函数调用（指向创建的对象实例）</li>
-</ul>
-<h4 id="箭头函数的this"><a href="#箭头函数的this" class="headerlink" title="箭头函数的this"></a>箭头函数的this</h4><ul>
-<li>没有自己的this，继承自最外层普通函数，一但确定无法被修改；</li>
+<li>函数作为对象方法被调用（上下文对象）</li>
+<li>通过call、apply和bind方法显式指定this（显式绑定）</li>
+<li>作为构造函数调用（new 绑定，指向创建的对象实例）</li>
 </ul>
 <h4 id="call-apply-bind-的区别"><a href="#call-apply-bind-的区别" class="headerlink" title="call/apply/bind 的区别"></a>call/apply/bind 的区别</h4><p>相同：</p>
 <p>1、都是用来改变函数的this对象的指向的。</p>
@@ -2542,15 +2569,26 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903917986267143">彻底掌握js内存泄漏以及如何避免 - 掘金 (juejin.cn)</a></li>
 </ul>
 <hr>
-<h2 id="手写代码"><a href="#手写代码" class="headerlink" title="手写代码"></a>手写代码</h2><h3 id="深拷贝浅拷贝"><a href="#深拷贝浅拷贝" class="headerlink" title="深拷贝浅拷贝"></a>深拷贝浅拷贝</h3><h4 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h4><p>拷贝后，新拷贝的对象内部的引用数据类型会随着源对象的变换而变化。</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// ES6</span>
+<h2 id="手写代码"><a href="#手写代码" class="headerlink" title="手写代码"></a>手写代码</h2><h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><p>一、数组扁平化</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+
+
+
+### 深拷贝浅拷贝
+
+#### 浅拷贝
+
+拷贝后，新拷贝的对象内部的引用数据类型会随着源对象的变换而变化。
+
+</span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span>js
+<span class="token comment">// ES6</span>
 <span class="token comment">/*
  * target: 拷贝的对象
  * sources: 被拷贝的对象
  */</span>
 Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> sources<span class="token punctuation">)</span>
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> print <span class="token operator">=</span> console<span class="token punctuation">.</span>log<span class="token punctuation">;</span>
 
@@ -2769,7 +2807,7 @@ document<span class="token punctuation">.</span><span class="token function">que
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://elegantlee.github.io/2022/08/05/ji-zhu-kai-fa/javascript-ji-chu-yu-jin-jie/">https://elegantlee.github.io/2022/08/05/ji-zhu-kai-fa/javascript-ji-chu-yu-jin-jie/</a>
+                    <a href="https://elegantlee.github.io/2022/08/15/ji-zhu-chen-dian/qian-duan-ji-chu/javascript/">https://elegantlee.github.io/2022/08/15/ji-zhu-chen-dian/qian-duan-ji-chu/javascript/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -3193,48 +3231,46 @@ document<span class="token punctuation">.</span><span class="token function">que
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/08/05/ji-zhu-kai-fa/javascript-ji-chu-yu-jin-jie/">
+                <a href="/2022/08/15/ji-zhu-chen-dian/qian-duan-ji-chu/vue/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="JavaScript基础与进阶">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Vue 基础">
                         
-                        <span class="card-title">JavaScript基础与进阶</span>
+                        <span class="card-title">Vue 基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录JavaScript 的基础知识点和高级用法
+                            记录 Vue 的基础用法和概念理解
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-05
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91/" class="post-category">
-                                    技术开发
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    前端基础
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
@@ -3248,31 +3284,31 @@ document<span class="token punctuation">.</span><span class="token function">que
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/07/27/ji-zhu-chen-dian/qian-duan-jin-jie/web-xing-neng-de-shang-ye-an-li/">
+                <a href="/2022/08/15/ji-zhu-chen-dian/qian-duan-ji-chu/css/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="web性能的商业案例">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="CSS 基础">
                         
-                        <span class="card-title">web性能的商业案例</span>
+                        <span class="card-title">CSS 基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            记录 CSS 的基础用法和概念理解
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%B2%89%E6%B7%80/" class="post-category">
-                                    技术沉淀
+                            <a href="/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    前端基础
                                 </a>
                             
                             
@@ -3282,8 +3318,8 @@ document<span class="token punctuation">.</span><span class="token function">que
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/web%E6%80%A7%E8%83%BD/">
-                        <span class="chip bg-color">web性能</span>
+                    <a href="/tags/CSS/">
+                        <span class="chip bg-color">CSS</span>
                     </a>
                     
                 </div>
