@@ -414,21 +414,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-12
+                    2022-08-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.5k
+                    5.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    17 分
+                    20 分
                 </div>
                 
 
@@ -778,6 +778,7 @@
 </li>
 </ul>
 <hr>
+<h2 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h2><hr>
 <h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h3><div class="admonition info"><p>有 <code>n</code> 件物品和一个最多能背重量为 <code>w</code> 的背包。第 <code>i</code> 件物品的重量是 <code>weight[i]</code>，得到的价值是 <code>value[i]</code> 。<strong>每件物品只能用一次</strong>，求解将哪些物品装入背包里物品价值总和最大。</p>
 </div>
 
@@ -963,8 +964,37 @@
 </li>
 </ul>
 <hr>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><hr>
-<h2 id="JavaScript-中的常用操作"><a href="#JavaScript-中的常用操作" class="headerlink" title="JavaScript 中的常用操作"></a>JavaScript 中的常用操作</h2><h3 id="数组与"><a href="#数组与" class="headerlink" title="数组与"></a>数组与</h3>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><h3 id="双指针-1"><a href="#双指针-1" class="headerlink" title="双指针"></a>双指针</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-string/">344. 反转字符串 - 力扣（LeetCode）</a></li>
+<li><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-string-ii/">541. 反转字符串 II - 力扣（LeetCode）</a><ul>
+<li>left 每次移动 2k 个位置；</li>
+</ul>
+</li>
+</ul>
+<h3 id="JavaScript-常用字符串操作"><a href="#JavaScript-常用字符串操作" class="headerlink" title="JavaScript 常用字符串操作"></a>JavaScript 常用字符串操作</h3><p><code>String.prototype.includes(searchString[, position])</code>：判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。</p>
+<p><code>String.prototype.indexOf(searchValue [, fromIndex])</code>：**<code>indexOf()</code>** 方法返回调用它的 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String"><code>String</code></a> 对象中第一次出现的指定值的索引，从 <code>fromIndex</code> 处进行搜索。如果未找到该值，则返回 -1。</p>
+<p><code>String.prototype.match(regexp)</code>：检索返回一个字符串匹配正则表达式的结果。</p>
+<p><code>String.prototype.matchAll(regexp)</code>：返回一个包含所有匹配正则表达式的结果及分组捕获组的迭代器。</p>
+<p><code>String.prototype.repeat(count)</code>：构造并返回一个新字符串，该字符串包含被连接在一起的指定数量的字符串的副本。</p>
+<p><code>String.prototype.replace(egexp|substr, newSubStr|function)</code>：**<code>replace()</code>** 方法返回一个由替换值（<code>replacement</code>）替换部分或所有的模式（<code>pattern</code>）匹配项后的新字符串。模式可以是一个字符串或者一个<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp">正则表达式</a>，替换值可以是一个字符串或者一个每次匹配都要调用的回调函数。<strong>如果<code>pattern</code>是字符串，则仅替换第一个匹配项。</strong></p>
+<ul>
+<li>在进行全局的搜索替换时，正则表达式需包含 <code>g</code> 标志。</li>
+</ul>
+<p><code>String.prototype.replaceAll(regexp|substr, newSubstr|function)</code>：**<code>replaceAll()</code>** 方法返回一个新字符串，新字符串所有满足 <code>pattern</code> 的部分都已被<code>replacement</code> 替换。<code>pattern</code>可以是一个字符串或一个 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp"><code>RegExp</code></a>， <code>replacement</code>可以是一个字符串或一个在每次匹配被调用的函数。</p>
+<ul>
+<li>当使用一个 <code>regex</code>时，您必须设置全局（“ g”）标志</li>
+</ul>
+<p><code>String.prototype.split([separator[, limit])</code>：**<code>split()</code>** 方法使用指定的分隔符字符串将一个<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String"><code>String</code></a>对象分割成子字符串数组，以一个指定的分割字串来决定每个拆分的位置。</p>
+<p><code>String.prototype.substring(indexStart[, indexEnd])</code>：**<code>substring()</code>** 方法返回一个字符串在开始索引到结束索引之间的一个子集，或从开始索引直到字符串的末尾的一个子集。</p>
+<p><code>String.prototype.toLowerCase()</code>：**<code>toLowerCase()</code>** 会将调用该方法的字符串值转为小写形式，并返回。</p>
+<p><code>String.prototype.toUpperCase()</code>：**<code>toUpperCase()</code>** 方法将调用该方法的字符串转为大写形式并返回（如果调用该方法的值不是字符串类型会被强制转换）。</p>
+<p><code>String.prototype.trim()</code>：**<code>trim()</code> **方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (space, tab, no-break space 等) 以及所有行终止符字符（如 LF，CR 等）。</p>
+<hr>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><hr>
+<h2 id="JavaScript-中的常用操作"><a href="#JavaScript-中的常用操作" class="headerlink" title="JavaScript 中的常用操作"></a>JavaScript 中的常用操作</h2><hr>
+<h2 id="常用数学公式及概念"><a href="#常用数学公式及概念" class="headerlink" title="常用数学公式及概念"></a>常用数学公式及概念</h2><h3 id="排列组合"><a href="#排列组合" class="headerlink" title="排列组合"></a>排列组合</h3><p>排列数：$A_{n}^{m}=n(n-1)(n-2) \ldots(n-m+1)=\frac{n !}{(n-m) !}$；</p>
+<p>组合数：$C_{n}^{m}=\frac{A_{n}^{m}}{m !}=\frac{n !}{(n-m) ! m !}$</p>
+
                 
             </div>
             <hr/>

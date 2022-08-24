@@ -414,7 +414,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-15
+                    2022-08-24
                 </div>
                 
 
@@ -465,32 +465,35 @@
 </blockquote>
 <h3 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h3><p>随着互联网时代的发展，我们对网页布局有了新的要求，例如我们可能是通过手机或者电脑来看网页的，而手机和电脑的大小和分辨率都是不一样的，那么就要要求页面能够在不同的设备上呈现相同的效果。因此，一个全新的概念—响应式布局应运而生。<br> 响应式网页设计是一种网页设计的技术做法，该设计可以使网站在不同的设备上浏览时对应不同分辨率都有适合的呈现，减少用户进行缩放，平移等操作。真正的响应式设计方法不仅仅是根据可视化区域的大小改变网页布局，而是要从整体上颠覆当前网页的设计方法，是针对任意设备的网页进行完美布局的一种显示机制，用一套代码解决几乎所有设备的页面展示问题。</p>
 <blockquote>
-<p><strong>标准文档流</strong>（padding+margin+负margin）+浮动float+定位</p>
+<p><strong>标准文档流</strong>（padding+margin+负margin）+浮动 float +定位</p>
 <p>定义：标准文档流就是元素排版过程中，元素会默认的自动从左往右，从上往下的 流式排列方式。前面内容发生了变化，后面的内容位置也会随着发生变化。</p>
 <p><strong>像素：</strong></p>
-<p>像素分为两种类型：css像素和物理像素。</p>
+<p>像素分为两种类型：css 像素和物理像素。</p>
 <ul>
 <li>css像素：在js或者css代码中使用的px单位就是指的是css像素；</li>
 <li>物理像素：只与设备的硬件密度有关，任何设备的物理像素都是固定的；</li>
 </ul>
 <p><strong>视口：</strong></p>
 <p>（1）布局视口</p>
-<p>布局视口定义了pc网页在移动端的默认布局行为，因为通常pc的分辨率较大，布局视口默认为980px。也就是说在不设置网页的viewport的情况下，pc端的网页默认会以布局视口为基准，在移动端进行展示。因此我们可以明显看出来，默认为布局视口时，根植于pc端的网页在移动端展示很模糊。</p>
+<p>布局视口定义了 pc 网页在移动端的默认布局行为，因为通常 pc 的分辨率较大，布局视口默认为 980px。也就是说在不设置网页的 viewport 的情况下，pc 端的网页默认会以布局视口为基准，在移动端进行展示。因此我们可以明显看出来，默认为布局视口时，根植于 pc 端的网页在移动端展示很模糊。</p>
 <p>（2）视觉视口</p>
 <p>视觉视口表示浏览器内看到的网站的显示区域，用户可以通过缩放来查看网页的显示内容，从而改变视觉视口。视觉视口的定义，就像拿着一个放大镜分别从不同距离观察同一个物体，视觉视口仅仅类似于放大镜中显示的内容，因此视觉视口不会影响布局视口的宽度和高度。</p>
 <p>（3）理想视口</p>
 <p>理想视口或者应该全称为“理想的布局视口”，在移动设备中就是指设备的分辨率。换句话说，理想视口或者说分辨率就是给定设备物理像素的情况下，最佳的“布局视口”。</p>
 <p><strong>单位转换</strong></p>
-<p>在不缩放的情况下，CSS像素=物理像素/分辨率（也叫DPR（Device pixel ratio，设备像素比））</p>
-<p>1rem = font-size(HTML元素)</p>
-<p>vw: 相对于视窗的宽度（视窗宽度为100vw）</p>
-<p>vh: 相对于视窗的高度（视窗高度为100vh）</p>
+<p>在不缩放的情况下，CSS 像素=物理像素/分辨率（也叫 DPR（Device pixel ratio，设备像素比））</p>
+<p>1rem = font-size(HTML 元素)</p>
+<p>vw: 相对于视窗的宽度（视窗宽度为 100 vw）</p>
+<p>vh: 相对于视窗的高度（视窗高度为 100 vh）</p>
+<p>vmin：相对于视口*较小尺寸的 1％</p>
+<p>vmax：相对于视口*较大尺寸的 1％</p>
+<p>%：相对于父元素（一般情况下）</p>
 <p>1px = (1/布局视口) * 100 vw</p>
 <p>Reference👉<a target="_blank" rel="noopener" href="https://blog.csdn.net/zsl15039718107/article/details/104430854">几种常用的响应式布局解决方案对比(媒体查询、百分比、rem和vw/vh）_zsl888822的博客-CSDN博客</a></p>
 </blockquote>
 <p>实现方案：</p>
 <p><strong>（1）媒体查询</strong></p>
-<p>使用@media媒体查询可以针对不同的媒体类型定义不同的样式，特别是响应式页面，可以针对不同屏幕的大小，编写多套样式，从而达到自适应的效果。</p>
+<p>使用 @media 媒体查询可以针对不同的媒体类型定义不同的样式，特别是响应式页面，可以针对不同屏幕的大小，编写多套样式，从而达到自适应的效果。</p>
 <p><strong>缺点：</strong></p>
 <p>在浏览器大小改变时，需要改变的样式太多，多套样式代码改起来很繁琐。</p>
 <p><strong>（2）百分比布局</strong>（流式布局）</p>
@@ -499,41 +502,41 @@
 <p><strong>缺点</strong>：</p>
 <p>（1）计算困难，如果我们要定义一个元素的宽度和高度，按照设计稿，必须换算成百分比单位。；<br>（2）各个属性中如果使用百分比，相对父元素的属性并不是唯一的。造成我们使用百分比单位容易使布局问题变得复杂。</p>
 <p><strong>（3）rem布局</strong></p>
-<p>首先 Rem 相对于根(html)的 font-size 大小来计算。简单的说它就是一个相对单例 如:font-size:10px;,那么（1rem = 10px）了解计算原理后首先解决怎么在不同设备上设置 html 的 font-size 大小。其实 rem 布局的本质是等比缩放，一般是基于宽度。</p>
+<p>首先 rem 相对于根（html）的 font-size 大小来计算。简单的说它就是一个相对单例 如：<code>font-size: 10px;</code>,那么（1rem = 10px）了解计算原理后首先解决怎么在不同设备上设置 html 的 font-size 大小。其实 rem 布局的本质是等比缩放，一般是基于宽度。</p>
 <p><strong>优点</strong>：可以快速适用移动端布局，字体，图片高度</p>
 <p><strong>缺点</strong>：</p>
 <p>①目前 ie 不支持，对 pc 页面来讲使用次数不多；<br>②数据量大：所有的图片，盒子都需要我们去给一个准确的值才能保证不同机型的适配；<br>③在响应式布局中，必须通过 js 来动态控制根元素 font-size 的大小。也就是说 css 样式和 js 代码有一定的耦合性。且必须将改变 font-size 的代码放在 css 样式之前。</p>
 <p><strong>（4）通过vw/vh来实现自适应</strong></p>
-<p>css3中引入了一个新的单位vw/vh，与视图窗口有关，vw表示相对于视图窗口的宽度，vh表示相对于视图窗口高度</p>
-<p><strong>（5）Flex 布局</strong></p>
+<p>css3 中引入了一个新的单位 vw/vh，与视图窗口有关，vw 表示相对于视图窗口的宽度，vh 表示相对于视图窗口高度。</p>
+<p><strong>（5）flex 布局</strong></p>
 <p>布局的传统解决方案，基于盒状模型，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。</p>
-<p>Flex 是 Flexible Box 的缩写，意为”弹性布局”,用来为盒状模型提供最大的灵活性。指定容器 display: flex 即可。 简单的分为容器属性和元素属性。</p>
-<p>容器的属性：</p>
+<p>Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性，指定容器 display: flex 即可。 简单的分为容器属性和元素属性。</p>
+<p><strong>容器的属性：</strong></p>
 <ul>
 <li>  <code>flex-direction</code>：决定主轴的方向（即子 item 的排列方法）flex-direction: row | row-reverse | column | column-reverse;</li>
 <li>  <code>flex-wrap</code>：决定换行规则 flex-wrap: nowrap | wrap | wrap-reverse;</li>
 <li>  flex-flow： .box { flex-flow: || ; }</li>
 <li>  <code>justify-content</code>：对齐方式，水平主轴对齐方式</li>
-<li>  <code>align-items</code>：对齐方式，竖直轴线方向</li>
-<li>  align-content</li>
+<li>  <code>align-items</code>：交叉轴上子项的对齐方式；</li>
+<li>  align-content：针对交叉轴上每一行的子项整体的对齐方式；</li>
 </ul>
-<p>项目的属性（元素的属性）：</p>
+<p><strong>项目的属性（元素的属性）</strong>：</p>
 <ul>
-<li>  order 属性：定义项目的排列顺序，顺序越小，排列越靠前，默认为 0</li>
-<li>  <code>flex-grow </code>属性：定义项目的放大比例，即使存在空间，也不会放大</li>
-<li>  <code>flex-shrink </code>属性：定义了项目的缩小比例，当空间不足的情况下会等比例的缩小，如果 定义个 item 的 flow-shrink 为 0，则为不缩小</li>
-<li>  flex-basis 属性：定义了在分配多余的空间，项目占据的空间。</li>
+<li>  order 属性：定义项目的排列顺序，顺序越小，排列越靠前，默认为 0。</li>
+<li>  <code>flex-grow</code> 属性：这个属性规定了 <code>flex-grow</code> 项在 flex 容器中分配剩余空间的相对比例，默认为 0。</li>
+<li>  <code>flex-shrink </code>属性：指定了 flex 元素的收缩规则。flex 元素仅在默认宽度之和大于容器的时候才会发生收缩，其收缩的大小是依据 flex-shrink 的值。</li>
+<li>  flex-basis 属性：指定了 flex 元素在主轴方向上的初始大小。</li>
 <li>  flex：是 flex-grow 和 flex-shrink、flex-basis 的简写，默认值为 0 1 auto。</li>
-<li>  align-self：允许单个项目与其他项目不一样的对齐方式，可以覆盖</li>
-<li>  align-items，默认属 性为 auto，表示继承父元素的 align-items 比如说，用 flex 实现圣杯布局</li>
+<li>  align-self：允许单个项目与其他项目不一样的对齐方式，可以覆盖。</li>
+<li>  align-items，默认属 性为 auto，表示继承父元素的 align-items 比如说，用 flex 实现圣杯布局。</li>
 </ul>
 <p>（5） <strong>rem 和 em 的区别</strong></p>
-<p>em和rem相对于px更具有灵活性，他们是相对长度单位，意思是长度不是定死了的，更适用于响应式布局。</p>
-<p>对于em和rem的区别一句话概括：<code>em相对于父元素，rem相对于根元素</code>。</p>
+<p>em 和 rem 相对于 px 更具有灵活性，他们是相对长度单位，意思是长度不是定死了的，更适用于响应式布局。</p>
+<p>对于 em 和 rem 的区别一句话概括：<code>em 相对于父元素，rem 相对于根元素</code>。</p>
 <hr>
-<h3 id="grid栅格布局"><a href="#grid栅格布局" class="headerlink" title="grid栅格布局"></a>grid栅格布局</h3><p>定义：gird布局即网格布局，一种新的css布局模型，擅长将一个页面划分为几个主要的区域，以及定义这些区域的大小位置，层次等关系，是css唯一的二维布局。</p>
+<h3 id="grid-栅格布局"><a href="#grid-栅格布局" class="headerlink" title="grid 栅格布局"></a>grid 栅格布局</h3><p>定义：gird 布局即网格布局，一种新的 css 布局模型，擅长将一个页面划分为几个主要的区域，以及定义这些区域的大小位置，层次等关系，是 css 唯一的二维布局。</p>
 <p><strong><code>flex</code> 布局是一维布局，<code>Grid</code> 布局是二维布局</strong>。<code>flex</code> 布局一次只能处理一个维度上的元素布局，一行或者一列。<code>Grid</code> 布局是将容器划分成了“行”和“列”，产生了一个个的网格，我们可以将网格元素放在与这些行和列相关的位置上，从而达到我们布局的目的。</p>
-<p>使用： 我们通过在元素上声明display:grid或者display:inline-grid来创建一个网格容器，这个元素所有的直系子元素将会成为网格项目。网格轨道：<code>grid-template-columns</code> 和 <code>grid-template-rows</code> 属性来定义网格中的行和列。<code>grid-row-gap</code> 属性、<code>grid-column-gap</code> 属性分别设置行间距和列间距。<code>grid-gap</code> 属性是两者的简写形式。<code>grid-auto-flow</code> 属性控制着自动布局算法怎么样运行，精确指定在网格中被自动布局的元素怎么样排列，默认的防止顺序是先行后列。<code>justify-items</code>属性设置单元格的内容的水平位置，<code>align-items</code>设置单元格的垂直位置</p>
+<p>使用： 我们通过在元素上声明 display:grid 或者 display:inline-grid 来创建一个网格容器，这个元素所有的直系子元素将会成为网格项目。网格轨道：<code>grid-template-columns</code> 和 <code>grid-template-rows</code> 属性来定义网格中的行和列。<code>grid-row-gap</code> 属性、<code>grid-column-gap</code> 属性分别设置行间距和列间距。<code>grid-gap</code> 属性是两者的简写形式。<code>grid-auto-flow</code> 属性控制着自动布局算法怎么样运行，精确指定在网格中被自动布局的元素怎么样排列，默认的放置顺序是先行后列。<code>justify-items</code> 属性设置单元格的内容的水平位置，<code>align-items</code> 设置单元格的垂直位置</p>
 <p><strong>References：</strong></p>
 <ul>
 <li>👉<a target="_blank" rel="noopener" href="https://juejin.cn/post/6986645219290644517#heading-6">12～18k的前端面试会问个啥？（答案版上） - 掘金 (juejin.cn)</a></li>
@@ -543,7 +546,7 @@
 <li><input disabled="" type="checkbox"> 如何给图片设置一个兜底图</li>
 <li><input disabled="" type="checkbox"> utf-8 编码 -&gt; 常见的汉字字符占几个字节</li>
 <li><input disabled="" type="checkbox"> 知道样式穿透吗</li>
-<li><input disabled="" type="checkbox"> scss你是怎么用的</li>
+<li><input disabled="" type="checkbox"> scss 你是怎么用的</li>
 </ul>
 <h2 id="2-垂直水平居中方式"><a href="#2-垂直水平居中方式" class="headerlink" title="2. 垂直水平居中方式"></a>2. 垂直水平居中方式</h2><blockquote>
 <p>行内元素：</p>
