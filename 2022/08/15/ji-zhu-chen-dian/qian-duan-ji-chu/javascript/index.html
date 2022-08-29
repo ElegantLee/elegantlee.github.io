@@ -414,21 +414,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-24
+                    2022-08-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    28k
+                    27.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    110 分
+                    108 分
                 </div>
                 
 
@@ -604,9 +604,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ul>
 <li>prototype：只要创建一个函数就会按特定的规则为这个函数创建一个 prototype 属性（指向原型对象）。</li>
 <li>实例对象上暴露的 _<em>proto</em>_ 属性，通过这个属性可以访问对象的原型。</li>
-<li>prototype 是类自带的对象，_<em>proto</em>_ 是实例化对象的属性，指向类的 prototype。</li>
+<li>prototype 是构造函数自带的对象，_<em>proto</em>_ 是实例化对象的属性，指向构造函数的 prototype。</li>
 </ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">instance_of</span><span class="token punctuation">(</span><span class="token parameter">object<span class="token punctuation">,</span> constructor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//L 表示左表达式，R 表示右表达式</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">instance_of</span><span class="token punctuation">(</span><span class="token parameter">object<span class="token punctuation">,</span> constructor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
  <span class="token keyword">while</span> <span class="token punctuation">(</span>object <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
    <span class="token keyword">if</span> <span class="token punctuation">(</span>object <span class="token operator">===</span> constructor<span class="token punctuation">.</span>prototype<span class="token punctuation">)</span> 
      <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span> 
@@ -830,7 +830,7 @@ arr<span class="token punctuation">.</span><span class="token function">forEach<
 <h4 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h4><p>（1）原型</p>
 <p>（2）构造函数</p>
 <p>（3）Array 自带的 isArray() 方法</p>
-<h5 id="1-instanceof运算符"><a href="#1-instanceof运算符" class="headerlink" title="1. instanceof运算符"></a>1. instanceof运算符</h5><p>从构造函数入手：可以判断一个对象是否是在其原型链上原型构造函数中的属性。</p>
+<h5 id="1-instanceof-运算符"><a href="#1-instanceof-运算符" class="headerlink" title="1. instanceof 运算符"></a>1. instanceof 运算符</h5><p>从构造函数入手：可以判断一个对象是否是在其原型链上原型构造函数中的属性。</p>
 <p>typeof 和 instanceof 的区别？ </p>
 <ul>
 <li>两者都可以用来判断变量，typeof 会返回基本类型，而 instanceof 只会返回一个布尔值。</li>
@@ -1395,7 +1395,7 @@ o<span class="token punctuation">.</span>__proto__ <span class="token operator">
 <li>作为构造函数调用（new 绑定，指向创建的对象实例）</li>
 </ul>
 <h4 id="call-apply-bind-的区别"><a href="#call-apply-bind-的区别" class="headerlink" title="call/apply/bind 的区别"></a>call/apply/bind 的区别</h4><p>相同：</p>
-<p>1、都是用来改变函数的this对象的指向的。</p>
+<p>1、都是用来改变函数的 this 对象的指向的。</p>
 <p>2、第一个参数都是 this 要指向的对象。</p>
 <p>3、都可以利用后续参数传参。</p>
 <p>不同：</p>
@@ -1416,7 +1416,7 @@ fn.bind(obj, 1, 2);<span aria-hidden="true" class="line-numbers-rows"><span></sp
 <h2 id="异步-JavaScript"><a href="#异步-JavaScript" class="headerlink" title="异步 JavaScript"></a>异步 JavaScript</h2><h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h3><p>Gmail 开发人员发现 IE 里面有个 XMLHTTPRequest 对象来请求数据时，可以实现<strong>无刷新数据请求</strong>，所以使用这个特性，进行网络数据请求，这就是 Ajax 的由来。</p>
 <p>Ajax 不是一个单词，他的全称是 Asynchronous JavaScript and XML，就是<strong>异步的 JavaScript 和 XML</strong>，它是一套用于创建快速动态网页的技术标准，使用步骤如下：</p>
 <ol>
-<li>创建异步 XMLHttpRequest 对象 <code>conet httpRequest = new XMLHttpRequest()</code>；</li>
+<li>创建异步 XMLHttpRequest 对象 <code>const httpRequest = new XMLHttpRequest()</code>；</li>
 <li>设置请求参数，包括请求的方法和URL等 <code>httpRequest.open('GET',url)</code>（第三个参数可以设置这个请求是异步还是同步的，默认是异步请求）；</li>
 <li>发送请求  <code>httpRequest.send()</code>；</li>
 <li>注册事件，事件状态变更会及时响应监听  ；</li>
@@ -1432,7 +1432,7 @@ fn.bind(obj, 1, 2);<span aria-hidden="true" class="line-numbers-rows"><span></sp
 
 <p>所以 Ajax 的核心就是 <code>XMLHttpRequest</code> 对象，这是一个非常早的实现方法，也是兼容性最好的，已经成为了浏览器标准，虽然我们现在都使用其它的 API 规范，但对象名字暂时还是用 XML 命名。</p>
 <h3 id="事件处理函数和回调函数"><a href="#事件处理函数和回调函数" class="headerlink" title="事件处理函数和回调函数"></a>事件处理函数和回调函数</h3><p>事件处理函数是异步执行的，只有在事件发生时被调用；事件处理程序是一种特殊类型的回调函数。而回调函数则是一个被传递到另一个函数中的会在适当的时候被调用的函数。回调函数曾经是 JavaScript 中实现异步函数的主要方式。然而，当回调函数本身需要调用其他同样接受回调函数的函数时，基于回调的代码会变得难以理解，即“回调地狱”。</p>
-<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p><strong><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></strong> 是现代 JavaScript 中异步编程的基础，是一个由异步函数返回的可以向我们指示当前操作所处的状态的对象。在 Promise 返回给调用者的时候，操作往往还没有完成，但 Promise 对象可以让我们操作最终完成时对其进行处理（无论成功还是失败）。Promise使异步操作可以链式调用，避免了回调地狱，使代码逻辑更加清晰。</p>
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p><strong><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></strong> 是现代 JavaScript 中异步编程的基础，是一个由异步函数返回的可以向我们指示当前操作所处的状态的对象。在 Promise 返回给调用者的时候，操作往往还没有完成，但 Promise 对象可以让我们操作最终完成时对其进行处理（无论成功还是失败）。Promise 使异步操作可以链式调用，避免了回调地狱，使代码逻辑更加清晰。</p>
 <h3 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h3><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/fetch">fetch()</a> 是一个现代的、基于 Promise 的、用于替代 <code>XMLHttpRequest</code> 的方法。</p>
 <p>fetch 不是 XMLHttpRequest 对象，它是原生的 js 对象，也就是说，它不依赖浏览器。我们主要需要了解下 fetch 和 ajax 的本质区别：</p>
 <ol>
@@ -1913,7 +1913,7 @@ Promise<span class="token punctuation">.</span><span class="token function">race
 <h4 id="Promise-中-reject-和-catch-处理上有什么区别？"><a href="#Promise-中-reject-和-catch-处理上有什么区别？" class="headerlink" title="Promise 中 reject 和 catch 处理上有什么区别？"></a>Promise 中 reject 和 catch 处理上有什么区别？</h4><ol>
 <li><p>reject 是用来抛出异常的，catch 是用来处理异常。</p>
 </li>
-<li><p>reject 是 Promise 的方法，而 catch 是 Promise 实例的方法。</p>
+<li><p>reject 是 Promise 构造函数的方法，而 catch 是 Promise 实例的方法。</p>
 </li>
 <li><p>reject 后的东西，一定会进入 then 中的第二个回调，如果 then 中没有写第二个回调，则进入 catch；网络异常(比如断网)，会直接进入 catch 而不会进入 then 的第二个回调。</p>
 </li>
@@ -2207,7 +2207,7 @@ settimeout
 
 
 <span class="token comment">/*
-当我们理解了async/await 就是**语法糖**，它的本质还是Promise，async相当于相当于Promise.then(),await相当于.then()括号里面的操作。所以翻译成 Promise 后就是下面这段代码:
+当我们理解了 async/await 就是**语法糖**，它的本质还是 Promise，async 相当于 Promise.then(),await 相当于.then()括号里面的操作。所以翻译成 Promise 后就是下面这段代码:
 */</span>
 <span class="token comment">// async function testAsync() {</span>
   <span class="token comment">//   await getJson()  </span>
@@ -2604,143 +2604,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903917986267143">彻底掌握js内存泄漏以及如何避免 - 掘金 (juejin.cn)</a></li>
 </ul>
 <hr>
-<h2 id="手写代码"><a href="#手写代码" class="headerlink" title="手写代码"></a>手写代码</h2><h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><p>一、数组扁平化</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
-
-
-
-### 深拷贝浅拷贝
-
-#### 浅拷贝
-
-拷贝后，新拷贝的对象内部的引用数据类型会随着源对象的变换而变化。
-
-</span><span class="token template-punctuation string">`</span></span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token template-punctuation string">`</span></span>js
-<span class="token comment">// ES6</span>
-<span class="token comment">/*
- * target: 拷贝的对象
- * sources: 被拷贝的对象
- */</span>
-Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> sources<span class="token punctuation">)</span>
-
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> print <span class="token operator">=</span> console<span class="token punctuation">.</span>log<span class="token punctuation">;</span>
-
-<span class="token comment">/* 浅拷贝 */</span>
-<span class="token keyword">let</span> a <span class="token operator">=</span>  <span class="token punctuation">{</span>
-  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"张三"</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span> 
-  <span class="token literal-property property">hobby</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"美食"</span><span class="token punctuation">,</span> <span class="token string">"音乐"</span><span class="token punctuation">,</span> <span class="token string">"篮球"</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">let</span> b<span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token comment">// 手动实现</span>
-<span class="token comment">/*
-for (const i in a) {
-  b[i] = a[i];
-}
-*/</span>
-
-<span class="token comment">// ES6方法实现</span>
-Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-a<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"李四"</span><span class="token punctuation">;</span>
-a<span class="token punctuation">.</span>hobby<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"打游戏"</span><span class="token punctuation">;</span>
-
-<span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-<span class="token comment">/**输出
- * { name: '李四', age: 23, hobby: [ '美食', '音乐', '打游戏' ] }
- * { name: '张三', age: 23, hobby: [ '美食', '音乐', '打游戏' ] }
- */</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h4><p>拷贝后，新拷贝的对象内部所有数据都是独立存在的，引用类型的数据不会随着源对象的改变而改变。</p>
-<p>两种实现方式：</p>
-<ol>
-<li>递归拷贝<ol>
-<li>考虑ES6之后新增的数据类型；</li>
-<li>当数据层级很深时存在栈溢出的问题；</li>
-<li>无法避免循环引用的问题；</li>
-</ol>
-</li>
-<li>利用JSON函数拷贝<ol>
-<li>只适合拷贝简单的对象，如果拷贝的对象中存在JS原生对象如Date，RegExp、Error或者函数引用拷贝就有问题。</li>
-</ol>
-</li>
-</ol>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> print <span class="token operator">=</span> console<span class="token punctuation">.</span>log<span class="token punctuation">;</span>
-
-<span class="token comment">/* 1. 递归拷贝 */</span>
-<span class="token keyword">function</span> <span class="token function">deepCopy</span><span class="token punctuation">(</span><span class="token parameter">source</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> source <span class="token operator">!==</span> <span class="token string">'object'</span> <span class="token operator">||</span> source <span class="token operator">===</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">return</span> source<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token keyword">let</span> target <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>source<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> k <span class="token keyword">in</span> source<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>source<span class="token punctuation">.</span><span class="token function">hasOwnProperty</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> source<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        target<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">deepCopy</span><span class="token punctuation">(</span>source<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-        target<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> source<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">return</span> target<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">let</span> a <span class="token operator">=</span>  <span class="token punctuation">{</span>
-  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"张三"</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span> 
-  <span class="token literal-property property">hobby</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"美食"</span><span class="token punctuation">,</span> <span class="token string">"音乐"</span><span class="token punctuation">,</span> <span class="token string">"篮球"</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token function">deepCopy</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-a<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"李四"</span><span class="token punctuation">;</span>
-a<span class="token punctuation">.</span>hobby<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"打游戏"</span><span class="token punctuation">;</span>
-
-<span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">/**输出
- * { name: '李四', age: 23, hobby: [ '美食', '音乐', '打游戏' ] }
- * { name: '张三', age: 23, hobby: [ '美食', '音乐', '篮球' ] }
- */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> print <span class="token operator">=</span> console<span class="token punctuation">.</span>log<span class="token punctuation">;</span>
-
-<span class="token comment">/* 2. JSON转换 */</span>
-<span class="token keyword">let</span> a <span class="token operator">=</span>  <span class="token punctuation">{</span>
-  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"张三"</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span> 
-  <span class="token literal-property property">hobby</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"美食"</span><span class="token punctuation">,</span> <span class="token string">"音乐"</span><span class="token punctuation">,</span> <span class="token string">"篮球"</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-a<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"李四"</span><span class="token punctuation">;</span>
-a<span class="token punctuation">.</span>hobby<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"打游戏"</span><span class="token punctuation">;</span>
-
-<span class="token function">print</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token function">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment">/**输出
- * { name: '李四', age: 23, hobby: [ '美食', '音乐', '打游戏' ] }
- * { name: '张三', age: 23, hobby: [ '美食', '音乐', '篮球' ] }
- */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="References-2"><a href="#References-2" class="headerlink" title="References"></a>References</h4><ol>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/l_ppp/article/details/106281069">面试题被问到再也不慌，深究JavaScript中的深拷贝与浅拷贝_「零一」的博客-CSDN博客_js深拷贝和浅拷贝面试题</a></li>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7047007027456901157">手撕面试题（1）——深拷贝 - 掘金 (juejin.cn)</a></li>
-<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016672263">深拷贝的终极探索（99%的人都不知道） - SegmentFault 思否</a></li>
-</ol>
-<hr>
-<h3 id="防抖节流"><a href="#防抖节流" class="headerlink" title="防抖节流"></a>防抖节流</h3><h4 id="原理介绍-应用场景"><a href="#原理介绍-应用场景" class="headerlink" title="原理介绍+应用场景"></a>原理介绍+应用场景</h4><p><code>节流（throttle）</code>：事件触发后，规定时间内，事件处理函数不能再次被调用。也就是说在规定的时间内，函数只能被调用一次，且是最先被触发调用的那次。顾名思义，可以减少一段时间内事件的触发频率。（王者荣耀英雄回城）</p>
+<h2 id="手写代码"><a href="#手写代码" class="headerlink" title="手写代码"></a>手写代码</h2><h3 id="防抖节流"><a href="#防抖节流" class="headerlink" title="防抖节流"></a>防抖节流</h3><h4 id="原理介绍-应用场景"><a href="#原理介绍-应用场景" class="headerlink" title="原理介绍+应用场景"></a>原理介绍+应用场景</h4><p><code>节流（throttle）</code>：事件触发后，规定时间内，事件处理函数不能再次被调用。也就是说在规定的时间内，函数只能被调用一次，且是最先被触发调用的那次。顾名思义，可以减少一段时间内事件的触发频率。（王者荣耀英雄回城）</p>
 <p><code>防抖</code>：多次触发事件，事件处理函数只能执行一次，并且是在触发操作结束时执行。也就是说，当一个事件被触发准备执行事件函数前，会等待一定的时间（这时间是码农自己去定义的，比如 1 秒），如果没有再次被触发，那么就执行，如果被触发了，那就本次作废，重新从新触发的时间开始计算，并再次等待 1 秒，直到能最终执行！（搜索框字段填写完成再请求）</p>
 <p><strong>使用场景：</strong><br><code>节流</code>：滚动加载更多、搜索框的搜索联想功能、高频点击、表单重复提交……</p>
 <ul>
@@ -3212,7 +3076,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token function">print</span><span class="token punctuation">(</span><span class="token function">instance_of</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> Array<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
-<h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> print <span class="token operator">=</span> console<span class="token punctuation">.</span>log<span class="token punctuation">;</span>
+<h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><p>拷贝后，新拷贝的对象内部的引用数据类型会随着源对象的变换而变化。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> print <span class="token operator">=</span> console<span class="token punctuation">.</span>log<span class="token punctuation">;</span>
 
 <span class="token comment">/* 浅拷贝 */</span>
 <span class="token keyword">let</span> a <span class="token operator">=</span>  <span class="token punctuation">{</span>
@@ -3241,7 +3106,21 @@ a<span class="token punctuation">.</span>hobby<span class="token punctuation">[<
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
-<h3 id="深拷贝-1"><a href="#深拷贝-1" class="headerlink" title="深拷贝"></a>深拷贝</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> print <span class="token operator">=</span> console<span class="token punctuation">.</span>log<span class="token punctuation">;</span>
+<h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><p>拷贝后，新拷贝的对象内部所有数据都是独立存在的，引用类型的数据不会随着源对象的改变而改变。</p>
+<p>两种实现方式：</p>
+<ol>
+<li>递归拷贝<ol>
+<li>考虑ES6之后新增的数据类型；</li>
+<li>当数据层级很深时存在栈溢出的问题；</li>
+<li>无法避免循环引用的问题；</li>
+</ol>
+</li>
+<li>利用JSON函数拷贝<ol>
+<li>只适合拷贝简单的对象，如果拷贝的对象中存在JS原生对象如Date，RegExp、Error或者函数引用拷贝就有问题。</li>
+</ol>
+</li>
+</ol>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> print <span class="token operator">=</span> console<span class="token punctuation">.</span>log<span class="token punctuation">;</span>
 
 <span class="token comment">/* 1. 递归拷贝 */</span>
 <span class="token comment">/**
@@ -3293,6 +3172,11 @@ a<span class="token punctuation">.</span>hobby<span class="token punctuation">[<
  * { name: '张三', age: 23, hobby: [ '美食', '音乐', '篮球' ] }
  */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h4 id="References-2"><a href="#References-2" class="headerlink" title="References"></a>References</h4><ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/l_ppp/article/details/106281069">面试题被问到再也不慌，深究JavaScript中的深拷贝与浅拷贝_「零一」的博客-CSDN博客_js深拷贝和浅拷贝面试题</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7047007027456901157">手撕面试题（1）——深拷贝 - 掘金 (juejin.cn)</a></li>
+<li><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000016672263">深拷贝的终极探索（99%的人都不知道） - SegmentFault 思否</a></li>
+</ol>
 
                 
             </div>
