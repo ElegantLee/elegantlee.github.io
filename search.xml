@@ -4313,7 +4313,7 @@ beforeRouteLeave	//	通过路由操作离开组件被触发<span aria-hidden="tr
 </blockquote>
 <h3 id="position-属性的值有哪些及其区别"><a href="#position-属性的值有哪些及其区别" class="headerlink" title="position 属性的值有哪些及其区别"></a>position 属性的值有哪些及其区别</h3><p><strong>固定定位 fixed</strong>： 元素的位置相对于浏览器窗口是固定位置，即使窗口是滚动的它也不会移动。Fixed 定位使元素的位置与文档流无关，因此==不占据空间==。 Fixed 定位的元素和其他元素重叠。</p>
 <p><strong>相对定位 relative</strong>： 如果对一个元素进行相对定位，它将出现在它所在的位置上。然后，可以通过设置垂直 或水平位置，让这个元素“相对于”它的起点进行移动。 在使用相对定位时，无论是 否进行移动，元素仍然==占据原来的空间==。因此，<u>移动元素会导致它覆盖其它框。</u></p>
-<p><strong>绝对定位 absolute</strong>： 绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于。absolute 定位使元素的位置与文档流无关，因此==不占据空间==。 absolute 定位的元素和其他元素重叠。</p>
+<p><strong>绝对定位 absolute</strong>： 绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于&lt;html&gt;。absolute 定位使元素的位置与文档流无关，因此==不占据空间==。 absolute 定位的元素和其他元素重叠。</p>
 <p><strong>粘性定位 sticky</strong>： 元素先按照普通文档流定位，然后相对于该元素在流中的 flow root（BFC）和 containing block（最近的块级祖先元素）定位。而后，元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位。</p>
 <ul>
 <li>粘性定位的元素是依赖于用户的滚动，在<strong>position:relative</strong> 与 <strong>position:fixed</strong> 定位之间切换。它的行为就像 <strong>position:relative;</strong> 而当页面滚动超出目标区域时，它的表现就像 **position:fixed;**，它会固定在目标位置。</li>
@@ -6385,7 +6385,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ul>
 <li>prototype：只要创建一个函数就会按特定的规则为这个函数创建一个 prototype 属性（指向原型对象）。</li>
 <li>实例对象上暴露的 _<em>proto</em>_ 属性，通过这个属性可以访问对象的原型。</li>
-<li>prototype 是构造函数自带的对象，_<em>proto</em>_ 是实例化对象的属性，指向构造函数的 prototype。</li>
+<li>prototype 是构造函数自带的属性，_<em>proto</em>_ 是实例化对象的属性，指向构造函数的 prototype。</li>
 </ul>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">instance_of</span><span class="token punctuation">(</span><span class="token parameter">object<span class="token punctuation">,</span> constructor</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
  <span class="token keyword">while</span> <span class="token punctuation">(</span>object <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
@@ -7559,7 +7559,7 @@ arr <span class="token comment">// [true]</span><span aria-hidden="true" class="
 <ul>
 <li><p>普通函数的 this 遵循 this 的4条规则；</p>
 </li>
-<li><p>箭头函数没有自己的 this，体内的 this 对象，就是函数定义时所在的作用域中的his，而不是使用时所在的对象。</p>
+<li><p>箭头函数没有自己的 this，体内的 this 对象，就是函数定义时所在的作用域中的 this，而不是使用时所在的对象。</p>
 </li>
 </ul>
 <p>2、箭头函数没有原型对象，不可以使用构造函数，也就是不能使用 new 命令。</p>
@@ -7572,9 +7572,9 @@ arr <span class="token comment">// [true]</span><span aria-hidden="true" class="
 <h3 id="Promise（重点）"><a href="#Promise（重点）" class="headerlink" title="Promise（重点）"></a>Promise（重点）</h3><h4 id="什么是-promise？"><a href="#什么是-promise？" class="headerlink" title="什么是 promise？"></a>什么是 promise？</h4><p>promise 是 ES6 提供的用于解决异步问题的一个构造函数。它将回调函数的嵌套，改成链式调用，以此用来解决传统编程中因为嵌套层数过多而产生的异步回调地狱问题。</p>
 <h4 id="Promise-规范"><a href="#Promise-规范" class="headerlink" title="Promise 规范"></a>Promise 规范</h4><ol>
 <li><p>promise 有三种状态：<code>pending</code>（初始状态，既没有被兑现，也没有被拒绝）、<code>fulfilled</code>（已兑现）、<code>rejected</code>（已拒绝）</p>
-<ol>
+<ul>
 <li>如果一个 promise 已经被兑现或被拒绝，那么我们也可以说它处于 <em>已敲定（settled）</em> 状态。</li>
-</ol>
+</ul>
 </li>
 <li><p>promise 的状态，只能从初始状态到兑现或拒绝，不能逆向。然后兑现和拒绝状态也不能相互转换。</p>
 </li>
@@ -7650,7 +7650,7 @@ op<span class="token punctuation">.</span><span class="token function">then</spa
   <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'p2 success'</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-<span class="token keyword">let</span> p3 <span class="token operator">=</span> Promse<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'p3 failed'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> p3 <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'p3 failed'</span><span class="token punctuation">)</span>
 
 Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span><span class="token punctuation">[</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>              
@@ -7664,7 +7664,8 @@ Promise<span class="token punctuation">.</span><span class="token function">all<
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>     
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>**Promse.race **就是赛跑的意思，意思就是说，<code>Promise.race([p1, p2, p3])</code> 里面哪个结果获得的快，就返回那个结果，不管结果本身是成功状态还是失败状态。</p>
+<p>**Promse.race ** </p>
+<p><code>Promise.race([p1, p2, p3])</code> 里面哪个结果获得的快，就返回那个结果，不管结果本身是成功状态还是失败状态。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
   <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'success'</span><span class="token punctuation">)</span>
@@ -14480,6 +14481,40 @@ a<span class="token punctuation">.</span>hobby<span class="token punctuation">[<
       </categories>
       <tags>
         <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>web 发展史及现状</title>
+    <url>/2022/09/01/ji-zhu-chen-dian/qian-duan-fa-zhan-shi/web-fa-zhan-shi-ji-xian-zhuang/</url>
+    <content><![CDATA[<blockquote>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>web 的发展目前可分为三个阶段：web 1.0 → web 2.0 → web 3.0。技术的变迁经过了漫长的积累和迭代的过程。就我自身而言，90 后，没有经历过 web 1.0 时代，即使身处 web 2.0 百家争鸣，百花齐放的时代，但由于各种原因，也没有较为深刻的认知。现在身处 web 3.0 时代，是时候回顾一下 web 的发展史以及发展现状了。本文回顾了 web 的前两个时代，并对 web 3.0 的发展现状进行梳理，以供参考。</p>
+</blockquote>
+<p>本文从宏观（总体描述）和微观（技术架构）两个维度对 web 的发展进行回顾与总结。准备好了吗，发车了~</p>
+<hr>
+<h2 id="宏观"><a href="#宏观" class="headerlink" title="宏观"></a>宏观</h2><h3 id="Web-1-0-时代"><a href="#Web-1-0-时代" class="headerlink" title="Web 1.0 时代"></a>Web 1.0 时代</h3><div class="admonition info"><p class="admonition-title">Info</p><p>1991 年 ~ 2004 年</p>
+</div>
+
+<p>Web 1.0 时代是万维网（www）发展的第一阶段 [1-2]（1989 年，英国科学家蒂姆·伯纳斯-李于1989 年发明了万维网。1990 年他在瑞士 CERN 的工作期间编写了第一个网页浏览器。网页浏览器于1991 年 1 月向其他研究机构发行，并于同年 8 月向公众开放），表现为“内容提供者”，即创建一个静态网站，该网站向用户提供可供检索和浏览的静态内容。Web 1.0 本质上是一个内容分发网络（CDN），网站上的内容对用户来说是只读的，主要是公司向个体提供服务。</p>
+<hr>
+<h3 id="Web-2-0-时代"><a href="#Web-2-0-时代" class="headerlink" title="Web 2.0 时代"></a>Web 2.0 时代</h3><div class="admonition info"><p class="admonition-title">Info</p><p>2004 年开始</p>
+</div>
+
+<p>Web 2.0 首次出现在达西·迪努奇（Darcy DiNucci ）在 1999 年发表的文章《Fragmented Future》中，于 2004 年末在 O’Reilly Media Web 2.0 会议上由提姆·奥莱理（Tim O’Reilly）和戴尔·多尔蒂（Dale Dougherty）正式推广 [3]。Web 2.0 又名参与式社交网络，顾名思义，Web 2.0 时代的网站是可交互的了，用户可以对网站执行写操作，表现为在论坛、贴吧中用户可以发帖、评论等。用户可以参与到网站内容的贡献中，并享受网站提供的部分利益分成，如短视频、B站创作等。在 Web 2.0 上时代，虽然用户可以自主创建互联网中的内容，但流量入口与利益分配等却被各个互联网巨头公司把控，且隐私与安全问题难以保障 [4]。</p>
+<hr>
+<h3 id="Web-3-0-时代"><a href="#Web-3-0-时代" class="headerlink" title="Web 3.0 时代"></a>Web 3.0 时代</h3><div class="admonition info"><p class="admonition-title">Info</p><p>2014 ~ 至今</p>
+</div>
+
+<p>对于我们普通大众来说，Web 2.0 时代的互联网是我们熟知并且每天都在使用的，作为<del>用户</del>韭菜的我们似乎已经习惯了被<del>企业家</del>大资本们安排。在 Web 2.0 时代，我们在网上发言，购买虚拟的产品，这些数据都在服务提供者的数据库中。你的数据，他们想删就删，如果不小心被黑客入侵造成用户数据泄露，你也只能自认倒霉。很大程度上，由我们个人产生的数据并不由我们自己支配，严格意义上说你买的那些虚拟的产品并不属于你，它只是一份存在服务器上数据库中的数据，你不能直接拿到它，只有间接的使用权。要解决以上问题，我们普通的用户是无能为力了，可能也没几个人去想这些问题。但是国外是一个“自由的国度”，私人财产神圣不容侵犯，你不能侵犯我的个人隐私。记忆中，16 年左右国内外陆陆续续出现了许多侵犯个人隐私的新闻，到今天，2022 年，互联网上的个人隐私算是已经深入人心了。</p>
+<p>为了解决上述问题，外国人开始发力了，</p>
+<hr>
+<h2 id="微观"><a href="#微观" class="headerlink" title="微观"></a>微观</h2><hr>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[^1]: <a href="https://zh.wikipedia.org/wiki/%E4%B8%87%E7%BB%B4%E7%BD%91">万维网 - 维基百科，自由的百科全书 (wikipedia.org)</a><br>[^2]: <a href="https://www.geeksforgeeks.org/web-1-0-web-2-0-and-web-3-0-with-their-difference/">Web 1.0、Web 2.0 和 Web 3.0 之间的比较 - GeeksforGeeks</a><br>[^3]: <a href="https://zh.m.wikipedia.org/zh-hans/Web_2.0">Web 2.0 - 维基百科，自由的百科全书 (wikipedia.org)</a><br>[^4]: <a href="https://www.cnblogs.com/JasonCeng/p/15861645.html">互联网的前世今生：Web 1.0、2.0、3.0 - JasonCeng - 博客园 (cnblogs.com)</a></p>
+]]></content>
+      <categories>
+        <category>前端发展史</category>
+      </categories>
+      <tags>
+        <tag>web 发展史</tag>
       </tags>
   </entry>
 </search>

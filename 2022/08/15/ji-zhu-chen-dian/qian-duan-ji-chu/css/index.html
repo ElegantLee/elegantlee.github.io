@@ -414,7 +414,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-24
+                    2022-09-08
                 </div>
                 
 
@@ -1003,7 +1003,7 @@
 </blockquote>
 <h3 id="position-属性的值有哪些及其区别"><a href="#position-属性的值有哪些及其区别" class="headerlink" title="position 属性的值有哪些及其区别"></a>position 属性的值有哪些及其区别</h3><p><strong>固定定位 fixed</strong>： 元素的位置相对于浏览器窗口是固定位置，即使窗口是滚动的它也不会移动。Fixed 定位使元素的位置与文档流无关，因此==不占据空间==。 Fixed 定位的元素和其他元素重叠。</p>
 <p><strong>相对定位 relative</strong>： 如果对一个元素进行相对定位，它将出现在它所在的位置上。然后，可以通过设置垂直 或水平位置，让这个元素“相对于”它的起点进行移动。 在使用相对定位时，无论是 否进行移动，元素仍然==占据原来的空间==。因此，<u>移动元素会导致它覆盖其它框。</u></p>
-<p><strong>绝对定位 absolute</strong>： 绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于。absolute 定位使元素的位置与文档流无关，因此==不占据空间==。 absolute 定位的元素和其他元素重叠。</p>
+<p><strong>绝对定位 absolute</strong>： 绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于&lt;html&gt;。absolute 定位使元素的位置与文档流无关，因此==不占据空间==。 absolute 定位的元素和其他元素重叠。</p>
 <p><strong>粘性定位 sticky</strong>： 元素先按照普通文档流定位，然后相对于该元素在流中的 flow root（BFC）和 containing block（最近的块级祖先元素）定位。而后，元素定位表现为在跨越特定阈值前为相对定位，之后为固定定位。</p>
 <ul>
 <li>粘性定位的元素是依赖于用户的滚动，在<strong>position:relative</strong> 与 <strong>position:fixed</strong> 定位之间切换。它的行为就像 <strong>position:relative;</strong> 而当页面滚动超出目标区域时，它的表现就像 **position:fixed;**，它会固定在目标位置。</li>
