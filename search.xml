@@ -3585,7 +3585,11 @@ mounted() {
 <td align="left">组件已销毁，作用同上</td>
 </tr>
 </tbody></table>
-<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><p>👉<a href="https://vue3js.cn/interview/vue/lifecycle.html#%E4%B8%80%E3%80%81%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%98%AF%E4%BB%80%E4%B9%88">面试官：请描述下你对vue生命周期的理解？在created和mounted这两个生命周期中请求数据有什么区别呢？ | web前端面试 - 面试官系列 (vue3js.cn)</a></p>
+<h3 id="父子组件的生命周期"><a href="#父子组件的生命周期" class="headerlink" title="父子组件的生命周期"></a>父子组件的生命周期</h3><p>父beforeCreate -&gt; 父created -&gt; 父beforeMount -&gt; 子beforeCreate -&gt; 子created -&gt; 子beforeMount -&gt; 子mounted -&gt; 父mounted-&gt;父beforeUpdate-&gt;子beforeUpdate-&gt;子updated-&gt;父updated-&gt;父beforeDestroy-&gt;子beforeDestroy-&gt;子destroyed-&gt;父destroyed</p>
+<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><ol>
+<li><a href="https://vue3js.cn/interview/vue/lifecycle.html#%E4%B8%80%E3%80%81%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%98%AF%E4%BB%80%E4%B9%88">面试官：请描述下你对vue生命周期的理解？在created和mounted这两个生命周期中请求数据有什么区别呢？ | web前端面试 - 面试官系列 (vue3js.cn)</a></li>
+<li><a href="https://blog.csdn.net/leilei__66/article/details/118699960">Vue——父子组件的生命周期（执行顺序）_默默花上开的博客-CSDN博客_父子组件生命周期</a></li>
+</ol>
 <hr>
 <h2 id="虚拟DOM"><a href="#虚拟DOM" class="headerlink" title="虚拟DOM"></a>虚拟DOM</h2><h3 id="什么是虚拟DOM"><a href="#什么是虚拟DOM" class="headerlink" title="什么是虚拟DOM"></a>什么是虚拟DOM</h3><p>虚拟 DOM （<code>Virtual DOM</code> ）这个概念相信大家都不陌生，从 <code>React</code> 到 <code>Vue</code> ，虚拟 <code>DOM</code> 为这两个框架都带来了跨平台的能力（<code>React-Native</code> 和 <code>Weex</code>）。</p>
 <p>实际上它只<u>是一层对真实<code>DOM</code>的抽象，是以<code>JavaScript</code> 对象 (<code>VNode</code> 节点) 作为基础的树，用对象的属性来描述节点，最终可以通过一系列操作使这棵树映射到真实DOM上。</u></p>
