@@ -414,21 +414,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-21
+                    2022-09-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    30.2k
+                    30.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    121 分
+                    122 分
                 </div>
                 
 
@@ -1470,6 +1470,7 @@ ul_dom<span class="token punctuation">[</span><span class="token number">0</span
 <li>currentTarget 返回的是绑定事件的元素。</li>
 </ul>
 <h3 id="事件循环（JS-异步任务的执行机制、JavaScript-的执行机制）"><a href="#事件循环（JS-异步任务的执行机制、JavaScript-的执行机制）" class="headerlink" title="事件循环（JS 异步任务的执行机制、JavaScript 的执行机制）"></a>事件循环（JS 异步任务的执行机制、JavaScript 的执行机制）</h3><p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2014/10/event-loop.html">阮一峰</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ktLWSbkx3L2hWkv2ZK6Gmw">JavaScript 事件循环：从起源到浏览器再到 Node.js</a></p>
 <p>JavaScript 是单线程的，这意味着任务的执行需要排队，如果有耗时特别长的任务在执行，那么后一个任务就得等待上一个任务执行完。这样的执行效率是很低的，没有充分利用 CPU。于是 JavaScript 将任务分为两种：同步任务（synchronous）和异步任务（asynchronous）。同步任务指的是只在主线程上执行的任务，只有前一个任务执行完毕，后一个任务才能执行；异步任务指的是，不进入主线程而进入“任务队列（task queue）”的任务，只有“任务队列”通知主线程某个异步任务可以执行了，该任务才进入主线程执行。</p>
 <p>具体来说事件的执行机制如下：</p>
 <p>（1）所有同步任务都在主线程上执行，形成一个<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2013/11/stack.html">执行栈</a>（execution context stack）。</p>
@@ -3908,6 +3909,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h2 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h2><p>匹配字符串中格式为“yyyy-MM-dd’T’HH:mm:ss”的日期</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span>\d<span class="token punctuation">{</span><span class="token number">4</span><span class="token punctuation">}</span><span class="token operator">-</span>\d<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token operator">-</span>\d<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span>\w\d<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token operator">:</span>\d<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token operator">:</span>\d<span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<hr>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="模块化规范"><a href="#模块化规范" class="headerlink" title="模块化规范"></a>模块化规范</h3><p><a target="_blank" rel="noopener" href="https://zhaoda.net/webpack-handbook/module-system.html">模块系统 | Webpack 中文指南 (zhaoda.net)</a></p>
+<h3 id="各种打包工具"><a href="#各种打包工具" class="headerlink" title="各种打包工具"></a>各种打包工具</h3><p><a target="_blank" rel="noopener" href="http://webpack.wuhaolin.cn/1%E5%85%A5%E9%97%A8/1-2%E5%B8%B8%E8%A7%81%E7%9A%84%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E5%8F%8A%E5%AF%B9%E6%AF%94.html"> 常见的构建工具及对比 · 深入浅出 Webpack (wuhaolin.cn)</a></p>
 
                 
             </div>
