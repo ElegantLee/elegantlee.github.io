@@ -414,7 +414,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-10-19
+                    2022-10-20
                 </div>
                 
 
@@ -617,7 +617,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li> let 和 const <code>会产生暂时性死区</code>：在解析代码时，JavaScript 引擎也会注意出现在块后面的 let 声明。在 let 声明之前的执行瞬间被称为“暂时性死区”（temporal dead zone），在这个阶段引用任何后面才声明的变量都会抛出 RefferenceError。</li>
 </ol>
 <h4 id="作用域和作用域链"><a href="#作用域和作用域链" class="headerlink" title="作用域和作用域链"></a>作用域和作用域链</h4><p><strong>作用域：</strong>简单来说<u>作用域就是变量与函数的可访问范围</u>。作用域最大的用处就是<code>隔离变量</code>，不同作用域下同名变量不会有冲突。</p>
-<p><strong>作用域链：</strong>一般情况下，变量到创建该变量的函数的作用域中取值。但是如果在当前作用域中没有查到，就会向上级作用域去查，直到查到全局作用域，这么一个查找过程形成的链条就叫做作用域链。</p>
+<p><strong>作用域链：</strong>一般情况下，变量到创建该变量的作用域中取值。但是如果在当前作用域中没有查到，就会向上级作用域去查，直到查到全局作用域，这么一个查找过程形成的链条就叫做作用域链。</p>
 <p>在 JavaScript 执行过程中，其作用域链是由词法作用域决定的。</p>
 <p><strong>词法作用域是代码编译阶段就决定好的，和函数是怎么调用的没有关系</strong>。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -890,7 +890,7 @@ arr<span class="token punctuation">.</span><span class="token function">map</spa
 <span class="token keyword">let</span> arr0 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <hr>
-<h3 id="类和对象"><a href="#类和对象" class="headerlink" title="==类和对象=="></a>==类和对象==</h3><h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>[MDN]</p>
+<h3 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h3><h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>[MDN]</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Working_with_Objects">使用对象</a></li>
 <li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Details_of_the_Object_Model">对象模型细节</a></li>
@@ -935,7 +935,7 @@ animal1<span class="token punctuation">.</span><span class="token function">disp
 fish<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token string">"Fishes"</span><span class="token punctuation">;</span>
 fish<span class="token punctuation">.</span><span class="token function">displayType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output:Fishes</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>（4）使用 ECMAScript6 提供的关键字：class, constructor, static, extends, super。</p>
+<p>（4）使用 ECMAScript 2015 提供的关键字：class, constructor, static, extends, super。</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token string">"use strict"</span><span class="token punctuation">;</span>
 
 <span class="token keyword">class</span> <span class="token class-name">Polygon</span> <span class="token punctuation">{</span>
@@ -1632,7 +1632,7 @@ Promise<span class="token punctuation">.</span><span class="token function">reso
 <p>css 不会阻塞 DOM 的解析，但会阻塞 DOM 的渲染。或者说是阻塞渲染树的生成，进而阻塞 DOM 的渲染。</p>
 <p>js 会阻塞 DOM 的解析。</p>
 <p>css 会阻塞 js 的执行。</p>
-<p>浏览器遇到 <code>&lt;script&gt;</code> 标签且没有 <code>defer</code> 或 <code>async</code> 属性时会触发页面渲染。</p>
+<p>浏览器遇到 <code>&lt;script&gt;</code> 标签且没有 <code>defer</code> 或 <code>async</code> 属性时会阻塞页面渲染。</p>
 <h3 id="defer-和-async-的区别"><a href="#defer-和-async-的区别" class="headerlink" title="defer 和 async 的区别"></a>defer 和 async 的区别</h3><p>参考：<a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/2acd6447-af1d-4430-837f-a468b6c76ffe?orderBy=updateTime&amp;order=desc&amp;titleKey=defer">script 标签中， async 和 defer 两个属性有什么用途和区别？- 题目详情 - 前端面试题宝典 (ecool.fun)</a></p>
 <hr>
 <h2 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h2><h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><p>ES6 允许按照一定模式，从数组和对象中提取值，对变量进行赋值，这被称为<strong>解构（Destructuring）</strong>。</p>
