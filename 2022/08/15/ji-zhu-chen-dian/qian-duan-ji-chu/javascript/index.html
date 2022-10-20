@@ -414,21 +414,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-27
+                    2022-10-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    31.1k
+                    31.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    125 分
+                    128 分
                 </div>
                 
 
@@ -618,6 +618,20 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ol>
 <h4 id="作用域和作用域链"><a href="#作用域和作用域链" class="headerlink" title="作用域和作用域链"></a>作用域和作用域链</h4><p><strong>作用域：</strong>简单来说<u>作用域就是变量与函数的可访问范围</u>。作用域最大的用处就是<code>隔离变量</code>，不同作用域下同名变量不会有冲突。</p>
 <p><strong>作用域链：</strong>一般情况下，变量到创建该变量的函数的作用域中取值。但是如果在当前作用域中没有查到，就会向上级作用域去查，直到查到全局作用域，这么一个查找过程形成的链条就叫做作用域链。</p>
+<p>在 JavaScript 执行过程中，其作用域链是由词法作用域决定的。</p>
+<p><strong>词法作用域是代码编译阶段就决定好的，和函数是怎么调用的没有关系</strong>。</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myName<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> myName <span class="token operator">=</span> <span class="token string">"b"</span>
+  <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">var</span> myName <span class="token operator">=</span> <span class="token string">"a"</span>
+<span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 输出 a</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <hr>
 <h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="箭头函数和普通函数的区别"><a href="#箭头函数和普通函数的区别" class="headerlink" title="箭头函数和普通函数的区别"></a>箭头函数和普通函数的区别</h4><p>特性：</p>
 <ol>
@@ -639,6 +653,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><h5 id="闭包是什么"><a href="#闭包是什么" class="headerlink" title="闭包是什么"></a>闭包是什么</h5><p><strong>《JavaScript 高级程序设计（第 4 版）》（红宝书）：</strong>闭包是指有权访问另外一个函数作用域中的变量的函数。</p>
 <p><strong>MDN：</strong>闭包是由函数以及声明该函数的<strong>词法环境</strong>组合而成的。该环境包含了这个闭包创建时作用域内的任何局部变量。词法（lexical）一词指的是，词法作用域根据源代码中声明变量的位置来确定该变量在何处可用。嵌套函数可访问声明于它们外部作用域的变量。</p>
 <p><strong>《你不知道的 JavaScript》：</strong>当函数可以记住并访问所在的词法作用域时，就产生了闭包，即使函数是在当前词法作用域之外执行。</p>
+<p><strong><a target="_blank" rel="noopener" href="https://zhqwq.github.io/broswer-working-principle/guide/10.html">浏览器工作原理与实践</a><strong>：在 JavaScript 中，根据</strong>词法作用域</strong>的规则，内部函数总是可以访问其外部函数中声明的变量，当通过调用一个外部函数返回一个内部函数后，即使该外部函数已经执行结束了，但是内部函数引用外部函数的变量依然保存在内存中，我们就把这些变量的集合称为闭包。比如外部函数是 foo，那么这些变量的集合就称为 foo 函数的闭包。</p>
 <p><strong>形成原因：</strong>内部的函数存在所在词法作用域的引用就会导致闭包。</p>
 <p><strong>闭包变量存储的位置：</strong>闭包中的变量存储的位置是堆内存。</p>
 <p><strong>闭包的作用</strong></p>
@@ -4024,6 +4039,31 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <h4 id="ES6-Module"><a href="#ES6-Module" class="headerlink" title="ES6 Module"></a>ES6 Module</h4><p>遇到模块加载命令import时，不会去执行模块，而是只生成一个引用。等到真的需要用到时，再到模块里面去取值。因此，ES6模块是动态引用，不存在缓存值的问题，而且模块里面的变量，绑定其所在的模块。</p>
 <p><a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2015/11/circular-dependency.html">JavaScript 模块的循环加载 - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
 <h3 id="各种打包工具"><a href="#各种打包工具" class="headerlink" title="各种打包工具"></a>各种打包工具</h3><p><a target="_blank" rel="noopener" href="http://webpack.wuhaolin.cn/1%E5%85%A5%E9%97%A8/1-2%E5%B8%B8%E8%A7%81%E7%9A%84%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7%E5%8F%8A%E5%AF%B9%E6%AF%94.html"> 常见的构建工具及对比 · 深入浅出 Webpack (wuhaolin.cn)</a></p>
+<hr>
+<h2 id="token-和-cookie"><a href="#token-和-cookie" class="headerlink" title="token 和 cookie"></a>token 和 cookie</h2><p>【CORS 详解】：<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2016/04/cors.html">跨域资源共享 CORS 详解 - 阮一峰的网络日志 (ruanyifeng.com)</a></p>
+<p>【cookie 详解】：<a target="_blank" rel="noopener" href="https://zh.javascript.info/cookie">Cookie，document.cookie (javascript.info)</a></p>
+<p>【跨域方式详解】：<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000015597029">javascript - 不要再问我跨域的问题了_个人文章 - SegmentFault 思否</a></p>
+<ol>
+<li>token 放在 localStorage 或 sessionStorage 中<ul>
+<li>缺点：由于 localStorage 和 sessionStorage 都可以被 javascript 访问，所以容易受到 XSS 攻击。尤其是项目中用到很多第三方的 Javascript 类库。<br>另外，需要应用程序来保证 token 只在 https 下传输。</li>
+</ul>
+</li>
+<li>token 放在 cookie 中<ul>
+<li>优点：可以指定 httponly，来防止被 Javascript 读取，也可以指定 secure，来保证 token 只在 https 下传输。</li>
+<li>缺点：<ol>
+<li>不符合Restful 最佳实践。</li>
+<li>容易遭受CSRF攻击 （可以在服务器端检查 Refer 和 Origin）</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="JWT-的使用"><a href="#JWT-的使用" class="headerlink" title="JWT 的使用"></a>JWT 的使用</h3><p>客户端收到服务器返回的 JWT，可以储存在 Cookie 里面，也可以储存在 localStorage。此后，客户端每次与服务器通信，都要带上这个 JWT。你可以把它放在 Cookie 里面自动发送，但是这样不能跨域，所以更好的做法是放在 HTTP 请求的头信息 Authorization 字段里面（Authorization: Bearer）。另一种做法是，跨域的时候，JWT 就放在 POST 请求的数据体里面。token 放在 localStorage 或 sessionStorage 中比放在 cookie 中更容易遭到 XSS 攻击；放在 cookie 中可以设置 httpOnly 防止 cookie 被 Javascript 脚本读取，指定 secure 保证 token 只在 https 下传输。</p>
+<p>参考：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://restfulapi.cn/page/jwt">JWT 认证 - RESTful API 一种流行的 API 设计风格</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/java_tang_shi_wen/article/details/115027687">session和token认证方式，cookie和localStorage存储，Web安全 ——总结_疯狂踩坑人的博客-CSDN博客_token存储在localstore安全吗</a></li>
+</ol>
 
                 
             </div>
